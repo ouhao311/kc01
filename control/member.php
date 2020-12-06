@@ -144,7 +144,7 @@ class memberControl extends BaseMemberControl{
 	
 	//发布资讯
 	public function addviewsDo(){
-      header("Content-Security-Policy: upgrade-insecure-requests");
+    //   header("Content-Security-Policy: upgrade-insecure-requests");
 
         $lang = Language::getLangContent();
 		$mid=$_SESSION['member_id'];
@@ -309,7 +309,7 @@ class memberControl extends BaseMemberControl{
 	
 	// 我的资料
     public function profileDo(){
-header("Content-Security-Policy: upgrade-insecure-requests");
+// header("Content-Security-Policy: upgrade-insecure-requests");
 
         $lang = Language::getLangContent();
 		$mid=$_SESSION['member_id'];

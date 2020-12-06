@@ -318,7 +318,7 @@ class hotlineControl extends PcControl{
 	 }
 	// 提问
     public function addDo(){
-              header("Content-Security-Policy: upgrade-insecure-requests");
+            //   header("Content-Security-Policy: upgrade-insecure-requests");
 
 		$lang = Language::getLangContent();
 		$mid=$_SESSION['member_id'];

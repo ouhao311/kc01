@@ -1129,3 +1129,12 @@ SELECT COUNT(*) AS nc_count FROM `hx_govent_list` WHERE ( isdel = '0' ) ORDER BY
 [2020-12-06 19:14:40] /manage/modules/news/index.php?url=govent_list&do=get_xml&pid= ( url=govent_list&do=get_xml ) 
 ERR: Db Error: Table 'test.hx_govent_list' doesn't exist
 SELECT * FROM `hx_govent_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 0,15  
+[2020-12-06 19:31:10] /index.php?url=news&do=index&pid=1 ( url=news&do=index ) 
+ERR: Db Error: Table 'test.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=19 and status=1 and isdel=0 ORDER by rank asc 
+[2020-12-06 19:34:50] /manage/modules/news/index.php?url=govent_list&do=get_xml&pid= ( url=govent_list&do=get_xml ) 
+ERR: Db Error: Table 'test.hx_govent_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_govent_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 1  
+[2020-12-06 19:34:50] /manage/modules/news/index.php?url=govent_list&do=get_xml&pid= ( url=govent_list&do=get_xml ) 
+ERR: Db Error: Table 'test.hx_govent_list' doesn't exist
+SELECT * FROM `hx_govent_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 0,15  

@@ -1,0 +1,133 @@
+{template 'header',1}
+<div class="page">
+  <div class="fixed-bar">
+    <div class="item-title"><a class="back" href="index.php?url=area&do=index" title="返回列表"><i class="fa fa-arrow-circle-o-left"></i></a>
+      <div class="subject">
+        <h3>功能设置 - 新增</h3>
+        <h5>功能新增与编辑</h5>
+      </div>
+    </div>
+  </div>
+
+  <form id="form" method="post" action="index.php?url=gmenu&do=save&id=<?php echo $_GET['id']?>">
+    <input type="hidden" name="form_submit" value="ok" />
+    <input type="hidden" name="pid" id="pid" value="<?php echo $output['info']['pid']?>">
+    <div class="ncap-form-default">
+     <dl class="row">
+        <dt class="tit">
+          <label for="pname">父级名称</label>
+        </dt>
+        <dd class="opt">
+          {if $output['info']['pname']}{$output['info']['pname']}{else}顶级功能{/if}
+          <span class="err"></span>
+          <p class="notic"></p>
+        </dd>
+      </dl>
+    
+      <dl class="row">
+        <dt class="tit">
+          <label for="uname"><em>*</em>功能名称</label>
+        </dt>
+        <dd class="opt">
+          <input type="text" name="uname" value="<?php echo $output['info']['uname']?>" maxlength="20" id="uname" class="input-txt">
+          <span class="err"></span>
+          <p class="notic">请认真填写功能名称。</p>
+        </dd>
+      </dl>
+            <dl class="row">
+        <dt class="tit">
+          <label for="code"><em>*</em>代码</label>
+        </dt>
+        <dd class="opt">
+          <input type="text" name="code" value="<?php echo $output['info']['code']?>" maxlength="20" id="code" class="input-txt">
+          <span class="err"></span>
+          <p class="notic"></p>
+        </dd>
+      </dl>
+      
+                  <dl class="row">
+        <dt class="tit">
+          <label for="ico">图标</label>
+        </dt>
+        <dd class="opt">
+          <input type="text" name="ico" value="<?php echo $output['info']['ico']?>" maxlength="20" id="ico" class="input-txt">
+          <span class="err"></span>
+          <p class="notic"></p>
+        </dd>
+      </dl>
+      
+            <dl class="row">
+        <dt class="tit">
+          <label for="list">排序</label>
+        </dt>
+        <dd class="opt">
+          <input type="text" name="list" value="{if $output['info']['list']}<?php echo $output['info']['list']?>{else}0{/if}" maxlength="20" id="list" class="input-txt">
+          <span class="err"></span>
+          <p class="notic"></p>
+        </dd>
+      </dl>
+      
+          <dl class="row">
+        <dt class="tit">
+          <label for="power">功能操作</label>
+        </dt>
+        <dd class="opt">
+        
+        <label for="view"><input name="view"   id="view" type="checkbox" {if $info['view']}checked{/if} /> 查看 </label>
+         <label for="add"><input name="add"   id="add" type="checkbox" {if $info['add']}checked{/if} /> 添加 </label>
+          <label for="edit"><input name="edit"   id="edit" type="checkbox" {if $info['edit']}checked{/if} /> 修改 </label>
+           <label for="del"><input name="del"   id="del" type="checkbox" {if $info['del']}checked{/if} /> 删除 </label>
+            <label for="shenhe"><input name="shenhe"   id="shenhe" type="checkbox" {if $info['shenhe']}checked{/if} /> 审核 </label> 
+             <label for="progress"><input name="progress"   id="progress" type="checkbox" {if $info['progress']}checked{/if} /> 进度 </label>
+              <label for="topshenhe"><input name="topshenhe"   id="topshenhe" type="checkbox" {if $info['topshenhe']}checked{/if} /> 超级审核 </label>
+              <label for="all"><input name="all"   id="all" type="checkbox"  {if $info['all']}checked{/if} /> 所有 </label>
+          
+          
+          <span class="err"></span>
+          <p class="notic"></p>
+        </dd>
+      </dl>
+
+    
+      <div class="bot"><a href="JavaScript:void(0);" class="ncap-btn-big ncap-btn-green" id="submitBtn"><?php echo $lang['hx_submit'];?></a></div>
+    </div>
+  </form>
+</div>
+<script>
+//按钮先执行验证再提交表单
+$(function(){$("#submitBtn").click(function(){
+    if($("#form").valid()){
+        
+        $("#form").submit();
+    }
+	});
+});
+//
+$(document).ready(function(){
+
+	$('#form').validate({
+        errorPlacement: function(error, element){
+			var error_td = element.parent('dd').children('span.err');
+            error_td.append(error);
+        },
+        rules : {
+            uname : {
+            	required   : true
+            },
+			code : {
+            	required   : true
+            }
+        },
+        messages : {
+        	uname : {
+                required : '<i class="fa fa-exclamation-circle"></i>请填写功能名称'
+            },
+			code : {
+                required : '<i class="fa fa-exclamation-circle"></i>请填写代码'
+            }
+
+        }
+    });
+});
+</script>
+{template 'footer',1}

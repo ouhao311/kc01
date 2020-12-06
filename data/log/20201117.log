@@ -1,0 +1,42 @@
+[2020-11-17 10:07:28] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-11-17 10:08:14] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-11-17 10:08:48] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-11-17 10:09:03] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-11-17 10:09:04] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-11-17 10:09:08] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-11-17 10:09:12] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-11-17 10:09:16] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-11-17 10:09:18] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-11-17 10:12:54] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-11-17 10:13:05] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-11-17 10:13:06] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-11-17 10:13:08] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-11-17 10:13:23] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 

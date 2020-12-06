@@ -1,0 +1,178 @@
+{template 'header2'}
+<link href="/ssz/wap/css/fuwu.css" rel="stylesheet" type="text/css" /> 
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.15&key=318b49df2c860ec628c262954fd9fcd8"></script>
+    <script src="https://webapi.amap.com/maps?v=1.4.15&key=318b49df2c860ec628c262954fd9fcd8&plugin=AMap.CircleEditor"></script>
+    <link rel="stylesheet" type="text/css" href="/public/layui/css/layui.css">
+    <script src="/public/layui/layui.js"></script>
+    <style>
+        html,body{
+            height:100%;
+			text-align:center
+        }
+        .info{
+            width:26rem;
+        }
+		#container{
+			height:50%;
+			width:95%;
+			margin:0 auto;
+		}
+		#distance{
+			margin:10px;
+		
+			font-size: 12px;
+		}
+		#time{
+			font-size:16px;
+			color:#1e9fff;
+			font-weight:bold;
+			margin:10px;
+		}
+		#signbtn{
+			margin:10px auto;
+			width:140px;
+			height:140px;
+			border-radius:50%;
+			box-shadow:0px 0px 8px #25a4ff;
+			font-size: 20px;
+		}
+		#place{
+			margin:5px auto;
+			height:20px;
+			color:#ffffff;
+			width:80px;
+			font-size: 12px;
+			padding-top: 1px;
+		}
+		.isdiy{
+			background-color:#5fb878 ;
+		}
+		.nodiy{
+			background-color:#ff5722 ;
+		}
+		.layui-form-switch{
+			width: -5%;
+			height: 20%;
+			background-color: #ff5722;
+			margin: 5px 0;
+
+		}
+		.layui-form-onswitch{
+			background-color: #009688;
+			
+		}
+		.layui-form-switch em{
+			color: #ffffff!important;
+		}
+		#box{
+			position: fixed;
+			bottom: 0;
+			margin:10px auto;
+			width: 100%;
+		}
+		#history{
+			text-align: left;
+			margin: 10px auto;
+			width: 100%;
+			display: flex;            
+	        display: -webkit-flex;            
+	        justify-content: center;            
+	        align-items: center;      
+		}
+		.layui-timeline-item {
+		    position: relative;
+		    padding-bottom: 5px;
+		}
+		.layui-text {
+		    line-height: 15px;
+		    font-size: 14px;
+		    color: #666;
+		}
+		#weizhi{
+			margin-top: -8px;
+			display: block;
+			color: #009f95;
+			font-size: 11px;
+		}
+		.signtype{
+			color: orange;
+			font-style:normal;
+		}
+		#location{
+			font-size: 12px;
+		}
+    </style>
+		
+	<div id='container'></div>
+	<div id="box">
+		<div id='time'></div>
+		<button id='signbtn' class="layui-btn layui-btn-normal">考勤签到</button><br>
+		<div id='location'>系统正在定位中</div>
+	</div>	
+	<input type="hidden" id="isonoff" name="isonoff" value="true">
+	<input type="hidden" id="userid" name="userid" value="0">
+	<script type="text/javascript">
+	
+		var map = new AMap.Map('container', {
+			resizeEnable: true
+		});
+		AMap.plugin('AMap.Geolocation', function() {
+			var geolocation = new AMap.Geolocation({
+				enableHighAccuracy: true,//是否使用高精度定位，默认:true
+				timeout: 10000,          //超过10秒后停止定位，默认：5s
+				buttonPosition:'RB',    //定位按钮的停靠位置
+				buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+				zoomToAccuracy: true,   //定位成功后是否自动调整地图视野到定位点
+			});
+			map.addControl(geolocation);
+			geolocation.getCurrentPosition(function(status,result){
+				if(status=='complete'){
+					onComplete(result)
+				}else{
+					onError(result)
+				}
+			});
+		});
+		//解析定位结果
+		function onComplete(data) {
+		    console.log(data)
+		    var location=data.formattedAddress;
+		    document.getElementById('location').innerHTML=location;
+			$("#signbtn").click(function(){
+			    console.log("经度："+data.position.lat);
+                console.log("纬度："+data.position.lng);
+                console.log("地址:"+data.formattedAddress);
+                $.ajax({
+				             type: "post",
+				             url: "{url('task','clock')}",
+				             async: true,
+				             data: {
+				             	lat:data.position.lat,
+				             	lng:data.position.lng,
+				             	address:data.formattedAddress
+				             },
+				             success: function(res) {
+				             	res = $.parseJSON(res);
+				             	console.log(res)
+				             	layui.use(['layer'], function(){
+				             	if (res.err == 1) {
+				             	    layer.msg(res.msg);
+			                        
+		                            } else {
+			                        globalFunc.time();
+		                          }
+				             	});
+				             }
+			            });
+			});
+		}
+		//解析定位错误信息
+		function onError(data) {
+			document.getElementById('location').innerHTML='定位失败';
+			document.getElementById('location').innerHTML = '失败原因排查信息:'+data.message;
+		}
+        setInterval("document.getElementById('time').innerHTML=new Date().toLocaleString()+' 星期'+'日一二三四五六'.charAt(new Date().getDay());",1000);
+		
+	</script>	
+
+{template 'footer'} 

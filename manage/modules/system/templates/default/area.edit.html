@@ -1,0 +1,164 @@
+{template 'header',1}
+<div class="page">
+  <div class="fixed-bar">
+    <div class="item-title"><a class="back" href="index.php?url=area&do=index" title="返回列表"><i class="fa fa-arrow-circle-o-left"></i></a>
+      <div class="subject">
+        <h3>地区设置 - 新增</h3>
+        <h5>地区新增与编辑</h5>
+      </div>
+    </div>
+  </div>
+
+  <form id="form" method="post" action="index.php?url=area&do=save&area_id=<?php echo $_GET['area_id']?>">
+    <input type="hidden" name="form_submit" value="ok" />
+    <div class="ncap-form-default">
+      <dl class="row">
+        <dt class="tit">
+          <label for="ac_name"><em>*</em>地区名</label>
+        </dt>
+        <dd class="opt">
+          <input type="text" name="area_name" value="<?php echo $output['info']['area_name']?>" maxlength="20" id="area_name" class="input-txt">
+          <span class="err"></span>
+          <p class="notic"></p>
+        </dd>
+      </dl>
+
+      <dl class="row">
+        <dt class="tit">
+          <label for="parent_id">上级地区</label>
+        </dt>
+        <dd class="opt">
+            <?php echo $output['info']['area_parent_name']?>
+          <span class="err"></span>
+          <p class="notic"></p>
+        </dd>
+      </dl>
+      <dl class="row">
+        <dt class="tit">
+          <label for="ac_sort">所属大区域</label>
+        </dt>
+        <dd class="opt">
+          <input type="text" value="<?php echo $output['info']['area_region']?>" name="area_region" id="area_region" class="input-txt">
+          <span class="err"></span>
+          <p class="notic">默认只有省级地区才需要填写大区域，目前全国几大区域有：华北、东北、华东、华南、华中、西南、西北、港澳台、海外。</p>
+        </dd>
+      </dl>
+
+
+
+      <dl class="row">
+        <dt class="tit">
+          <label for="">经纬度</label>
+        </dt>
+        <dd class="opt">
+          <input type="text" value="<?php echo $output['info']['baidumap']?>" name="baidumap" id="baidumap" readonly class="input-txt">
+          <span class="err"></span>
+          <div class="layui-input-inline">
+            <input type="button" name="searchMap" id="searchMap" value="选择坐标" class="layui-btn layui-btn-normal" />
+          </div>
+          <p class="notic">经纬度保存为坐标点</p>
+        </dd>
+      </dl>
+
+      <link href="<?php echo ADMIN_RESOURCE_URL;?>/js/jquery.searchableSelect.css" rel="stylesheet" type="text/css">
+      <script src="<?php echo ADMIN_RESOURCE_URL;?>/js/jquery.searchableSelect.js"></script>
+
+      <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=7d3a4c6e5e8a70dd200a2eeacf8c1b50"></script>
+      <script>
+          $('#searchMap').click(function(){
+              var address ="<?php echo $output['info']['area_parent_name']?>";
+              var address2 = $("#area_name").val();
+              layer.open({
+                  type: 1,
+                  title: '选择地图坐标',
+                  shadeClose: true,
+                  shade: 0.8,
+                  area: ['80%', '80%'],
+                  content: "<div class='layui-container'><div class='layui-row mb15 pt20'><div class='layui-input-inline ad'><input type='text' name='dz'  lay-verify='required' placeholder='输入具体地址' value='"+address+address2+"' autocomplete='off' id='dz' class='layui-input' style='min-width:300px;'/></div><input type='hidden' id='zb'/> <div class='layui-input-inline'><button id='ss' class='layui-btn' >搜索</button></div> <div class='layui-input-inline'><a class='layui-btn layui-btn-normal' lay-submit='' onclick='queding()' lay-filter='demo1'>确定</a></div>" +
+                      " &nbsp;经纬度: <div class='layui-input-inline ad' id='pot'></div></div></div><div id='map' style='width: 100%;height: 600px;'></div>"
+              });
+
+                  var map = new BMap.Map("map");
+                  var point = new BMap.Point(116.331398,39.897445);
+
+                  var marker = new BMap.Marker(point);
+                  map.addOverlay(marker);              // 将标注添加到地图中
+                  //marker.setAnimation(BMAP_ANIMATION_BOUNCE); //跳动的动画
+                  map.centerAndZoom(point, 18);
+                  map.disableScrollWheelZoom();
+
+                  var mapStyle = {
+                      features: ["road", "building", "water", "land"],//隐藏地图上的poi
+                      style : "normal"  //设置地图风格为高端黑
+                  }
+                  map.setMapStyle(mapStyle);
+                  $('#ss').click(function(){
+                      var myaddress=$('#dz').val();
+
+                      // 创建地址解析器实例
+                      var myGeo = new BMap.Geocoder();
+                      // 将地址解析结果显示在地图上,并调整地图视野
+                      myGeo.getPoint(myaddress, function(point){
+                          if (point) {
+
+                              map.centerAndZoom(point, 16);
+                              map.addOverlay(new BMap.Marker(point));
+                              $('#zb').val();
+                              $('#zb').val(point.lng+','+point.lat);
+                              $('#pot').text(point.lng+','+point.lat);
+
+                          }else{
+                              layer.msg("请输入详细具体地址!");
+                          }
+                      }, "北京市");
+
+                  });
+                  marker.addEventListener("click", function () {
+                      map.openInfoWindow(point);
+                  });
+
+
+          });
+          function queding(){
+              $('#baidumap').val();
+              if($('#zb').val()!=""){
+                  $('#baidumap').val($('#zb').val());
+              }
+              layer.closeAll();
+          }
+      </script>
+
+      <div class="bot"><a href="JavaScript:void(0);" class="ncap-btn-big ncap-btn-green" id="submitBtn"><?php echo $lang['hx_submit'];?></a></div>
+    </div>
+  </form>
+</div>
+<script>
+//按钮先执行验证再提交表单
+$(function(){$("#submitBtn").click(function(){
+    if($("#form").valid()){
+        $("#form").submit();
+    }
+	});
+});
+//
+$(document).ready(function(){
+	$("#region").hx_region({src:'db',show_deep:3});
+	$('#form').validate({
+        errorPlacement: function(error, element){
+			var error_td = element.parent('dd').children('span.err');
+            error_td.append(error);
+        },
+        rules : {
+            area_name : {
+            	required   : true
+            }
+        },
+        messages : {
+        	area_name : {
+                required : '<i class="fa fa-exclamation-circle"></i>请填写地区'
+            }
+        }
+    });
+});
+</script>
+{template 'footer',1}

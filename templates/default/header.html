@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}</title>
+<meta name="keywords" content="{if empty($keywords)}{C('site_keywords')}{else}{$keywords}{/if}" />
+<meta name="description" content="{if empty($description)}{C('site_description')}{else}{$description}{/if}" />
+<meta name="author" content="{C('site_name')}" />  
+<link href="//at.alicdn.com/t/font_759613_byou54gk0v7.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="/public/css/style.css" />
+<script language="javascript" type="text/javascript" src="/public/js/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="/public/js/jquery.superslide.js"></script>
+<link rel="stylesheet" href="/public/css/layui.css"  media="all">
+<script src="/public/layui/layui.js"></script> 
+<script type="text/javascript"> 
+//全局变量
+var GV = {
+	ROOT: "/",
+	WEB_ROOT: "",
+	JS_ROOT: "/public/js/",
+	TMPL: "/public/"
+};
+</script>
+</head>
+<body>
+
+<!--top区域 start-->
+<div class="top_x w1min">
+<div class="w1">
+	<div class="topx_left">
+		<div class="topx_logo"><img src="/public/images/header_logo.png" /></div>
+		<div class="topx_zi">
+		<h1>{C('site_name')}</h1>
+		</div>
+	</div>
+	<div class="topx_right" id="ucenterlogin">
+		{if $_SESSION['is_login']} 
+		<dl class="login" >
+			你好, <span class="user-nickname">[{$_SESSION['member_name']}]</span>
+			<a href="{url('member','index')}"><i class="iconfont icon-user"></i>会员中心</a>
+			<a href="{url('logout','index')}">&nbsp;&nbsp;退出登录</a>
+		</dl>
+		{else} 
+		<dl class="offline" >
+			<a href="{url('login','index')}" class="signin"><i class="iconfont icon-gongchandang"></i>登录</a>
+		</dl>
+		{/if}
+		<div class="top-search">
+			<form method="GET" action="/index.php"  target="_blank">
+				<input type="hidden" name="url" value="news"/>
+				<input type="hidden" name="do" value="search"/>
+				<input type="text" name="keywords" required  lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+				<button class="layui-btn layui-bg-orange" lay-submit lay-filter="formDemo"><i class="iconfont icon-xiazai15"></i>搜索</button>
+			</form>
+		</div>
+	</div>			
+</div>
+</div>
+<div class="lang_mu w1min">
+<ul class="layui-nav" lay-filter="">
+   <li class="layui-nav-item {if $_GET['url']==''||$_GET['url']=='index'}layui-this{/if}">
+		<a href="/" target="">
+			<b>首页</b>
+		</a>
+	</li>
+    {php $class_list=channel();}
+	{loop $class_list $item}            
+   <li class="layui-nav-item {if $_GET['pid']==$item['id']}layui-this{/if}">
+		<a href="{url('news','index',array('pid'=>$item['id']))}" {if !empty($item['son_channel'])}data-toggle="dropdown"{/if}	><b>{$item['title']}</b></a>
+        {if !empty($item['son_channel'])}
+        <dl class="layui-nav-child">
+			{php $son_channel=$item['son_channel'];}
+			{loop $son_channel $item2}       
+			<dd><a href="{url('news','index',array('pid'=>$item2['id']))}" target="_self"  >{$item2['title']}</a></dd>
+			{/loop}	 
+         </dl>
+		{/if}	
+    </li>
+	{/loop}
+	 <li class="layui-nav-item {if $_GET['url']=='online'}layui-this{/if}">
+		<a href="{url('online','index')}" target="">
+			<b>线上解疑平台</b>
+		</a>
+	</li>
+	<li class="layui-nav-item {if $_GET['url']=='integral'}layui-this{/if}">
+		<a href="{url('integral','index')}" target="">
+			<b>积分统计</b>
+		</a>
+	</li>       
+</ul>
+<script>
+//注意：导航 依赖 element 模块，否则无法进行功能性操作
+layui.use('element', function(){
+  var element = layui.element;
+  
+  //…
+});
+</script>
+</div>
+<!--top区域 end-->

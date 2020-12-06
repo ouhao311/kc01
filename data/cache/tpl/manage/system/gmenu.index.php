@@ -1,0 +1,113 @@
+<?php defined('SSZCMS') or exit('Access Denied');?><?php include T('header',1);?>
+<div class="page">
+  <div class="fixed-bar">
+    <div class="item-title">
+      <div class="subject">
+        <h3>功能权限设置</h3>
+        <h5>可对系统后台菜单功能进行编辑</h5>
+      </div>
+    </div>
+  </div>
+  <!-- 操作说明 -->
+  <div class="explanation" id="explanation">
+    <div class="title" id="checkZoom"><i class="fa fa-lightbulb-o"></i>
+      <h4 title="<?php echo $lang['hx_prompts_title'];?>"><?php echo $lang['hx_prompts'];?></h4>
+      <span id="explanationZoom" title="<?php echo $lang['hx_prompts_span'];?>"></span>
+    </div>
+    <ul>
+      <li>此处为核心文件，强烈建议对此处谨慎操作。</li>
+    
+    </ul>
+  </div>
+  <div id="flexigrid"></div>
+</div>
+<script type="text/javascript">
+//定义变量，点击返回上一级、新增分类自动获取当前父类时用到
+var his_parent_ids = [0],cur_parent_id = 0;
+$(function(){
+    $("#flexigrid").flexigrid({
+        url: 'index.php?url=gmenu&do=get_xml&pid=<?php echo intval($_GET['pid']);?>',
+        colModel : [
+            {display: '操作', name : 'operation', width : 150, sortable : false, align: 'center', className: 'handle'},
+{display: '名称', name : 'gname', width : 80, sortable : false, align: 'center'},
+            {display: '代码', name : 'code', width : 60, sortable : false, align: 'center'},
+{display: '排序', name : 'list', width : 60, sortable : false, align : 'center'},
+{display: '查看', name : 'view', width : 80, sortable : false, align : 'center'},
+{display: '添加', name : 'add', width : 80, sortable : false, align : 'center'},
+{display: '修改', name : 'edit', width : 80, sortable : false, align : 'center'},
+{display: '删除', name : 'del', width : 80, sortable : false, align : 'center'},
+{display: '审核', name : 'shenhe', width : 80, sortable : false, align : 'center'},
+
+{display: '进度', name : 'progress', width : 80, sortable : false, align : 'center'},
+{display: '超级审核', name : 'topshenhe', width : 80, sortable : false, align : 'center'}, 
+{display: '全部', name : 'all', width : 80, sortable : false, align : 'center'},
+
+            ],
+        buttons : [
+            {display: '<i class="fa fa-plus"></i>新增数据', name : 'add', bclass : 'add', title : '新增数据', onpress : fg_operate },          
+            {display: '<i class="fa fa-level-up"></i>返回上级', name : 'up', bclass : 'up', title : '返回上级', onpress : fg_operate }
+            ],
+        searchitems : [
+            {display: '功能名称', name : 'gname'}
+            ],
+        sortname: "",
+        sortorder: "",
+        rp: 15,
+        title: '功能列表'
+    });
+});
+function fg_operate(name, grid) {
+    if (name == 'add') {
+        window.location.href = 'index.php?url=gmenu&do=add&pid='+cur_parent_id;
+    }else if (name == 'delete') {
+        if($('.trSelected',grid).length>0){
+            var itemlist = new Array();
+            $('.trSelected',grid).each(function(){
+            itemlist.push($(this).attr('data-id'));
+            });
+            fg_delete(itemlist);
+        } else {
+            return false;
+        }
+    }else if (name == 'up') {
+    fg_up();
+    }
+}
+function fg_delete(id) {
+if (typeof id == 'number') {
+    var id = new Array(id.toString());
+};
+if(confirm('系统将会把选中功能及所有子功能删除，确认操作吗？')){
+id = id.join(',');
+} else {
+        return false;
+    }
+$.ajax({
+        type: "GET",
+        dataType: "json",
+        url: "index.php?url=gmenu&do=del",
+        data: "id="+id,
+        success: function(data){
+            if (data.state){
+                $("#flexigrid").flexReload();
+            } else {
+            alert(data.msg);
+            }
+        }
+    });
+}
+function fg_show_children(id,pid) {
+$("#flexigrid").flexOptions({url: 'index.php?url=gmenu&do=get_xml&pid='+id}).flexReload();
+his_parent_ids.push(pid);
+cur_parent_id = id;
+}
+function fg_up() {
+if (his_parent_ids.length == 0) {
+his_parent_ids.push(0);
+}
+$("#flexigrid").flexOptions({url: 'index.php?url=gmenu&do=get_xml&pid='+his_parent_ids[his_parent_ids.length-1]}).flexReload();
+cur_parent_id = his_parent_ids[his_parent_ids.length-1];
+his_parent_ids.pop();
+}
+</script> 
+<?php include T('footer',1);?>

@@ -1,0 +1,15 @@
+[2020-08-22 08:24:07] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-22 08:24:59] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-22 16:30:29] /manage/modules/organ/index.php?url=clock_list&do=get_xml&pid= ( url=clock_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_clock_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_clock_list` ORDER BY id desc LIMIT 1  
+[2020-08-22 16:30:29] /manage/modules/organ/index.php?url=clock_list&do=get_xml&pid= ( url=clock_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_clock_list' doesn't exist
+SELECT * FROM `hx_clock_list` ORDER BY id desc LIMIT 0,15  
+[2020-08-22 16:35:35] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 

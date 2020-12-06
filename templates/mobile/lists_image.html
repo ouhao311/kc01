@@ -1,0 +1,60 @@
+{template 'header1'}
+
+<div class="gdtys grace-scroll-x">
+	{php $class_list=channel();}
+	{loop $class_list $item}
+	<a href="{url('news','index',array('pid'=>$item['id']))}" >
+	<div class="items  {if $_GET['pid']==$item['id']||$topclassinfo['id']==$item['id']}dtbh{/if}">
+		{$item['title']}
+	</div>
+	</a>
+	{/loop}
+</div>
+{if !empty($sonclass)}
+<div class="xwbt">
+	<div class="grace-scroll-x gdtys scrollqb"> 
+		<a href="{url('news','index',array('pid'=>$topclassinfo['id']))}"><span {if $_GET['pid']==$topclassinfo['id']}class="dtbh1"{/if}>全部</span></a>
+		{loop $sonclass $item}
+		<a href="{url('news','index',array('pid'=>$item['id']))}"><span {if $_GET['pid']==$item['id']}class="dtbh1"{/if}>{$item['title']}</span></a>
+		{/loop}
+		<span class="">集中活动</span>
+	</div>
+</div>
+{/if}	
+
+<div class="listnew" style="position: relative;">
+	<div data-v-ecaca2b0="" id="outer-jjmts" class="_v-container" style="position: static; width: 100%; height:auto;">
+		<div data-v-ecaca2b0="" id="inner-15hhk" class="_v-content" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+			{loop $list $item} 
+			<div data-v-ecaca2b0="" class="grace-news-list">
+				<a href="{url('news','show',array('id'=>$item['id']))}" target="_blank" title="{$item['title']}">
+				<div data-v-ecaca2b0="" class="item">
+					<div data-v-ecaca2b0="" class="body">
+						<div data-v-ecaca2b0="" class="title">{$item['title']}</div>
+						<div data-v-ecaca2b0="" class="desc">
+							<div data-v-ecaca2b0="" class="xmIconfont watch"></div>
+							<div data-v-ecaca2b0="" class="left time">{date('Y-m-d',$item['edittime'])}</div>
+							<div data-v-ecaca2b0="" class="xmIconfont watch"></div>
+							<div data-v-ecaca2b0="" class="left">{$item['clicks']}</div>
+						</div>
+					</div>
+					<div data-v-ecaca2b0="" class="img img-r">
+						<img data-v-ecaca2b0="" src="{getImageUrl($item['pic'],'400')}">
+					</div>
+				</div>
+				</a>
+			</div>
+			{/loop}	 
+		</div>
+	</div>
+	<ul class="xwpages">
+		{if !empty($list)}
+			{$show_page}
+		{/if}
+	</ul>
+</div>
+
+
+<!--主体内容 结束-->
+
+{template 'footer'}

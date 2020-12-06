@@ -1,0 +1,15 @@
+[2020-07-17 12:57:57] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen_czw.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-17 12:57:57] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen_czw.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-17 12:57:57] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen_czw.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-17 12:57:57] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen_czw.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-17 12:57:57] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen_czw.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 

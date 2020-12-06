@@ -1,0 +1,357 @@
+{template 'header2'}
+
+ 
+<link rel="stylesheet" type="text/css" href="/public/layui/css/layui.css">
+<script src="/public/layui/layui.js"></script>
+<style type="text/css">
+	.layui-container{width: 100%;margin: 0 auto;padding:0px;}
+	.ke-container{width: 100%!important;} 
+	.layui-form-title{text-align:right;display:block;width:100%;min-width:60px;min-height:60px;height: 34px;}
+	.layui-form-title em{font: bold 14px/20px tahoma, verdana;color: red;vertical-align: middle;}
+	.mb15 { margin-bottom: 15px; }
+	.layui-input-block {margin-left: 20px;}
+	.layui-tab-content{padding-top:20px;}
+	.satisfaction{
+	    width: 80px;
+	    height: 80px;
+	    float: left;
+	    text-align: center;
+	    position: relative;
+	}
+	#satisfaction1,#satisfaction2,#satisfaction3{
+	    position: absolute;
+	    left: 50%;
+	    top: 50%;
+	    margin: -25px -25px;
+	}
+	.satisfaction span{
+	    display: block;
+	    position: absolute;
+	    left: 50%;
+	    top: 80%;
+	    margin:0 -20px;
+	}
+			.assist{
+			width: 100%;
+			height: 100%;
+		    }
+		    .assist-content{
+		    	width: 90%;
+		    	height: auto;
+		    	margin: 0 auto;
+		    	border-left: 2px solid #EEEEEE;
+		    	border-right: 2px solid #EEEEEE;
+		    	background-color: white;
+		    }
+		    .con-left{
+		    	width: 15%;
+		    	height: auto;
+		    	float: left;
+		    }
+		    .con-left img{
+		    	width: 40px;
+		    	height: 40px;
+		    	border-radius: 50%;
+		    }
+		    .con-right{
+		    	width: 85%;
+		    	height: auto;
+		    	float: right;
+		    }
+		    .conname{
+		    	font-size: 18px;
+		    	height: 25px;
+		    	margin: 5px;
+		    	line-height: 25px;
+		    }
+		    span{
+		    	font-size: 16px;
+		    	/*margin-left: 10px;*/
+		    }
+		    .speciality,.concompany{
+		    	font-size: 14px;
+		    	color: #CCCCCC;
+		    	margin: 5px;
+		    }
+		    .contact{
+		    	padding:10px ;
+		    	height: auto;
+		    	overflow: hidden;
+		    }
+		    .con-right img{
+		    	height: 25px;
+		    	float: right;
+		    	margin: 0 auto;
+		    }
+		    .con-right .con-tel{
+		        height: 20px;
+		    	margin-right: 10px;
+		    	padding-right: 10px;
+		    	border-right: 1px solid #999;
+		    }
+		    .xhx{
+		    	width: 96%;
+		    	border: 2px solid #eeeeee;
+		    	margin: 0 auto;
+		    }
+		    .xwpages{
+		        display: block;
+		        width: 90%;
+		        margin: 50px auto;
+		    }
+</style>
+
+<div class="mgtop-15 background-w1">
+    <input type="text" name="ids" value="{php echo $_GET['id']}" style="display:none">
+	<div class="fdiv mua">
+	    <ul><i class="iconfont icon-dangwugongkai"></i><b>{$title}</b></ul> 
+	</div>
+	<div class="tu_k link2"><br/></div> 
+	<div class="layui-container">
+		<form class="layui-form"  id="article_list_form" enctype="multipart/form-data" method="post" >
+			<input type="hidden" name="form_submit" value="ok"/>
+			<input type="hidden" name="id" value="<?php echo $info['id'];?>" />
+			<input type="hidden" name="ref_url" value="<?php echo getReferer();?>" /> 
+			
+			   	 <div class="layui-row mb15 ">
+						<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+							<label class="layui-form-title">是否匿名</label>
+						</div>
+						<div class=" layui-col-xs10 layui-col-sm10 layui-col-md10 ">
+							<div class="layui-input-block">
+								<input type="radio"   name="anonymous" value="1" title="是"  lay-filter="anonymous" {if $onlinedata['anonymous']=="1"} checked="checked"{/if}>
+                                <input type="radio" name="anonymous" value="2" title="否" lay-filter="anonymous" {if $onlinedata['anonymous']=="0"} checked="checked"{/if}>
+							</div>
+						</div>
+				     </div>
+			
+			    
+				<div class="layui-tab-item layui-show">
+					<div class="layui-row mb15 ">
+							    <div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+								    <label class="layui-form-title"><em>*</em> 来电人</label>
+							    </div>
+							    <div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
+								    <div class="layui-input-block">
+									    <input type="text" name="name" style="width:100%;" id="name"  placeholder="请输入姓名" autocomplete="off" class="layui-input" value="{$onlinedata['name']}">
+								    </div>
+							    </div>
+						    </div>
+					<!--<div class="layui-row mb15 ">-->
+					<!--		<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">-->
+					<!--			<label class="layui-form-title"><em>*</em> 年龄</label>-->
+					<!--		</div>-->
+					<!--		<div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">-->
+					<!--			<div class="layui-input-block">-->
+					<!--				<input type="text" name="age" style="width:100%;" id="age" lay-verify="required|title" placeholder="请输入年龄" autocomplete="off" class="layui-input" value="{$onlinedata['age']}">-->
+					<!--			</div>-->
+					<!--		</div>-->
+					<!--	</div>-->
+					<div class="layui-row mb15 ">
+							<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+								<label class="layui-form-title"><em>*</em> 联系方式</label>
+							</div>
+							<div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
+								<div class="layui-input-block">
+									<input type="text" name="mobile" style="width:100%;" id="mobile"  placeholder="请输入电话" autocomplete="off" class="layui-input" value="{$onlinedata['mobile']}">
+								</div>
+							</div>
+						</div>
+						<!--<div class="layui-row mb15 ">-->
+						<!--	<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">-->
+						<!--		<label class="layui-form-title"><em>*</em> 村庄</label>-->
+						<!--	</div>-->
+						<!--	<div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">-->
+						<!--		<div class="layui-input-block">-->
+						<!--			<input type="text" name="village" style="width:100%;" id="village" lay-verify="required|title" placeholder="请输入村庄" autocomplete="off" class="layui-input" value="{$onlinedata['village']}">-->
+						<!--		</div>-->
+						<!--	</div>-->
+						<!--</div>-->
+					<!--<div class="layui-row mb15 ">-->
+					<!--		<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">-->
+					<!--			<label class="layui-form-title"><em>*</em> 问题</label>-->
+					<!--		</div>-->
+					<!--		<div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">-->
+					<!--			<div class="layui-input-block">-->
+					<!--				<input type="text" name="title" style="width:100%;" id="title" lay-verify="required|title" placeholder="请输入问题" autocomplete="off" class="layui-input" value="{$onlinedata['title']}">-->
+					<!--			</div>-->
+					<!--		</div>-->
+					<!--	</div>-->
+					<div class="layui-row mb15 ">
+								<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+									<label class="layui-form-title"> 缩略图</label>
+								</div>
+								<div class=" layui-col-xs10 layui-col-sm10 layui-col-md10 ">
+									<div class="layui-input-block">
+										{getMorePic('upload_img_pic','upload_img_list_pic','pic',$onlinedata['pic'],'0')}
+									</div>
+									<div class="layui-input-block">
+										<div class="layui-form-mid layui-word-aux">缩略图尺寸：450*300</div>
+									</div>
+								</div>
+					</div> 
+					<!--<div class="layui-row mb15 ">-->
+				 <!--	    <div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">-->
+					<!--		<label class="layui-form-title">上传视频</label>-->
+					<!--	</div>-->
+					<!--    <div class=" layui-col-xs10 layui-col-sm10 layui-col-md10 ">-->
+					<!--	    <div class="layui-input-block">-->
+					<!--			{getMorevideo('upload_video_pic','upload_video_list_pic','video',$onlinedata['video'],'0')}-->
+					<!--		</div>-->
+					<!--		<div class="layui-input-block">-->
+					<!--			<div class="layui-form-mid layui-word-aux">视频图尺寸：450*300</div>-->
+					<!--		</div>-->
+					<!--	</div>-->
+					<!--</div>-->
+					<!--<div class="layui-row mb15 ">-->
+					<!--<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">-->
+					<!--			<label class="layui-form-title">上传音频</label>-->
+					<!--	</div>-->
+					<!--<div class=" layui-col-xs10 layui-col-sm10 layui-col-md10 ">-->
+					<!--	<div class="layui-input-block">-->
+					<!--	    {getMoreaudio('upload_audio_pic','upload_audio_list_pic','audio',$onlinedata['audio'],'0')}-->
+					<!--	</div>-->
+					<!--				<div class="layui-input-block">-->
+					<!--					<div class="layui-form-mid layui-word-aux">音频图尺寸：450*300</div>-->
+					<!--				</div>-->
+					<!--</div>-->
+					<!--</div>-->
+					<div class="layui-row mb15 ">
+						<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+							<label class="layui-form-title"> 问题描述</label>
+						</div>
+						<div class=" layui-col-xs10 layui-col-sm10 layui-col-md10 ">
+							<div class="layui-input-block">
+								<textarea name="content" id="content" placeholder="请输入问题描述" class="layui-textarea"><?php echo $onlinedata['content'];?></textarea>
+							</div>
+						</div>
+					</div>
+				    <div class="layui-row mb15 ">
+						<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+			                 <label class="layui-form-title"><em>*</em>截止时间</label>
+						</div>
+						<div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
+			                 <div class="layui-input-block">
+				                 <input type="text" name="time" style="width:100%;" id="time" lay-v="required|title" autocomplete="off" class="layui-input" value="">
+			                 </div>
+						</div>
+					</div>
+				   
+				  <!--   <div id="workername" class="layui-row mb15 ">-->
+						<!--<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">-->
+						<!--	<label class="layui-form-title">工作人员名称</label>-->
+						<!--</div>-->
+						<!--<div  class=" layui-col-xs10 layui-col-sm10 layui-col-md10 ">-->
+						<!--	<div class="layui-input-block">-->
+						<!--		{php echo $this->puttree11(0,$onlinedata['managid']);}-->
+						<!--	</div>-->
+						<!--</div>-->
+				  <!--   </div>-->
+				     
+				</div> 
+				<!--<div class="layui-row mb15 ">-->
+				<!--			<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">-->
+				<!--				<label class="layui-form-title">验证码</label>-->
+				<!--			</div>-->
+				<!--			<div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">-->
+				<!--				<div class="layui-input-block">-->
+				<!--					 <input name="verifyCode" placeholder="请输入验证码"  style="height:35px;border:1px solid #e6e6e6;padding:10px;">-->
+				<!--					 <input type="button" class="sendVerifyCode" value="获取验证码">-->
+				<!--				</div>-->
+				<!--			</div>-->
+				<!--		</div>-->
+                <div class="layui-row mb15 ">
+							<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+								<label class="layui-form-title"> </label>
+							</div>
+							<div class=" layui-col-xs10 layui-col-sm10 layui-col-md10 ">
+								<div class="layui-input-block">
+									<button  class="layui-btn layui-btn-primary updateinfo"  lay-submit lay-filter="formDemo">提交</button> 
+								</div>
+							</div>
+						</div>
+				
+		</form>
+	
+	<script> 
+        layui.use(['form','laydate'], function() {
+				var form = layui.form,
+					laydate = layui.laydate;
+
+				//日期
+				laydate.render({
+					elem: '#time',
+					type: 'datetime',
+			        trigger: 'click'
+				});
+				
+				$(":file").attr('capture','camera');
+						 $(".sendVerifyCode").on("click", function(){
+            var number = $("input[name=mobile]").val();
+            console.log(number);
+            $.ajax({
+                 url:"{url('online','sendsms')}",
+                async : true,
+                type: "post",
+                dataType: "json",
+                data: {"number":number},
+                success: function (data) {
+                    if(data == 'fail'){
+                        alert("发送验证码失败");
+                        return ;
+                    }
+                }
+            });
+            //倒计时
+                $(".sendVerifyCode").addClass("on");
+                var time = 60;
+                $(".sendVerifyCode").attr("disabled", true);
+                var timer = setInterval(function() {
+                 if (time == 0) {
+                  clearInterval(timer);
+                  $(".sendVerifyCode").attr("disabled", false);
+                  $(".sendVerifyCode").val("获取验证码");
+                  $(".sendVerifyCode").removeClass("on");
+                 } else {
+                  $(".sendVerifyCode").val(time + "秒后重新获取");
+                  time--;
+                 }
+            }, 1000);
+			});	
+						//监听提交
+						form.verify({
+							rank: function(value, item){
+								if(value==''){
+									return '请输入排序!';
+								} 
+							},
+							pidtitle: function(value, item){ 
+								if(value==''){
+									return '请选择所属分类!';
+								}
+							},
+							title: function(value, item){
+								if(value==''){
+									return '请输入标题!';
+								}
+							}
+							
+						}); 
+							 form.on("radio(isserve)", function (data) {
+							     if ($("#isserve").is(":checked")) {
+                                    $("#workername").show();
+                                    }
+                                 if ($("#notserve").is(":checked")) {
+                                        $("#workername").hide();
+                                    }
+							 });
+							 
+		});
+						
+			
+	</script>
+	<div class="clear"></div> 
+
+</div> 
+
+{template 'footer'} 

@@ -1,0 +1,51 @@
+{template 'header'}
+
+<link rel="stylesheet" type="text/css" href="/public/layui/css/layui.css">
+<script src="/public/layui/layui.js"></script>
+<div class="mgtop-15 background-w1">
+	 
+		<div class="fdiv mua"><ul><i class="iconfont icon-dangwugongkai"></i><b>{$title}</b></ul>
+		<ol>当前位置：<a href="/">首页</a> > <a href="{url('integral','index')}">积分统计</a> >
+		列表
+		</ol></div>
+		<table class="layui-table my-table">
+		  <colgroup>
+			<col width="20%">
+			<col width="40%">
+			<col width="20%">
+			<col>
+		  </colgroup>
+		  <thead>
+			<tr>
+				<th>排行</th>
+				<th>姓名</th>
+				<th>积分</th>
+				<th>所属支部</th>
+			</tr> 
+		  </thead>
+		  <tbody>
+			{loop $userlist $key $item}
+			{php $i=$key+1;}
+			{if $i>4}
+			{php $i=4;}
+			{/if}
+		  	<tr>
+				<td><i class="jf{$i}">{$key+1}</i></td>
+				<td><a ><legend><div class="layui-inline">
+									<img src="{getImageUrl($item['avatar'],'avatar')}" class="layui-circle" />
+								</div></legend><span>{$item['truename']}</span></a></td>
+				<td>{$item['integral']}</td> 
+				<td>{getSinglePas($table='attribute','department',$item['department'],'title')}</td>
+			</tr>
+			{/loop}
+			</tbody>
+		</table>
+
+	
+</div>
+
+ 
+<!--主体内容 结束-->
+ 
+
+{template 'footer'} 

@@ -1,0 +1,52 @@
+{template 'header'}
+
+<!--主体内容 开始-->
+<div class="article">
+	<!--左侧区域 开始-->
+	<div id="left">	
+		{loop $banner_list $item}
+		<div class="left_title" ></div>  
+		<div class="left_body">  
+		   <a href="{$item['url']}" target="_blank"><img src="{getImageUrl($item['pic'],'268')}" alt="{$item['title']}" title="{$item['title']}" /></a>
+		</div>
+		<div class="left_bottom"></div>
+		{/loop} 
+	   </div>
+	<!--左侧区域 结束-->
+	
+	<!--右侧区域 开始-->
+	<div id="right"> 
+		   <div class="right_title">
+				<!--当前位置 开始-->
+			<div id="location"><b>当前位置：</b>
+			<a href="/" target="_self">首页</a>
+			&nbsp;>>&nbsp;<a >搜索结果  </a> 
+			</div>
+			<!--当前位置 结束-->
+				<h2>搜索结果</h2>
+			</div>
+			<div class="right_body">
+				<ul class="textlist">
+					<!--循环开始-->
+					{loop $list $item} 
+					<li>
+						<span class="float_right">{date('Y-m-d',$item['edittime'])}</span>
+						<a  href="{url('news','show',array('id'=>$item['id']))}" target="_blank" title="{$item['title']}">{$item['title']}</a>
+					</li>
+					{/loop}	                     
+					<!--循环结束-->
+				</ul>
+				<div class="page">
+					{if !empty($list)}
+						{$show_page}
+					{/if}
+				</div> 
+			</div>
+			<div class="right_bottom"></div>        
+		</div>
+	<!--右侧区域 结束-->
+	<div class="clear"></div>
+ </div>
+<!--主体内容 结束-->
+
+{template 'footer'}

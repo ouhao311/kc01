@@ -1,0 +1,501 @@
+[2020-07-12 18:31:49] /manage/modules/news/index.php?url=article_list&do=get_xml&pid=&kaishi=&jieshu=&keywords=&pid=2 ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and isdel=0 ORDER by rank asc 
+[2020-07-12 18:31:49] /manage/modules/news/index.php?url=article_list&do=get_xml&pid=&kaishi=&jieshu=&keywords=&pid=2 ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and isdel=0 ORDER by rank asc 
+[2020-07-12 18:31:49] /manage/modules/news/index.php?url=article_list&do=get_xml&pid=&kaishi=&jieshu=&keywords=&pid=2 ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and isdel=0 ORDER by rank asc 
+[2020-07-12 18:31:49] /manage/modules/news/index.php?url=article_list&do=get_xml&pid=&kaishi=&jieshu=&keywords=&pid=2 ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and isdel=0 ORDER by rank asc 
+[2020-07-12 18:31:49] /manage/modules/news/index.php?url=article_list&do=get_xml&pid=&kaishi=&jieshu=&keywords=&pid=2 ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and isdel=0 ORDER by rank asc 
+[2020-07-12 18:31:49] /manage/modules/news/index.php?url=article_list&do=get_xml&pid=&kaishi=&jieshu=&keywords=&pid=2 ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and isdel=0 ORDER by rank asc 
+[2020-07-12 18:31:49] /manage/modules/news/index.php?url=article_list&do=get_xml&pid=&kaishi=&jieshu=&keywords=&pid=2 ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and isdel=0 ORDER by rank asc 
+[2020-07-12 18:31:49] /manage/modules/news/index.php?url=article_list&do=get_xml&pid=&kaishi=&jieshu=&keywords=&pid=2 ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and isdel=0 ORDER by rank asc 
+[2020-07-12 18:31:49] /manage/modules/news/index.php?url=article_list&do=get_xml&pid=&kaishi=&jieshu=&keywords=&pid=2 ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and isdel=0 ORDER by rank asc 
+[2020-07-12 18:31:49] /manage/modules/news/index.php?url=article_list&do=get_xml&pid=&kaishi=&jieshu=&keywords=&pid=2 ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:10:35] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:10:35] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:10:35] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:10:35] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:10:35] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:11:24] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:11:24] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:11:24] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:11:24] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:11:24] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:11:33] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:11:33] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:11:33] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:11:33] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:11:33] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:13:18] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:13:18] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:13:18] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:13:18] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:13:18] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:14:12] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:14:12] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:14:12] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:14:12] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:14:12] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:14:31] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:14:31] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:14:31] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:14:31] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:14:31] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:19:30] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:19:30] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:19:30] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:19:30] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:19:30] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:21:10] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:21:10] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:21:10] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:21:10] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:21:10] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:22:20] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:22:20] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:22:20] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:22:20] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:22:20] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:25:05] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:25:05] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:25:05] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:25:05] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:25:05] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:25:15] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:25:15] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:25:15] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:25:15] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:25:15] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:25:28] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:25:28] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:25:28] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:25:28] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:25:28] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:27:26] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:27:26] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:27:26] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:27:26] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:27:26] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:32:49] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:32:49] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:32:49] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:32:49] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:32:50] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:34:45] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:34:45] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:34:45] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:34:45] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:34:45] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:37:02] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:37:02] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:37:02] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:37:02] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:37:02] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:37:40] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:37:40] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:37:40] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:37:40] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:37:40] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:38:14] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:38:14] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:38:14] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:38:14] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:38:14] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:39:12] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:39:12] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:39:12] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:39:12] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:39:13] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:39:55] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:39:55] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:39:55] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:39:55] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:39:55] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:40:48] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:40:48] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:40:48] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:40:48] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:40:48] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:41:30] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:41:30] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:41:30] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:41:30] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:41:30] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:41:47] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:41:47] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:41:47] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:41:47] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 20:41:47] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 21:26:44] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 21:26:44] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 21:26:44] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 21:26:44] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 21:26:44] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 21:31:09] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 21:31:09] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 21:31:09] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 21:31:09] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 21:31:09] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 21:31:18] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 21:31:18] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 21:31:18] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 21:31:18] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 21:31:18] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 21:34:04] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 21:34:04] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 21:34:04] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 21:34:04] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 21:34:04] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 22:06:33] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 22:06:33] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 22:06:33] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 22:06:33] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 22:06:33] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 23:22:09] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 23:22:09] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 23:22:09] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 23:22:09] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 23:22:09] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 23:22:19] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 23:22:19] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 23:22:19] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 23:22:19] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 23:22:19] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 23:29:06] /index.php?url=news&do=index&pid=2 ( url=news&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 23:29:06] /index.php?url=news&do=index&pid=2 ( url=news&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 23:29:06] /index.php?url=news&do=index&pid=2 ( url=news&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 23:29:06] /index.php?url=news&do=index&pid=2 ( url=news&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 23:29:06] /index.php?url=news&do=index&pid=2 ( url=news&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 23:29:19] /index.php?url=news&do=index&pid=9 ( url=news&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=16 and status=1 and isdel=0 ORDER by rank asc 
+[2020-07-12 23:29:19] /index.php?url=news&do=index&pid=9 ( url=news&do=index ) 
+ERR: Db Error: Table 'jianglouzhen.hx_array' doesn't exist
+SELECT * FROM hx_Array where pid=17 and status=1 and isdel=0 ORDER by rank asc 

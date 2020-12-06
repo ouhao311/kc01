@@ -1,0 +1,33 @@
+{template 'header'}
+<!--主体内容 开始-->
+<div class="mgtop-15 background-w1">
+	{loop $sonclass $item}
+	<div class="fdiv mua">
+	<ul><i class="iconfont icon-dangwugongkai"></i><b>{$item['title']}</b></ul>
+	<ol><a href="{url('news','index',array('pid'=>$item['id']))}">更多+</a></ol>
+	</div>
+	<div class="m_newtu">
+	<ul>
+		{php $list=M('article')->getList('new',4,$item['id']); }
+		{loop $list $key $item2}
+	   <li>
+			<a href="{url('news','show',array('id'=>$item2['id']))}" target="_blank" title="{$item2['title']}">
+				<img src="{getImageUrl($item2['pic'],'200')}" />
+			<dl>
+				<dt>{$item2['title']}</dt>
+				<dd>{$item2['intro']}</dd>
+				<span><em><i class="iconfont icon-chakan1"></i>{$item2['clicks']}</em>
+				<cite><i class="iconfont icon-shijian1"></i>{date('Y-m-d',$item2['edittime'])}</cite></span>
+			</dl>
+			</a>
+		</li>
+		{/loop}	
+	</ul>	
+	</div>
+	{/loop}	
+</div>
+
+<!--主体内容 结束-->
+
+
+{template 'footer'} 

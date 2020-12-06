@@ -1,0 +1,11 @@
+<?php defined('SSZCMS') or exit('Access Denied');?><?php if (C('debug') == 1){?>
+<div id="think_page_trace" class="trace">
+  <fieldset id="querybox">
+    <legend><?php echo L('hx_debug_trace_title');?></legend>
+    <div> <?php print_r(Tpl::showTrace());?> </div>
+  </fieldset>
+</div>
+<?php }?>
+<div id="goTop"> <a href="JavaScript:void(0);" id="btntop"><i class="fa fa-angle-up"></i></a><a href="JavaScript:void(0);" id="btnbottom"><i class="fa fa-angle-down"></i></a></div>
+</body>
+</html>

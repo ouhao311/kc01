@@ -1,0 +1,6 @@
+[2020-11-09 10:17:31] /index.php?url=task&do=clock ( url=task&do=clock ) 
+ERR: Db Error: Column 'admin_name' cannot be null
+INSERT  INTO `hx_admin_log` (content,admin_name,createtime,admin_id,ip,url) VALUES ('打卡2020-11-09成功奖励5积分',NULL,'1604888251',NULL,'61.133.116.108','task&clock')
+[2020-11-09 19:45:33] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 

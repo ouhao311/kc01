@@ -1,0 +1,60 @@
+[2020-09-21 17:39:17] /manage/modules/organ/index.php?url=manager_list&do=edit&id=18 ( url=manager_list&do=edit ) 
+ERR: Db Error: Unknown column 'value' in 'where clause'
+SELECT * FROM `hx_office_list` WHERE status=1 and value="office" LIMIT 1  
+[2020-09-21 17:39:36] /manage/modules/organ/index.php?url=manager_list&do=edit&id=18 ( url=manager_list&do=edit ) 
+ERR: Db Error: Unknown column 'value' in 'where clause'
+SELECT * FROM `hx_office_list` WHERE status=1 and value="office" LIMIT 1  
+[2020-09-21 17:43:10] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-09-21 17:44:21] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-09-21 17:48:22] /index.php?url=online&do=add&id=39 ( url=online&do=add ) 
+ERR: Db Error: Unknown column 'toprevid' in 'field list'
+UPDATE `hx_online_list` SET title='姜楼村村口有垃圾不及时清理',name='赵先生',age='38',mobile='17806359796',intro='',pic='',video='',audio='',content='',village='姜楼',managid='',addtime='1600681702',ip='223.104.192.108',istopreview='1',toprevtime='1600681702',toprevid='18',releaseid='18' WHERE ( id = '39' )
+[2020-09-21 17:48:27] /index.php?url=online&do=add&id=39 ( url=online&do=add ) 
+ERR: Db Error: Unknown column 'toprevid' in 'field list'
+UPDATE `hx_online_list` SET title='姜楼村村口有垃圾不及时清理',name='赵先生',age='38',mobile='17806359796',intro='',pic='',video='',audio='',content='',village='姜楼',managid='',addtime='1600681707',ip='223.104.192.108',istopreview='1',toprevtime='1600681707',toprevid='18',releaseid='18' WHERE ( id = '39' )
+[2020-09-21 17:51:37] /index.php?url=online&do=add&id=39 ( url=online&do=add ) 
+ERR: Db Error: Unknown column 'toprevid' in 'field list'
+UPDATE `hx_online_list` SET title='姜楼村村口有垃圾不及时清理',name='赵先生',age='38',mobile='17806359796',intro='',pic='',video='',audio='',content='',village='姜楼',managid='18',addtime='1600681897',ip='223.104.192.108',istopreview='1',toprevtime='1600681897',toprevid='18',releaseid='18' WHERE ( id = '39' )
+[2020-09-21 17:52:09] /index.php?url=online&do=add&id=39 ( url=online&do=add ) 
+ERR: Db Error: Unknown column 'toprevid' in 'field list'
+UPDATE `hx_online_list` SET title='姜楼村村口有垃圾不及时清理',name='赵先生',age='38',mobile='17806359796',intro='',pic='',video='',audio='',content='',village='姜楼',managid='24',addtime='1600681929',ip='223.104.192.108',istopreview='1',toprevtime='1600681929',toprevid='18',releaseid='18' WHERE ( id = '39' )
+[2020-09-21 17:52:22] /index.php?url=online&do=add&id=39 ( url=online&do=add ) 
+ERR: Db Error: Unknown column 'toprevid' in 'field list'
+UPDATE `hx_online_list` SET title='姜楼村村口有垃圾不及时清理',name='赵先生',age='38',mobile='17806359796',intro='',pic='',video='',audio='',content='',village='姜楼',managid='24',addtime='1600681942',ip='223.104.192.108',istopreview='1',toprevtime='1600681942',toprevid='18',releaseid='18' WHERE ( id = '39' )
+[2020-09-21 18:01:44] /index.php?url=online&do=changegrade&id=40 ( url=online&do=changegrade ) 
+ERR: Db Error: Column 'admin_name' cannot be null
+INSERT  INTO `hx_admin_log` (content,admin_name,createtime,admin_id,ip,url) VALUES ('用户评价[]成功奖励10积分',NULL,'1600682504',NULL,'223.104.192.108','online&changegrade')
+[2020-09-21 18:02:39] /index.php?url=online&do=add&id=40 ( url=online&do=add ) 
+ERR: Db Error: Unknown column 'toprevid' in 'field list'
+UPDATE `hx_online_list` SET title='垃圾清运不及时',name='赵先生',age='38',mobile='17806359796',intro='',pic='',video='',audio='',content='',village='姜楼',managid='19',addtime='1600682559',ip='223.104.192.108',istopreview='1',toprevtime='1600682559',toprevid='18',releaseid='18' WHERE ( id = '40' )
+[2020-09-21 18:06:33] /index.php?url=online&do=add&id=41 ( url=online&do=add ) 
+ERR: Db Error: Unknown column 'toprevid' in 'field list'
+UPDATE `hx_online_list` SET title='有污水',name='赵先生',age='38',mobile='17806359796',intro='',pic='',video='',audio='',content='',village='姜楼',managid='19',addtime='1600682793',ip='223.104.192.108',istopreview='1',toprevtime='1600682793',toprevid='18',releaseid='18' WHERE ( id = '41' )
+[2020-09-21 18:51:34] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-09-21 18:53:16] /manage/modules/organ/index.php?url=manager_list&do=edit&id=18 ( url=manager_list&do=edit ) 
+ERR: Db Error: Unknown column 'value' in 'where clause'
+SELECT * FROM `hx_office_list` WHERE status=1 and value="office" LIMIT 1  
+[2020-09-21 18:56:13] /manage/modules/organ/index.php?url=manager_list&do=edit&id=18 ( url=manager_list&do=edit ) 
+ERR: Db Error: Unknown column 'value' in 'where clause'
+SELECT * FROM `hx_office_list` WHERE status=1 and value="office" LIMIT 1  
+[2020-09-21 18:57:51] /manage/modules/organ/index.php?url=manager_list&do=edit&id=18 ( url=manager_list&do=edit ) 
+ERR: Db Error: Unknown column 'value' in 'where clause'
+SELECT * FROM `hx_office_list` WHERE status=1 and value="office" LIMIT 1  
+[2020-09-21 18:58:59] /manage/modules/organ/index.php?url=manager_list&do=edit&id=27 ( url=manager_list&do=edit ) 
+ERR: Db Error: Unknown column 'value' in 'where clause'
+SELECT * FROM `hx_office_list` WHERE status=1 and value="office" LIMIT 1  
+[2020-09-21 19:00:29] /manage/modules/organ/index.php?url=manager_list&do=edit&id=27 ( url=manager_list&do=edit ) 
+ERR: Db Error: Unknown column 'value' in 'where clause'
+SELECT * FROM `hx_office_list` WHERE status=1 and value="office" LIMIT 1  
+[2020-09-21 19:10:49] /manage/modules/organ/index.php?url=manager_list&do=edit&id=27 ( url=manager_list&do=edit ) 
+ERR: Db Error: Unknown column 'value' in 'where clause'
+SELECT * FROM `hx_office_list` WHERE status=1 and value="office" LIMIT 1  
+[2020-09-21 19:11:59] /manage/modules/organ/index.php?url=manager_list&do=edit&id=27 ( url=manager_list&do=edit ) 
+ERR: Db Error: Unknown column 'value' in 'where clause'
+SELECT * FROM `hx_office_list` WHERE status=1 and value="office" LIMIT 1  

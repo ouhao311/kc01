@@ -1,0 +1,70 @@
+<?php defined('SSZCMS') or exit('Access Denied');?><?php include T('header',1);?>
+<div class="layui-container">
+<form class="layui-form"  id="ad_position_form" enctype="multipart/form-data" method="post" >
+  <input type="hidden" name="form_submit" value="ok"/>
+  <input type="hidden" name="id" value="<?php echo $info['id'];?>" />
+  <input type="hidden" name="ref_url" value="<?php echo getReferer();?>" /> 
+  
+  <div class="layui-row mb15 pt20">
+    <div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+      <label class="layui-form-title"><em>*</em> 排序</label>
+    </div>
+    <div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
+      <div class="layui-input-block">
+        <input type="text" name="rank" id="rank" lay-verify="rank|number" autocomplete="off" class="layui-input" value="<?php if(empty($info['rank'])){echo 0;}else{echo $info['rank'];}?>"> 
+      </div>
+    </div>
+  </div> 
+  <div class="layui-row mb15 pt20">
+    <div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+      <label class="layui-form-title"><em>*</em> 广告位标题</label>
+    </div>
+    <div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
+      <div class="layui-input-block">
+        <input type="text" name="title" id="title" lay-verify="title" placeholder="广告位标题" autocomplete="off" class="layui-input" value="<?php echo $info['title'];?>"> 
+      </div>
+    </div>
+  </div>
+  <div class="layui-row mb15 pt20">
+    <div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+      <label class="layui-form-title"><em>*</em> 广告位尺寸</label>
+    </div>
+    <div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
+      <div class="layui-input-block">
+        <input type="text" name="size" id="size" lay-verify="size" placeholder="广告位尺寸" autocomplete="off" class="layui-input" value="<?php echo $info['size'];?>"> 
+      </div>
+    </div>
+  </div> 
+  <div class="layui-row mb15 pt20">
+    <div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+      <label class="layui-form-title"></label>
+    </div>
+    <div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
+      <div class="layui-input-block">
+        <button class="layui-btn" lay-submit lay-filter="formDemo"><?php echo $lang['hx_submit'];?></button> 
+      </div>
+    </div>
+  </div>
+</form>
+ 
+<script> 
+layui.use('form', function(){
+  var form = layui.form;
+   
+  //监听提交
+  form.verify({
+    rank: function(value, item){
+      if(value==''){
+        return '请输入排序!';
+      } 
+    },
+    title: function(value, item){
+      if(value==''){
+        return '请输入广告位标题!';
+      }
+    } 
+  }); 
+});
+</script>
+</div>
+<?php include T('footer',1);?>

@@ -1,0 +1,12 @@
+[2020-11-25 10:54:20] /manage/modules/news/index.php?url=govent_list&do=get_xml&pid= ( url=govent_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_govent_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_govent_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 1  
+[2020-11-25 10:54:20] /manage/modules/news/index.php?url=govent_list&do=get_xml&pid= ( url=govent_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_govent_list' doesn't exist
+SELECT * FROM `hx_govent_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 0,15  
+[2020-11-25 10:57:52] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-11-25 11:10:38] /manage/modules/organ/index.php?url=manager_list&do=add ( url=manager_list&do=add ) 
+ERR: Db Error: Unknown column 'value' in 'where clause'
+SELECT * FROM `hx_office_list` WHERE status=1 and value="office" LIMIT 1  

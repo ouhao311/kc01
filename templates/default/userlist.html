@@ -1,0 +1,33 @@
+{template 'header'}
+
+<div class="mgtop-15 background-w1">
+	<div class="fdiv mua">
+		<ul><i class="iconfont icon-dangwugongkai"></i><b>{$title}</b></ul>
+		<ol>当前位置：<a href="/">首页</a> > {$title}
+		</ol>
+	</div>
+	<div class="ladyUcroll link2">
+		<ul>	
+			{loop $list $item} 
+		   <li class="layui-elem-field">
+				<legend><div class="layui-inline">
+				<img src="{getImageUrl($item['avatar'],'avatar')}" />
+				</div></legend>
+				<div class="layui-field-box">
+				<p><a href="javascript:openIframeLayer('{url('user','userview',array('id'=>$item['id']))}','用户信息',{area:['700px', '500px']});"><b>{$item['truename']}</b>
+				<span class="zt_1"><i class="iconfont icon-dangwugongkai"></i>入党申请</span> 
+				</a></p>
+				<em>党组织: {getSinglePas($table='attribute','department',$item['department'],'title')}<br /></em>
+				</div>		
+			</li>
+			{/loop}	  
+		<ul>	
+	</div>
+	<ul class="xwpages">
+		{if !empty($list)}
+			{$show_page}
+		{/if}
+	</ul>	
+</div>
+
+{template 'footer'}

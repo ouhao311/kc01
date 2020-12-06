@@ -1,0 +1,18 @@
+<ul class="cp-toast-list">
+  <?php if ($output['statistics']['cashlist'] > 0) {?>
+  <li>
+    <span>[分销-会员]</span>
+    <a target="workspace" href="<?php echo urlAdmin('predeposit','pd_cash_list');?>" onclick="openItem('shop|predeposit')"><i class="fa fa-bell-o"></i>有<strong><?php echo $output['statistics']['cashlist'];?></strong>条预存款提现申请需要处理。</a>
+  </li>
+  <?php }?>
+  <?php if ($output['statistics']['pay_billno'] > 0) {?>
+  <li>
+    <span>[商城-店铺]</span>
+    <a target="workspace" href="<?php echo urlAdmin('store', 'store_joinin');?>" onclick="openItem('shop|store')"><i class="fa fa-bell-o"></i>有<strong><?php echo $output['statistics']['store_joinin'];?></strong>条开店申请需要处理。</a>
+  </li>
+  <?php }?> 
+
+
+
+</ul>
+

@@ -1,0 +1,73 @@
+<?php defined('SSZCMS') or exit('Access Denied');?><?php include T('header',true);?>
+<div class="page">
+  <div class="fixed-bar">
+    <div class="item-title">
+      <div class="subject">
+        <h3><?php echo L('web_set');?></h3>
+        <h5><?php echo L('web_set_subhead');?></h5>
+      </div>
+      <?php echo $top_link;?> </div>
+  </div>
+  <!-- 操作说明 -->
+  <div class="explanation" id="explanation">
+    <div class="title" id="checkZoom"><i class="fa fa-lightbulb-o"></i>
+      <h4 title="<?php echo L('hx_prompts_title');?>"><?php echo L('hx_prompts');?></h4>
+      <span id="explanationZoom" title="<?php echo L('hx_prompts_span');?>"></span> </div>
+    <ul>
+      <li>网站发件邮箱设置，基本设置及其他模块相关内容在其各自栏目设置项内进行操作。</li>
+    </ul>
+  </div>
+  <form method="post" enctype="multipart/form-data" name="form1">
+    <input type="hidden" name="form_submit" value="ok" />
+    <div class="ncap-form-default">
+      <dl class="row">
+        <dt class="tit">
+          <label for="field_notice"><?php echo L('smtp_server');?></label>
+        </dt>
+        <dd class="opt">
+          <input type="text" value="<?php echo $list_setting['email_host'];?>" name="email_host" id="email_host" class="txt">
+          <p class="notic"><?php echo L('set_smtp_server_address');?></label></p>
+        </dd>
+      </dl>
+      <dl class="row">
+      <dt class="tit">
+          <label for="field_notice"><?php echo L('smtp_port');?></label>
+        </dt>
+        <dd class="opt">
+         <input type="text" value="<?php echo $list_setting['email_port'];?>" name="email_port" id="email_port" class="txt">
+          <p class="notic"><?php echo L('set_smtp_port');?></p>
+        </dd>
+      </dl>
+      <dl class="row">
+      <dt class="tit">
+          <label for="field_notice"><?php echo L('sender_mail_address');?></label>
+        </dt>
+        <dd class="opt">
+          <input type="text" value="<?php echo $list_setting['email_addr'];?>" name="email_addr" id="email_addr" class="txt">
+          <p class="notic"><?php echo L('if_smtp_authentication');?></label></p>
+        </dd>
+      </dl> 
+<dl class="row">
+      <dt class="tit">
+          <label for="field_notice"><?php echo L('smtp_user_name');?></label>
+        </dt>
+        <dd class="opt">
+          <input type="text" value="<?php echo $list_setting['email_id'];?>" name="email_id" id="email_id" class="txt">
+          <p class="notic"><?php echo L('smtp_user_name_tip');?></p>
+        </dd>
+</dl> 
+<dl class="row">
+      <dt class="tit">
+          <label for="field_notice"><?php echo L('smtp_user_pwd');?></label>
+        </dt>
+        <dd class="opt">
+          <input type="password" value="<?php echo $list_setting['email_pass'];?>" name="email_pass" id="email_pass" class="txt">
+          <p class="notic"><?php echo L('smtp_user_pwd_tip');?></p>
+        </dd>
+    </dl>   
+     
+      <div class="bot"><a href="JavaScript:void(0);" class="ncap-btn-big ncap-btn-green" onclick="document.form1.submit()"><?php echo L('hx_submit');?></a></div>
+    </div>
+  </form>
+</div>
+<?php include T('footer',true);?>

@@ -1,0 +1,300 @@
+[2020-08-10 10:39:22] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 10:39:22] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 10:39:22] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 10:39:22] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 10:39:22] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 10:39:22] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=16 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 10:39:22] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=17 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 10:55:33] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 10:55:33] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 10:55:33] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 10:55:33] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 10:55:33] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 10:55:33] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=16 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 10:55:33] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=17 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 11:14:16] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 11:20:38] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 11:20:38] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 11:20:38] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 11:20:38] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 11:20:38] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 11:20:39] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=16 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 11:20:39] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=17 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 11:23:39] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 11:23:39] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 11:23:39] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 11:23:39] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 11:23:39] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 11:23:39] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=16 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 11:23:39] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=17 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 11:23:43] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 11:23:43] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 11:23:43] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 11:23:43] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 11:23:43] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 11:23:43] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=16 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 11:23:43] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=17 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 13:22:21] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 13:22:35] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 14:31:47] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 14:31:47] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 14:31:47] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 14:31:47] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 14:31:47] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 14:31:47] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=16 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 14:31:47] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=17 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 14:49:19] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 14:49:19] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 14:49:19] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 14:49:19] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 14:49:19] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 14:49:19] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=16 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 14:49:19] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=17 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 15:32:19] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 16:13:14] /manage/modules/organ/index.php?url=office_list&do=get_xml&pid= ( url=office_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_office_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_office_list` WHERE ( isdel = '0' ) ORDER BY rank asc LIMIT 1  
+[2020-08-10 16:13:14] /manage/modules/organ/index.php?url=office_list&do=get_xml&pid= ( url=office_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_office_list' doesn't exist
+SELECT * FROM `hx_office_list` WHERE ( isdel = '0' ) ORDER BY rank asc LIMIT 0,15  
+[2020-08-10 16:15:10] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 1  
+[2020-08-10 16:15:10] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT * FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 0,15  
+[2020-08-10 16:15:32] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 1  
+[2020-08-10 16:15:32] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT * FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 0,15  
+[2020-08-10 16:15:44] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 1  
+[2020-08-10 16:15:44] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT * FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 0,15  
+[2020-08-10 16:15:47] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 1  
+[2020-08-10 16:15:47] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT * FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 0,15  
+[2020-08-10 16:17:23] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 1  
+[2020-08-10 16:17:23] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT * FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 0,15  
+[2020-08-10 16:17:48] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 1  
+[2020-08-10 16:17:48] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT * FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 0,15  
+[2020-08-10 16:22:22] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 1  
+[2020-08-10 16:22:22] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT * FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 0,15  
+[2020-08-10 16:23:13] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 1  
+[2020-08-10 16:23:13] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT * FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 0,15  
+[2020-08-10 16:23:36] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 1  
+[2020-08-10 16:23:36] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT * FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 0,15  
+[2020-08-10 16:23:45] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 1  
+[2020-08-10 16:23:45] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT * FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 0,15  
+[2020-08-10 16:27:37] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 1  
+[2020-08-10 16:27:37] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT * FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 0,15  
+[2020-08-10 16:27:37] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 1  
+[2020-08-10 16:27:37] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT * FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 0,15  
+[2020-08-10 16:27:39] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 1  
+[2020-08-10 16:27:39] /manage/modules/organ/index.php?url=manager_list&do=get_xml&pid= ( url=manager_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_manager_list' doesn't exist
+SELECT * FROM `hx_manager_list` WHERE ( isdel = '0' ) ORDER BY id desc LIMIT 0,15  
+[2020-08-10 18:32:30] /manage/modules/organ/index.php?url=office_list&do=get_xml&pid= ( url=office_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_office_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_office_list` WHERE ( isdel = '0' ) ORDER BY rank asc LIMIT 1  
+[2020-08-10 18:32:30] /manage/modules/organ/index.php?url=office_list&do=get_xml&pid= ( url=office_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_office_list' doesn't exist
+SELECT * FROM `hx_office_list` WHERE ( isdel = '0' ) ORDER BY rank asc LIMIT 0,15  
+[2020-08-10 18:33:55] /manage/modules/organ/index.php?url=office_list&do=get_xml&pid= ( url=office_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_office_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_office_list` WHERE ( isdel = '0' ) ORDER BY rank asc LIMIT 1  
+[2020-08-10 18:33:55] /manage/modules/organ/index.php?url=office_list&do=get_xml&pid= ( url=office_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_office_list' doesn't exist
+SELECT * FROM `hx_office_list` WHERE ( isdel = '0' ) ORDER BY rank asc LIMIT 0,15  
+[2020-08-10 18:41:08] /manage/modules/organ/index.php?url=depart_list&do=get_xml&pid= ( url=depart_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_depart_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_depart_list` WHERE ( pid = '0' ) AND ( isdel = '0' ) ORDER BY id desc LIMIT 1  
+[2020-08-10 18:41:08] /manage/modules/organ/index.php?url=depart_list&do=get_xml&pid= ( url=depart_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_depart_list' doesn't exist
+SELECT * FROM `hx_depart_list` WHERE ( pid = '0' ) AND ( isdel = '0' ) ORDER BY id desc LIMIT 0,15  
+[2020-08-10 18:41:45] /manage/modules/organ/index.php?url=depart_list&do=get_xml&pid= ( url=depart_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_depart_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_depart_list` WHERE ( pid = '0' ) AND ( isdel = '0' ) ORDER BY id desc LIMIT 1  
+[2020-08-10 18:41:45] /manage/modules/organ/index.php?url=depart_list&do=get_xml&pid= ( url=depart_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_depart_list' doesn't exist
+SELECT * FROM `hx_depart_list` WHERE ( pid = '0' ) AND ( isdel = '0' ) ORDER BY id desc LIMIT 0,15  
+[2020-08-10 18:42:30] /manage/modules/organ/index.php?url=depart_list&do=get_xml&pid= ( url=depart_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_depart_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_depart_list` WHERE ( pid = '0' ) AND ( isdel = '0' ) ORDER BY id desc LIMIT 1  
+[2020-08-10 18:42:30] /manage/modules/organ/index.php?url=depart_list&do=get_xml&pid= ( url=depart_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_depart_list' doesn't exist
+SELECT * FROM `hx_depart_list` WHERE ( pid = '0' ) AND ( isdel = '0' ) ORDER BY id desc LIMIT 0,15  
+[2020-08-10 18:43:00] /manage/modules/organ/index.php?url=depart_list&do=get_xml&pid= ( url=depart_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_depart_list' doesn't exist
+SELECT COUNT(*) AS nc_count FROM `hx_depart_list` WHERE ( pid = '0' ) AND ( isdel = '0' ) ORDER BY id desc LIMIT 1  
+[2020-08-10 18:43:00] /manage/modules/organ/index.php?url=depart_list&do=get_xml&pid= ( url=depart_list&do=get_xml ) 
+ERR: Db Error: Table 'jianglou.hx_depart_list' doesn't exist
+SELECT * FROM `hx_depart_list` WHERE ( pid = '0' ) AND ( isdel = '0' ) ORDER BY id desc LIMIT 0,15  
+[2020-08-10 23:44:44] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 23:44:44] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 23:44:44] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 23:44:44] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 23:44:44] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 23:44:44] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=16 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-10 23:44:44] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=17 and status=1 and isdel=0 ORDER by rank asc 

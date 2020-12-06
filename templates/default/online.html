@@ -1,0 +1,42 @@
+{template 'header'}
+
+<!--主体内容 开始-->
+
+<div class="mgtop-15 background-w1">
+
+	<div class="fdiv mua">
+	<ul><i class="iconfont icon-dangwugongkai"></i><b>{$title}</b></ul>
+	<ol><a href="{url('online','add')}">我要提问+</a></ol>
+	</div>
+	<div class="tu_k link2"><br/>
+	</div> 
+	{loop $list $item}
+		<div class="chat-discussion">
+			<div class="chat-message left">
+				<img class="message-avatar" src="{getImageUrl($member['avatar'],'avatar')}" alt="">
+				<div class="message">
+					<span class="message-content">{$item['title']}</span>
+				</div>
+			</div>
+			<div style="text-align:right">
+				<div class="chat-message right " style="text-align:center;width: auto;display: inline-block;align-items: center">
+					<img class="message-avatar" src="{getImageUrl($member['avatar'],'avatar')}" alt="">
+					<div class="message" style="background-color: #a13b3b;float: right;margin-right: 0px">
+						<span class="message-content" style="color: white;display: inline-block">{$item['replyintro']}</span>
+					</div>
+				</div>
+			</div>       
+		</div>
+		{/loop}	
+	<ul class="xwpages">
+	    {if !empty($list)}
+			{$show_page}
+		{/if}
+	</ul>
+</div>
+
+<!--主体内容 结束-->
+
+
+
+{template 'footer'}

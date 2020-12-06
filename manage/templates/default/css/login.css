@@ -1,0 +1,185 @@
+*{
+	margin:0;
+	padding:0;
+}
+html{
+
+}
+a{
+	color:#333;
+	text-decoration: none;
+}
+ a:hover,
+ a:active{
+	color:#333;
+	text-decoration: none;
+}
+.clearfix{
+	content: '';
+	display: inline-block;
+	clear: both;
+}
+body{
+
+}
+/*上面两行代码特意提出来，是为了解决html字体过大时，他的line-height对子孙元素的不良影响。必不可少，开发时你可以把他放到样式重置中。*/
+.login{
+	width:100%;
+	height: 100%;
+	background:url('../images/login-bg.jpg') no-repeat;
+	background-size: 100% 100%;
+	position: relative;
+}
+.login .title .logo{
+	float: left;
+}
+.login .title .link_to a{
+	color:#333;
+	transition: all 0.3s;
+	text-decoration: none;
+}
+.login .title .link_to a:hover,
+.login .title .link_to a:active{
+	text-decoration: none;
+	color:#24C3F3;
+}
+.login .title .link_to{
+	float: right;
+	margin-right: 10px;
+	margin-top: 29px;
+}
+.login .title img{
+	width:100%;
+	margin-top: 5px;
+	vertical-align: middle;
+}
+.login .title{
+	padding:5px 20px;
+	/* border-bottom:1px solid #666; */
+}
+.login .title > div{
+	width:100%;
+}
+.login_main{
+	position: absolute;
+	right:6%;
+	top:40%;
+	transform: translate(-10%,-60%);
+}
+.login_main .inner{
+	width:990px;
+	margin:0 auto;
+}
+.login_main .inner .log_l{
+	float: left;
+	width:460px;
+	color:#333;
+	padding-top: 80px;
+}
+.login_main .inner .log_l h2{
+	font-size: 30px;
+	letter-spacing: 2px;
+}
+.login_main .inner .log_l p{
+	line-height: 32px;
+	font-size: 15px;
+	margin-top: 20px;
+}
+.login_main .inner .log_r{ 
+	width:380px;margin:0 auto;
+	box-shadow: 2px 2px 3px #696C71;
+}
+.login_main .inner .log_r form{
+	background:#fff;
+	padding:30px;
+}
+.login_main .inner .log_r form h2{ 
+	text-align: center; padding-bottom:10px;
+}
+.login_main .inner .log_r form h4{
+	font-size: 20px;
+	padding-bottom: 20px;
+	font-weight: normal;
+	color:#333;
+	text-align: center;
+	letter-spacing: 1px;
+}
+.login_main .inner .log_r form div{
+	text-align: center;
+	margin-top: 6px;
+}
+.login_main .inner .log_r form div input{
+	width:300px;
+	height:40px;
+	padding-left: 10px;
+	border-radius: 3px;
+	outline: none;
+	border:1px solid #ccc;
+	color:#888;
+	transition: all 0.3s;
+}
+.login_main .inner .log_r form div input[type="text"]:focus{
+	border-color:#b7372d;
+}
+.login_main .inner .log_r form .hide{
+	text-align: left;
+	height:25px;
+	line-height: 25px;
+	margin-left: 5px;
+	color:#ff3300;
+	font-size: 14px;
+	visibility: hidden;
+}
+.login_main .inner .log_r form div input:focus{
+	outline: none;
+}
+.login_main .inner .log_r form div input[type="button"]{
+	width:312px;
+	height: 42px;
+	line-height: 42px;
+	background: #b7372d;
+	border:none;
+	outline: none;
+    font-size: 14px;
+    border-radius: 0;
+    cursor: pointer;
+    color:#fff;
+    letter-spacing: 2px;	
+    font-size: 16px;
+	border-radius: 3px;
+	transition: all 0.3s;
+}
+.login_main .inner .log_r form div input[type="button"]:hover{
+	background: rgba(0,193,222,.7);
+}
+.login_main .inner .log_r form  .password{
+	text-align: right;
+	margin-top: 20px;
+}
+.login_main .inner .log_r form  .password a{
+	font-size: 14px;
+}
+ .foot {
+	 width: 100%;
+	 /* background: #c5f0ff; */
+	 clear: both;
+	 position: absolute;
+	 left:0;
+	 bottom:0;
+ }
+.foot .inner{
+	width:1200px;
+	margin:0 auto;
+	text-align: center;
+	padding: 25px;
+}
+.foot .inner span{
+	color: #73777a;
+	font-size: 14px;
+	margin-right: 15px;
+}
+ .foot .inner span a{
+	color:#73777a;
+	text-decoration: none;
+}
+    

@@ -1,0 +1,233 @@
+<?php defined('SSZCMS') or exit('Access Denied');?><!--查看完成详情-->
+<?php include T('header',1);?>
+<script charset="utf-8" src="https://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js"></script>
+<script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=NRYBZ-XEBKD-ETX4E-HJIQT-63SQT-3EFRM"></script>
+<style type="text/css">
+.layui-container{width: 100%;margin: 0 auto;padding:0px;}
+.ke-container{width: 100%!important;} 
+.layui-form-title{text-align:right;display:block;width:100%;line-height:34px;min-width:100px;height:34px;}
+.layui-form-title em{font: bold 14px/20px tahoma, verdana;color: red;vertical-align: middle;}
+.mb15 { margin-bottom: 15px; }
+.layui-input-block {margin-left: 20px;}
+.layui-tab-content{padding-top:20px;}
+.clock{
+            position: relative;
+        }
+</style>
+<div class="mgtop-15 background-w1">
+<div class="fdiv mua">
+    <ul><i class="iconfont icon-dangwugongkai"></i><b><?php echo $title;?></b></ul> 
+</div>
+<div class="tu_k link2"><br/></div> 
+<div class="layui-container">
+<form class="layui-form"  id="article_list_form" enctype="multipart/form-data" method="post" >
+<input type="hidden" name="form_submit" value="ok"/>
+<input type="hidden" name="id" value="<?php echo $info['id'];?>" />
+<input type="hidden" name="ref_url" value="<?php echo getReferer();?>" /> 
+<div class="layui-tab-item layui-show">
+
+<div class="layui-row mb15 ">
+<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+                 <label class="layui-form-title"><em>*</em>接待人员</label>
+</div>
+<div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
+                 <div class="layui-input-block">
+                 <input type="text" name="reception" style="width:100%;" id="reception" lay-v="required|title" autocomplete="off" class="layui-input"  value="<?php echo $info['reception'];?>">
+                 </div>
+</div>
+</div>
+<div class="layui-row mb15 ">
+<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+                 <!--<label class="layui-form-title"><em>*</em>事项登记日期</label>-->
+</div>
+<div class=" layui-col-xs9 layui-col-sm9 layui-col-md9" style="margin-left:16.77777%">
+                 <div class="layui-input-block">
+                <input type="radio" name="depart" lay-skin="primary" lay-v="required|title" autocomplete="off" class="layui-input " title="党代表"  value="1" <?php if($info['depart']=="1"){?> checked="checked"  <?php }?>>
+    <input type="radio" name="depart" lay-skin="primary" lay-v="required|title" autocomplete="off" class="layui-input " title="人大代表" value="2" <?php if($info['depart']=="2"){?> checked="checked"  <?php }?>>
+    <input type="radio" name="depart" lay-skin="primary" lay-v="required|title" autocomplete="off" class="layui-input " title="政协委员"  value="3" <?php if($info['depart']=="3"){?> checked="checked"  <?php }?>>
+                 </div>
+</div>
+</div>
+<div class="layui-row mb15 ">
+<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+                 <label class="layui-form-title"><em>*</em>问题、建议描述</label>
+</div>
+<div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
+                 <div class="layui-input-block">
+                     <textarea name="qustion" id="qustion"  class="layui-textarea"><?php echo $info['qustion'];?></textarea>
+                 </div>
+</div>
+</div>
+<div class="layui-row mb15 ">
+<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+                 <label class="layui-form-title"><em>*</em>事项类别</label>
+</div>
+<div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
+                 <div class="layui-input-block">
+                 <input type="radio" name="itemcategory" lay-skin="primary" lay-v="required|title" autocomplete="off" class="layui-input " title="意见建议"  value="1" <?php if($info['itemcategory']=="1"){?> checked="checked"  <?php }?>>
+         <input type="radio" name="itemcategory" lay-skin="primary" lay-v="required|title" autocomplete="off" class="layui-input " title="矛盾纠纷" value="2" <?php if($info['itemcategory']=="2"){?> checked="checked"  <?php }?> >
+         <input type="radio" name="itemcategory" lay-skin="primary" lay-v="required|title" autocomplete="off" class="layui-input " title="事项帮助" value="3" <?php if($info['itemcategory']=="3"){?> checked="checked"  <?php }?>>
+         <input type="radio" name="itemcategory" lay-skin="primary" lay-v="required|title" autocomplete="off" class="layui-input " title="事项代办" value="4" <?php if($info['itemcategory']=="4"){?> checked="checked"  <?php }?>>
+                 </div>
+</div>
+</div>
+<div class="layui-row mb15 ">
+<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+                 <label class="layui-form-title"><em>*</em>处理方式</label>
+</div>
+<div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
+                 <div class="layui-input-block">
+                 <input type="radio" name="processmode" lay-skin="primary" lay-v="required|title" autocomplete="off" class="layui-input " title="现场化解"  value="1" <?php if($info['processmode']=="1"){?> checked="checked"  <?php }?>>
+         <input type="radio" name="processmode" lay-skin="primary" lay-v="required|title" autocomplete="off" class="layui-input " title="网格员调解" value="2" <?php if($info['processmode']=="2"){?> checked="checked"  <?php }?>>
+         <input type="radio" name="processmode" lay-skin="primary" lay-v="required|title" autocomplete="off" class="layui-input " title="部门承办" value="3" <?php if($info['processmode']=="3"){?> checked="checked"  <?php }?>>
+                 </div>
+</div>
+</div>
+<div class="layui-row mb15 ">
+<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+                 <label class="layui-form-title"><em>*</em>办结时间</label>
+</div>
+<div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
+                 <div class="layui-input-block">
+                  <input type="text" name="enddate" style="width:100%;" id="enddate" lay-v="required|title" autocomplete="off" class="layui-input" value="<?php echo $info['createtime'];?>">
+                 </div>
+</div>
+</div>
+<div class="layui-row mb15 ">
+<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+                 <label class="layui-form-title"><em>*</em>处理结果</label>
+</div>
+<div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
+                 <div class="layui-input-block">
+                     <textarea name="content" id="content"  class="layui-textarea"><?php echo $info['content'];?></textarea>
+                 </div>
+</div>
+</div>
+<div class="layui-row mb15 ">
+<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+                 <label class="layui-form-title"><em>*</em>群众满意度反馈</label>
+</div>
+<div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
+                 <div class="layui-input-block">
+                <input type="radio" name="satisfaction" lay-skin="primary" title="满意" lay-v="required|title" autocomplete="off" class="layui-input "  value="1"  <?php if($info['satisfaction']=="1"){?> checked="checked"  <?php }?>>
+        <input type="radio" name="satisfaction" lay-skin="primary" lay-v="required|title" autocomplete="off" class="layui-input " title="基本满意" value="2"  <?php if($info['satisfaction']=="2"){?> checked="checked"  <?php }?>>
+        
+        <input type="radio" name="satisfaction" lay-skin="primary" lay-v="required|title" autocomplete="off" class="layui-input " title="不满意" value="3"  <?php if($info['satisfaction']=="3"){?> checked="checked"  <?php }?>>
+                 </div>
+</div>
+</div>
+<div class="layui-row mb15 ">
+<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+                 <label class="layui-form-title"><em>*</em>办理人员签字</label>
+</div>
+<div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
+                 <div class="layui-input-block">
+                 <input type="text" name="transaction" style="width:100%;" id="transaction" lay-v="required|title" autocomplete="off" class="layui-input"  value="<?php echo $info['transaction'];?>">
+                 </div>
+</div>
+</div>
+<div class="layui-row mb15 ">
+                <div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+                <label class="layui-form-title"><em>*</em>地图</label>
+                 </div>
+                 <div class=" layui-col-xs12 layui-col-sm12 layui-col-md12">
+                     <?php if(!empty($info['lat'])) { ?>
+                <div  id="container" style=" border:2px solid #25a4ff;width:95%;height:300px;margin: 10px auto;">
+                                     <input id="lat" type="text" name="lat" style="width:100%;"  lay-v="required|title" autocomplete="off" class="layui-input" value="<?php echo $info['lat'];?>" >
+                                     <input id="lng" type="text" name="lng" style="width:100%;"  lay-v="required|title" autocomplete="off" class="layui-input" value="<?php echo $info['lng'];?>" >
+                                     <input id="addr" type="text" name="address" style="width:100%;"  lay-v="required|title" autocomplete="off" class="layui-input" value="<?php echo $info['address'];?>" >
+                                 </div>
+                                 <?php } ?>
+                 </div>
+                </div> 
+               </div>
+</form>
+</div>
+<script>
+layui.use(['form', 'layedit', 'laydate'], function() {
+var form = layui.form,
+layer = layui.layer,
+layedit = layui.layedit,
+laydate = layui.laydate;
+//日期
+laydate.render({
+elem: '#date',
+type: 'datetime',
+        trigger: 'click'
+});
+laydate.render({
+elem: '#enddate',
+type: 'datetime',
+        trigger: 'click'
+});
+
+//监听提交
+form.verify({
+rank: function(value, item){
+if(value==''){
+return '请输入排序!';
+} 
+},
+pidtitle: function(value, item){ 
+if(value==''){
+return '请选择所属分类!';
+}
+},
+title: function(value, item){
+if(value==''){
+return '请输入标题!';
+}
+}
+
+}); 
+});
+//地图
+        var geolocation = new qq.maps.Geolocation("NRYBZ-XEBKD-ETX4E-HJIQT-63SQT-3EFRM", "myapp");
+        var options = {
+            timeout: 8000 //延时
+        };
+        var geocoder;
+        var latLng;
+        // 定位成功之后调用的方法
+        function showPosition(position) {
+            console.log(position)
+            let lat = position.lat;
+            let lng = position.lng;
+            // 逆地址解析(经纬度到地名转换过程)
+            geocoder = new qq.maps.Geocoder({
+                complete: function(res) {
+                    console.log(res)
+                    // 标志位置
+                    var center = new qq.maps.LatLng(lat, lng);
+                    var map = new qq.maps.Map(document.getElementById('container'), {
+                        center: center,
+                        zoom: 15,
+                    });
+                    //创建标记
+                    var marker = new qq.maps.Marker({
+                        position: center,
+                        map: map
+                    });
+                    //添加到提示窗
+                    var info = new qq.maps.InfoWindow({
+                        map: map
+                    });
+                    //获取标记的点击事件
+                    qq.maps.event.addListener(marker, 'click', function() {
+                        info.open();
+                        info.setContent('<div style="text-align:center;white-space:nowrap;margin:10px;">' + res.detail.address + '</div>');
+                        info.setPosition(center);
+                    });
+                }
+            });
+            latLng = new qq.maps.LatLng(lat, lng);
+            geocoder.getAddress(latLng);
+        };
+        function showErr() {
+            console.log('定位失败');
+        }
+        geolocation.getLocation(showPosition, showErr, options);
+</script>
+<div class="clear"></div> 
+</div> 
+<?php include T('footer',1);?>

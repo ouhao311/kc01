@@ -1,0 +1,186 @@
+[2020-08-13 09:45:47] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-13 09:45:47] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-13 09:45:47] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-13 09:45:47] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-13 09:45:47] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-13 09:45:47] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=16 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-13 09:45:47] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=17 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-13 10:17:26] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-13 10:17:26] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-13 10:17:26] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-13 10:17:26] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-13 10:17:26] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-13 10:17:26] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=16 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-13 10:17:26] / ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=17 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-13 10:20:37] /manage/modules/organ/index.php?url=visit_list&do=add ( url=visit_list&do=add ) 
+ERR: Db Error: Unknown column 'value' in 'where clause'
+SELECT * FROM `hx_office_list` WHERE status=1 and value="office" LIMIT 1  
+[2020-08-13 10:24:18] /manage/modules/organ/index.php?url=visit_list&do=add ( url=visit_list&do=add ) 
+ERR: Db Error: Unknown column 'value' in 'where clause'
+SELECT * FROM `hx_office_list` WHERE status=1 and value="office" LIMIT 1  
+[2020-08-13 10:27:31] /manage/modules/organ/index.php?url=visit_list&do=add ( url=visit_list&do=add ) 
+ERR: Db Error: Unknown column 'value' in 'where clause'
+SELECT * FROM `hx_office_list` WHERE status=1 and value="office" LIMIT 1  
+[2020-08-13 10:35:40] /manage/modules/organ/index.php?url=visit_list&do=checkdetail&id=11 ( url=visit_list&do=checkdetail ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '11' ) LIMIT 1  
+[2020-08-13 10:35:50] /manage/modules/organ/index.php?url=visit_list&do=add ( url=visit_list&do=add ) 
+ERR: Db Error: Unknown column 'value' in 'where clause'
+SELECT * FROM `hx_office_list` WHERE status=1 and value="office" LIMIT 1  
+[2020-08-13 10:36:07] /manage/modules/organ/index.php?url=visit_list&do=add ( url=visit_list&do=add ) 
+ERR: Db Error: Unknown column 'value' in 'where clause'
+SELECT * FROM `hx_office_list` WHERE status=1 and value="office" LIMIT 1  
+[2020-08-13 10:39:33] /manage/modules/organ/index.php?url=visit_list&do=checkdetail&id=11 ( url=visit_list&do=checkdetail ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '11' ) LIMIT 1  
+[2020-08-13 10:45:42] /manage/modules/organ/index.php?url=manager_list&do=add ( url=manager_list&do=add ) 
+ERR: Db Error: Unknown column 'value' in 'where clause'
+SELECT * FROM `hx_office_list` WHERE status=1 and value="office" LIMIT 1  
+[2020-08-13 10:45:52] /manage/modules/organ/index.php?url=visit_list&do=add ( url=visit_list&do=add ) 
+ERR: Db Error: Unknown column 'rank' in 'order clause'
+SELECT * FROM `hx_member` WHERE isorgan=1 ORDER BY rank asc LIMIT 1000  
+[2020-08-13 10:45:52] /manage/modules/organ/index.php?url=visit_list&do=add ( url=visit_list&do=add ) 
+ERR: Db Error: Unknown column 'rank' in 'order clause'
+SELECT * FROM `hx_member` WHERE isorgan=1 ORDER BY rank asc LIMIT 1000  
+[2020-08-13 10:46:16] /manage/modules/organ/index.php?url=visit_list&do=add ( url=visit_list&do=add ) 
+ERR: Db Error: Unknown column 'rank' in 'order clause'
+SELECT * FROM `hx_member` WHERE isorgan=1 ORDER BY rank asc LIMIT 1000  
+[2020-08-13 10:46:16] /manage/modules/organ/index.php?url=visit_list&do=add ( url=visit_list&do=add ) 
+ERR: Db Error: Unknown column 'rank' in 'order clause'
+SELECT * FROM `hx_member` WHERE isorgan=1 ORDER BY rank asc LIMIT 1000  
+[2020-08-13 10:47:36] /manage/modules/organ/index.php?url=visit_list&do=add ( url=visit_list&do=add ) 
+ERR: Db Error: Unknown column 'rank' in 'order clause'
+SELECT * FROM `hx_member` WHERE isorgan=1 ORDER BY rank asc LIMIT 1000  
+[2020-08-13 10:47:36] /manage/modules/organ/index.php?url=visit_list&do=add ( url=visit_list&do=add ) 
+ERR: Db Error: Unknown column 'rank' in 'order clause'
+SELECT * FROM `hx_member` WHERE isorgan=1 ORDER BY rank asc LIMIT 1000  
+[2020-08-13 10:51:59] /manage/modules/organ/index.php?url=visit_list&do=checkdetail&id=11 ( url=visit_list&do=checkdetail ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '11' ) LIMIT 1  
+[2020-08-13 10:52:40] /manage/modules/organ/index.php?url=visit_list&do=checkdetail&id=11 ( url=visit_list&do=checkdetail ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '11' ) LIMIT 1  
+[2020-08-13 10:52:51] /manage/modules/organ/index.php?url=visit_list&do=checkdetail&id=11 ( url=visit_list&do=checkdetail ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '11' ) LIMIT 1  
+[2020-08-13 10:53:51] /manage/modules/organ/index.php?url=visit_list&do=checkdetail&id=11 ( url=visit_list&do=checkdetail ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '11' ) LIMIT 1  
+[2020-08-13 10:54:19] /manage/modules/organ/index.php?url=visit_list&do=checkdetail&id=11 ( url=visit_list&do=checkdetail ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '11' ) LIMIT 1  
+[2020-08-13 11:09:54] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=11 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-13 11:09:54] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=12 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-13 11:09:54] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=13 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-13 11:09:54] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=14 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-13 11:09:54] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=15 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-13 11:09:54] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=16 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-13 11:09:54] /index.php ( url=index&do=index ) 
+ERR: Db Error: Table 'jianglou.hx_Array' doesn't exist
+SELECT * FROM hx_Array where pid=17 and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-13 11:27:29] /manage/modules/organ/index.php?url=visit_list&do=edit&id=11 ( url=visit_list&do=edit ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '11' ) LIMIT 1  
+[2020-08-13 11:27:32] /manage/modules/organ/index.php?url=visit_list&do=edit&id=11 ( url=visit_list&do=edit ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '11' ) LIMIT 1  
+[2020-08-13 11:27:33] /manage/modules/organ/index.php?url=visit_list&do=edit&id=10 ( url=visit_list&do=edit ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '10' ) LIMIT 1  
+[2020-08-13 11:27:36] /manage/modules/organ/index.php?url=visit_list&do=edit&id=11 ( url=visit_list&do=edit ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '11' ) LIMIT 1  
+[2020-08-13 11:27:40] /manage/modules/organ/index.php?url=visit_list&do=edit&id=10 ( url=visit_list&do=edit ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '10' ) LIMIT 1  
+[2020-08-13 11:28:55] /index.php?url=news&do=index ( url=news&do=index ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
+SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
+[2020-08-13 11:30:51] /manage/modules/organ/index.php?url=visit_list&do=edit&id=11 ( url=visit_list&do=edit ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '11' ) LIMIT 1  
+[2020-08-13 11:30:53] /manage/modules/organ/index.php?url=visit_list&do=edit&id=10 ( url=visit_list&do=edit ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '10' ) LIMIT 1  
+[2020-08-13 11:41:22] /manage/modules/organ/index.php?url=visit_list&do=edit&id=11 ( url=visit_list&do=edit ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '11' ) LIMIT 1  
+[2020-08-13 11:41:24] /manage/modules/organ/index.php?url=visit_list&do=edit&id=10 ( url=visit_list&do=edit ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '10' ) LIMIT 1  
+[2020-08-13 11:41:27] /manage/modules/organ/index.php?url=visit_list&do=edit&id=10 ( url=visit_list&do=edit ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '10' ) LIMIT 1  
+[2020-08-13 11:48:17] /manage/modules/organ/index.php?url=visit_list&do=edit&id=10 ( url=visit_list&do=edit ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '10' ) LIMIT 1  
+[2020-08-13 11:48:18] /manage/modules/organ/index.php?url=visit_list&do=edit&id=11 ( url=visit_list&do=edit ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '11' ) LIMIT 1  
+[2020-08-13 11:48:20] /manage/modules/organ/index.php?url=visit_list&do=edit&id=10 ( url=visit_list&do=edit ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '10' ) LIMIT 1  
+[2020-08-13 11:49:18] /manage/modules/organ/index.php?url=visit_list&do=edit&id=11 ( url=visit_list&do=edit ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '11' ) LIMIT 1  
+[2020-08-13 11:49:24] /manage/modules/organ/index.php?url=visit_list&do=edit&id=10 ( url=visit_list&do=edit ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '10' ) LIMIT 1  
+[2020-08-13 11:50:10] /manage/modules/organ/index.php?url=visit_list&do=checkdetail&id=11 ( url=visit_list&do=checkdetail ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '11' ) LIMIT 1  
+[2020-08-13 11:52:09] /manage/modules/organ/index.php?url=visit_list&do=checkdetail&id=11 ( url=visit_list&do=checkdetail ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '11' ) LIMIT 1  
+[2020-08-13 11:52:23] /manage/modules/organ/index.php?url=visit_list&do=checkdetail&id=11 ( url=visit_list&do=checkdetail ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '11' ) LIMIT 1  
+[2020-08-13 13:00:36] /manage/modules/organ/index.php?url=visit_list&do=checkdetail&id=11 ( url=visit_list&do=checkdetail ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '11' ) LIMIT 1  
+[2020-08-13 13:01:04] /manage/modules/organ/index.php?url=visit_list&do=checkdetail&id=11 ( url=visit_list&do=checkdetail ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '11' ) LIMIT 1  
+[2020-08-13 13:01:20] /manage/modules/organ/index.php?url=visit_list&do=checkdetail&id=11 ( url=visit_list&do=checkdetail ) 
+ERR: Db Error: Table 'jianglou.hx_visit_list' doesn't exist
+SELECT * FROM `hx_visit_list` WHERE ( id = '11' ) LIMIT 1  

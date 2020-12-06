@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!-- Apple devices fullscreen -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<!-- Apple devices fullscreen -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta charset="{CHARSET}">
+<title>{$html_title}</title>
+<link href="{ADMIN_TEMPLATES_URL}/css/index.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="msgpage">
+  <div class="msgbox">
+    <div class="pic"></div>
+    <div class="con">
+      {$msg}
+    </div>
+	{if $time}
+    {if ($is_show)}
+    <div class="scon">{L('hx_auto_redirect')}</div>
+    <div class="button">
+      <?php if (is_array($url)){ foreach($url as $k => $v){ ?>
+      <a href="{$v['url']}" class="ncap-btn">{$v['msg']}</a>
+      <?php } ?>
+	 
+      <script type="text/javascript"> window.setTimeout("javascript:location.href='{$url[0]['url']}'", {$time}); </script>
+     
+      <?php }else { if ($url != ''){ ?>
+      <a href="<?php echo $url;?>" class="ncap-btn"><?php echo L('hx_back_to_pre_page');?></a> 
+	
+      <script type="text/javascript"> window.setTimeout("javascript:location.href='{$url}'", {$time}); </script>
+
+      <?php }else { ?>
+	  
+      <a href="javascript:history.back()" class="ncap-btn">{L('hx_back_to_pre_page')}</a> 
+      <script type="text/javascript"> window.setTimeout("javascript:history.back()", {$time}); </script>
+	 
+      <?php } } ?>
+	 
+    </div>
+    <?php } ?>
+	{/if}
+    <div class="powerby">{L('hx_SSZCMS_message')}</div>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{template 'header'}
+
+
+<div class="mgtop-15 background-w1">
+
+	<div class="nab-left">
+		<div class="nmuz">
+		<ul>
+			{loop $pagelist $item}				
+			<span><a href="{url('page','index',array('id'=>$item['id']))}" {if $_GET['id']==$item['id']}class="curr"{/if} title="{$item['title']}">{$item['title']}</a></span>
+			{/loop}	        
+		</ul>
+		</div>
+	</div>
+
+	<div class="nab-right">
+
+		<div class="fdiv mub"><ul>{$title}</ul></div>
+
+		<div class="listn imgk">{$info['content']}</div>
+	</div>
+</div>
+
+
+{template 'footer'}

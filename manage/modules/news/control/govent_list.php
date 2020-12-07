@@ -1,6 +1,6 @@
 <?php
 // +----------------------------------------------------------------------
-// | Name: 线上解疑列表
+// | Name: 智慧政务列表
 // +----------------------------------------------------------------------
 // | Version: V1.0 By:sanshui
 // +----------------------------------------------------------------------
@@ -64,14 +64,14 @@ class govent_listControl extends SystemControl{
 // 		
 			
 			$list['addtime'] = $v['addtime']?date('Y-m-d H:i:s',$v['addtime']):'-';
-			$list['isreview'] = getReview('istopreview',$v['istopreview']);
+			// $list['isreview'] = getReview('istopreview',$v['istopreview']);
 			if($this->checkCzqx("edit")){
 				$list['operation'] = "<a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)' onclick='fg_edit(".$v['id'].")'><i class='fa fa-pencil-square-o'></i> 编辑</a>"; 
 			} 
 			
-			if($this->checkCzqx("shenhe")){
-				$list['operation'] .= "<a class='layui-btn layui-btn-sm layui-btn-auto' href='javascript:void(0)' onclick=\"fg_shenhe({$v['id']})\"><i class='fa fa-check-circle'></i> 审核</a>"; 
-			}
+			// if($this->checkCzqx("shenhe")){
+			// 	$list['operation'] .= "<a class='layui-btn layui-btn-sm layui-btn-auto' href='javascript:void(0)' onclick=\"fg_shenhe({$v['id']})\"><i class='fa fa-check-circle'></i> 审核</a>"; 
+			// }
 			
 		    if($this->checkCzqx("topshenhe")){
 		        	$list['operation'] .= "<a class='layui-btn layui-btn-sm layui-btn-auto' href='javascript:void(0)' onclick=\"fg_topshenhe({$v['id']})\"><i class='fa fa-check-circle'></i> 超级审核</a>"; 
@@ -88,18 +88,35 @@ class govent_listControl extends SystemControl{
      * 添加
      */
     public function addDo(){
-        $lang   = Language::getLangContent(); 
+        $lang   = Language::getLangContent();
+		$clicks=rand(0,999);
         if (chksubmit()){
-            $data = array();  
-			$data['title']      = trim($_POST['title']);  
-			$data['intro']      = trim($_POST['intro']);  
-			$data['addtime']  = time();
-			$data['isreview']=1; 
-			$data['revtime']  = time(); 
-			$data['ip']       = getIp(); 
+            $data = array(); 
+			$data['pid']      = intval($_POST['pid']); 
+			$data['rank']      = intval($_POST['rank']); 
+			$data['title']      = trim($_POST['title']); 
+			$data['shorttile']      = trim($_POST['shorttile']);
+			$data['intro']      = trim($_POST['intro']);
+			$data['content']  = htmlspecialchars_decode($_POST['content'], ENT_QUOTES); 
+			$data['pic']      = trim($_POST['pic']); 
+			$data['url']      = trim($_POST['url']); 
+			$data['addtime']  = time(); 
+			$data['mid']      = $this->admin_info['id'];
+			$data['edittime']  = time(); 
+			$data['editor']   = $this->admin_info['id'];
+			$data['status']=1;
+			$data['clicks']   = intval($_POST['clicks']); 
+			$data['ip']       = getIp();
+			$data['seo_title']      = trim($_POST['seo_title']);
+			$data['seo_keywords']      = trim($_POST['seo_keywords']);
+			$data['seo_description']      = trim($_POST['seo_description']);   
+			if(!$_POST['intro'])
+			{
+				$data['intro']    = clearHtmlText(str_cut(strip_tags($data['content']),200));//截取简介
+			}	
 			$result = M($this->name)->insert($data);
 			if ($result){
-				$this->log('线上解疑列表添加'.'['.$data['title'].']',null);
+				$this->log('智慧政务列表添加'.'['.$data['title'].']',null);
 				echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('操作成功');</script>";
 				exit();
 			}else {
@@ -107,14 +124,14 @@ class govent_listControl extends SystemControl{
 				exit();
 			}
         }
-		include T('online_list_edit'); 
+		include T('govent_list_edit'); 
     }
 
     /**
      * 编辑
      */
     public function editDo(){
-        $lang    = Language::getLangContent();  
+        $lang    = Language::getLangContent();
         $model=M($this->name);
 		$condition['id'] = intval($_GET['id']);
 	    $info = $model->where($condition)->find();
@@ -123,15 +140,32 @@ class govent_listControl extends SystemControl{
 			echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('没有找到此信息');</script>";
 			exit();
 		}  
+        $clicks=$info['clicks'];
         if (chksubmit()){ 
 			$data = array(); 
-			$data['title']      = trim($_POST['title']);  
-			$data['content']      = trim($_POST['content']);     
-			$data['ip']       = getIp(); 
+			$data['pid']      = intval($_POST['pid']); 
+			$data['rank']      = intval($_POST['rank']); 
+			$data['title']      = trim($_POST['title']); 
+			$data['shorttile']      = trim($_POST['shorttile']);
+			$data['intro']      = trim($_POST['intro']);
+			$data['content']  = htmlspecialchars_decode($_POST['content'], ENT_QUOTES); 
+			$data['pic']      = trim($_POST['pic']); 
+			$data['url']      = trim($_POST['url']);
+			$data['edittime']  = time(); 
+			$data['editor']   = $this->admin_info['id']; 
+			$data['clicks']   = intval($_POST['clicks']); 
+			$data['ip']       = getIp();
+			$data['seo_title']      = trim($_POST['seo_title']);
+			$data['seo_keywords']      = trim($_POST['seo_keywords']);
+			$data['seo_description']      = trim($_POST['seo_description']);   
+			if(!$_POST['intro'])
+			{
+				$data['intro']    = clearHtmlText(str_cut(strip_tags($data['content']),200));//截取简介
+			}	
 			$condition['id'] = intval($_POST['id']); 
 			$result = $model->where($condition)->update($data); 
 			if ($result){
-				$this->log('线上解疑列表编辑'.'['.$data['title'].']',null);
+				$this->log('智慧政务列表编辑'.'['.$data['title'].']',null);
 				echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('操作成功');</script>";
 				exit();
 			}else {
@@ -139,74 +173,9 @@ class govent_listControl extends SystemControl{
 				exit();
 			} 
         } 
-		include T('online_list_edit');
+		include T('govent_list_edit');
     }
-	
-	 /**
-     * 审核
-     */
-    public function reviewDo(){ 
-        $lang    = Language::getLangContent();
-		$model=M($this->name);
-		$condition['id'] = intval($_GET['id']);
-	    $info = $model->where($condition)->find();
-		if (empty($info)){
-			echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('没有找到此信息');</script>";
-			exit(); 
-		} 
-        if (chksubmit()){ 
-			$data = array();
-			$data['isreview']      = intval($_POST['isreview']);
-			$data['revtime']  = time();
-			$data['reviewinfo']      = trim($_POST['reviewinfo']); 
-			$data['replyintro']      = trim($_POST['reviewinfo']); 
-			$condition['id'] = intval($_POST['id']);
-			$data['managid']=$_POST['managemember'];
-			//var_Dump($_POST,$model);exit;
-			$result = $model->where($condition)->update($data); 
-			if ($result){
-				$this->log('线上解疑数据审核'.'['.$info['title'].']',null); 
-				echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('操作成功');</script>";
-				exit();
-			}else {
-				echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('操作失败');</script>";
-				exit();
-			} 
-        }  
-		include T('shuju_review1');
-    }
-	
-	  public function topreviewDo(){ 
-        $lang    = Language::getLangContent();
-		$model=M($this->name);
-		$condition['id'] = intval($_GET['id']);
-	    $info = $model->where($condition)->find();
-		if (empty($info)){
-			echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('没有找到此信息');</script>";
-			exit(); 
-		} 
-        if (chksubmit()){ 
-			$data = array();
-			$data['istopreview']      = intval($_POST['istopreview']);
-			$data['toprevtime']  = time();
-			$data['topreviewinfo']      = trim($_POST['topreviewinfo']); 
 		
-			$condition['id'] = intval($_POST['id']);
-			$data['managid']=$_POST['managemember'];
-			//var_Dump($_POST,$model);exit;
-			$result = $model->where($condition)->update($data); 
-			if ($result){
-				$this->log('线上解疑数据审核'.'['.$info['title'].']',null); 
-				echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('操作成功');</script>";
-				exit();
-			}else {
-				echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('操作失败');</script>";
-				exit();
-			} 
-        }  
-		include T('shuju_topreview1');
-    }
-	
     /**
      * 删除
      */
@@ -221,7 +190,7 @@ class govent_listControl extends SystemControl{
 				$data['isdel']=1;
                 $model->where($condition)->update($data); 
             }
-            $this->log('删除线上解疑列表'.'[ID:'.implode(',',$_GET['del_id']).']',null);
+            $this->log('删除资讯列表'.'[ID:'.implode(',',$_GET['del_id']).']',null);
             exit(json_encode(array('state'=>true,'msg'=>'删除成功')));
         } else {
             exit(json_encode(array('state'=>false,'msg'=>'删除失败')));

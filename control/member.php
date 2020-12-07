@@ -142,7 +142,144 @@ class memberControl extends BaseMemberControl{
     }
     
 	
-	//发布资讯
+		//我的消息
+	public function messageDo(){
+    //   header("Content-Security-Policy: upgrade-insecure-requests");
+
+        $lang = Language::getLangContent();
+		$mid=$_SESSION['member_id'];
+        $title='发布资讯';
+		$myinfo = M('member');
+		$condition 	= array();
+		$condition['id']	= $mid;
+		$member= $myinfo->getMemberInfo($condition); 
+		if (chksubmit()){
+			$data = array(); 
+			$data['pid']      = intval($_POST['pid']); 
+			$data['rank']      = 0; 
+			$data['title']      = trim($_POST['title']); 
+			$data['shorttile']      = trim($_POST['shorttile']);
+			$data['intro']      = trim($_POST['intro']);
+			$data['content']  = htmlspecialchars_decode($_POST['content'], ENT_QUOTES); 
+			$data['pic']      = trim($_POST['pic']); 
+			$data['url']      = trim($_POST['url']); 
+			$data['addtime']  = time(); 
+			$data['mid']      = 0;
+			$data['edittime']  = time(); 
+			$data['editor']   = 0;
+			$data['status']=1;
+			$data['isreview']=0; 
+			$data['revtime']  = 0; 
+			$data['clicks']   = 0; 
+			$data['ip']       = getIp();
+			$data['seo_title']      = trim($_POST['seo_title']);
+			$data['seo_keywords']      = trim($_POST['seo_keywords']);
+			$data['seo_description']      = trim($_POST['seo_description']);
+			$data['releaseid']      =  $mid;
+			
+			if(!$_POST['intro'])
+			{
+				$data['intro']    = clearHtmlText(str_cut(strip_tags($data['content']),200));//截取简介
+			}	
+			$result = M('article_list')->insert($data);
+			if ($result){
+				echo '<link rel="stylesheet" type="text/css" href="/public/layui/css/layui.css">';
+				echo '<script src="/public/layui/layui.all.js"></script>';
+				echo "<script>
+					layer.msg('发布成功！', { 
+						time: 2000
+					}, function(){
+						window.location.href='/index.php?url=member';
+					});  
+					</script>";
+				exit();
+			}else {
+				echo '<link rel="stylesheet" type="text/css" href="/public/layui/css/layui.css">';
+				echo '<script src="/public/layui/layui.all.js"></script>';
+				echo "<script>
+					layer.msg('发布失败！', { 
+						time: 2000
+					}, function(){
+						window.history.back(-1);
+					});  
+					</script>";
+				exit();
+			}
+		}
+		include T('member_message');
+		}	
+		
+		//我的任务
+	public function taskDo(){
+    //   header("Content-Security-Policy: upgrade-insecure-requests");
+
+        $lang = Language::getLangContent();
+		$mid=$_SESSION['member_id'];
+        $title='发布资讯';
+		$myinfo = M('member');
+		$condition 	= array();
+		$condition['id']	= $mid;
+		$member= $myinfo->getMemberInfo($condition); 
+		if (chksubmit()){
+			$data = array(); 
+			$data['pid']      = intval($_POST['pid']); 
+			$data['rank']      = 0; 
+			$data['title']      = trim($_POST['title']); 
+			$data['shorttile']      = trim($_POST['shorttile']);
+			$data['intro']      = trim($_POST['intro']);
+			$data['content']  = htmlspecialchars_decode($_POST['content'], ENT_QUOTES); 
+			$data['pic']      = trim($_POST['pic']); 
+			$data['url']      = trim($_POST['url']); 
+			$data['addtime']  = time(); 
+			$data['mid']      = 0;
+			$data['edittime']  = time(); 
+			$data['editor']   = 0;
+			$data['status']=1;
+			$data['isreview']=0; 
+			$data['revtime']  = 0; 
+			$data['clicks']   = 0; 
+			$data['ip']       = getIp();
+			$data['seo_title']      = trim($_POST['seo_title']);
+			$data['seo_keywords']      = trim($_POST['seo_keywords']);
+			$data['seo_description']      = trim($_POST['seo_description']);
+			$data['releaseid']      =  $mid;
+			
+			if(!$_POST['intro'])
+			{
+				$data['intro']    = clearHtmlText(str_cut(strip_tags($data['content']),200));//截取简介
+			}	
+			$result = M('article_list')->insert($data);
+			if ($result){
+				echo '<link rel="stylesheet" type="text/css" href="/public/layui/css/layui.css">';
+				echo '<script src="/public/layui/layui.all.js"></script>';
+				echo "<script>
+					layer.msg('发布成功！', { 
+						time: 2000
+					}, function(){
+						window.location.href='/index.php?url=member';
+					});  
+					</script>";
+				exit();
+			}else {
+				echo '<link rel="stylesheet" type="text/css" href="/public/layui/css/layui.css">';
+				echo '<script src="/public/layui/layui.all.js"></script>';
+				echo "<script>
+					layer.msg('发布失败！', { 
+						time: 2000
+					}, function(){
+						window.history.back(-1);
+					});  
+					</script>";
+				exit();
+			}
+		}
+		include T('member_task');
+    }	
+	
+	
+	
+	
+		//发布资讯
 	public function addviewsDo(){
     //   header("Content-Security-Policy: upgrade-insecure-requests");
 

@@ -33,7 +33,7 @@ layui.use('layer', function(){
 });
 var gotourl="<?php echo url('member');?>";
 <?php if($_GET['gotourl']) { ?>
-gotourl="{$_GET['gotourl']}";
+gotourl="<?php echo $_GET['gotourl'];?>";
 <?php } ?>
 //获取用户名和密码并判断不能为空
 function login(){

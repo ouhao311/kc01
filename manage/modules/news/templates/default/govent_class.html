@@ -3,20 +3,23 @@
 	<div class="fixed-bar">
 		<div class="item-title">
 			<div class="subject">
-				<h3>智慧政务</h3>
-				<h5>智慧政务列表管理</h5>
+				<h3>资讯分类</h3>
+				<h5>资讯分类列表</h5>
+			</div> 
 			</div> 
 			<span style="float: right;position:absolute;right:1%;top:10px;">
-				{if $this->checkCzqx("add")}
+				<?php if($_GET['pid']>0){ ?>
+				<a class="layui-btn layui-btn-primary" href='javascript:void(0)' onclick='fg_addson(<?php echo $_GET['pid']; ?>)' style="text-decoration:none">
+					<i class="Hx-iconfont">&#xe600;</i> 新增
+				</a>
+				<?php }else{ ?>
 				<a class="layui-btn layui-btn-primary" href='javascript:void(0)' onclick='fg_add()' style="text-decoration:none">
 					<i class="Hx-iconfont">&#xe600;</i> 新增
 				</a>
-				{/if}
-				{if $this->checkCzqx("del")}
+				<?php } ?>
 				<a class="layui-btn layui-btn-primary deldata" href="javascript:;"  style="text-decoration:none">
 					<i class="Hx-iconfont">&#xe6e2;</i> 删除
-				</a>
-				{/if}
+				</a> 
 				<a class="layui-btn layui-btn-primary" href='javascript:' onclick='$("#flexigrid").flexReload();' title="刷新" style="text-decoration:none">
 					<i class="Hx-iconfont">&#xe68f;</i> 刷新
 				</a>
@@ -28,15 +31,15 @@
 			<div class="layui-form-pane" style="margin-top: 15px;">
 				<div class="layui-form-item">
 					<label class="layui-form-label">范围选择</label>
-					<div class="layui-input-inline">
+					<!-- <div class="layui-input-inline">
 						<input class="layui-input"  value="" name="kaishi" placeholder="开始时间" id="LAY_demorange_s" readonly>
 					</div>
 					<div class="layui-input-inline">
 						<input class="layui-input"  value="" name="jieshu" placeholder="截止时间" id="LAY_demorange_e" readonly>
-					</div>
+					</div> -->
 					<div class="layui-input-inline"> 
 						<input type="text" name="keywords" placeholder="请输入关键字" autocomplete="off" class="layui-input">
-					</div>
+					</div> 
 					<a class="layui-btn " id="ncsubmit" lay-submit="" lay-filter="demo11">
 						<i class="Hx-iconfont">&#xe665;</i> 立即查找
 					</a>  
@@ -48,10 +51,9 @@
 	
 	<script> 
 	//加载模块
-	layui.use(['laydate','element','form'], function(){
+	layui.use(['laydate','element'], function(){
 	  var laydate = layui.laydate; 
 	  var element = layui.element; 
-	  var form = layui.form; 
 	  laydate.render({ 	  elem: '#LAY_demorange_s'	});
 	  laydate.render({ 	  elem: '#LAY_demorange_e'	});
 	 
@@ -61,24 +63,25 @@
 	$(function(){
 		// 高级搜索提交
 		$('#ncsubmit').click(function(){
-			$("#flexigrid").flexOptions({url: 'index.php?url=<?php echo $this->name;?>&do=get_xml&pid=<?php echo $_GET['pid']?>&'+$("#formSearch").serialize(),query:'',qtype:''}).flexReload();
+			$("#flexigrid").flexOptions({url: 'index.php?url=<?php echo $this->name;?>&pid=<?php echo $_GET['pid']?>&do=get_xml&'+$("#formSearch").serialize(),query:'',qtype:''}).flexReload();
 		});
 		$("#flexigrid").flexigrid({
 			url: 'index.php?url=<?php echo $this->name;?>&do=get_xml&pid=<?php echo $_GET['pid']?>',
 			colModel : [
-				{display: '问题', name : 'title', width : 140, sortable : false, align: 'center'}, 
-				{display: '发布者', name : 'releaseid', width : 80, sortable : false, align: 'center'},      
-				{display: '描述', name : 'content', width: 180, sortable : true, align : 'center'}, 
-				{display: '是否为工作人员提问', name : 'ismag', width: 130, sortable : true, align : 'center'}, 
-				{display: '是否匿名提问', name : 'anonymous', width: 130, sortable : true, align : 'center'}, 
-				{display: '时间', name : 'edittime', width: 120, sortable : true, align : 'center'}, 
-				{display: '操作', name : 'operation', width : 200, sortable : false, align: 'center', className: 'handle'}   		
+				{display: '排序', name : 'rank', width : 60, sortable : false, align: 'center'},
+				{display: 'ID', name : 'id', width : 60, sortable : false, align: 'center'},
+				{display: '分类名称', name : 'title', width : 140, sortable : false, align: 'center'},
+				{display: '分类图标', name : 'pic', width: 100, sortable : true, align : 'center'},   
+				{display: '是否可发布', name : 'isfabu', width: 80, sortable : true, align : 'center'},
+				{display: '是否显示', name : 'status', width: 80, sortable : true, align : 'center'},
+				{display: '编辑时间', name : 'edittime', width: 160, sortable : true, align : 'center'}, 
+				{display: '操作', name : 'operation', width : 350, sortable : false, align: 'center', className: 'handle'}   		
 				], 		 
-			sortname: "id",
-			sortorder: "desc"
+			sortname: "rank",
+			sortorder: "asc"
 		}); 	
 	}); 
-	//删除线上解疑列表
+	//删除资讯分类
 	$('.deldata').click(function(){
 		if($('#flexigrid .trSelected').length>0){
 			var itemlist = new Array();
@@ -135,44 +138,33 @@
 			}
 		});	
 	}
-	//添加线上解疑列表
+	//添加资讯分类
 	function fg_add() { 
 		layer.open({
 		type: 2, 
-		title:"添加线上解疑",
-		area: ['85%', '85%'],
+		title:"添加资讯分类",
+		area: ['60%', '80%'],
 		content: "index.php?url=<?php echo $this->name;?>&do=add"
 	  });  
 	}
-	//编辑线上解疑列表
+	//编辑资讯分类
 	function fg_edit(id) { 
 		layer.open({
 		type: 2, 
-		title:"编辑线上解疑",
-		area: ['85%', '85%'],
+		title:"编辑资讯分类",
+		area: ['60%', '80%'],
 		content: "index.php?url=<?php echo $this->name;?>&do=edit&id="+id
 	  });  
 	}
-
-		//审核
-		function fg_shenhe(id) { 
+	//新增下级分类
+	function fg_addson(id) { 
 		layer.open({
 		type: 2, 
-		title:"审核数据",
-		area: ['65%', '45%'],
-		content: "index.php?url=<?php echo $this->name;?>&do=review&id="+id
+		title:"新增下级分类",
+		area: ['60%', '80%'],
+		content: "index.php?url=<?php echo $this->name;?>&do=add&pid="+id
 	  });  
 	}
-		//审核
-	function fg_topshenhe(id) { 
-		layer.open({
-		type: 2, 
-		title:"审核数据",
-		area: ['65%', '45%'],
-		content: "index.php?url=<?php echo $this->name;?>&do=topreview&id="+id
-	  });  
-	}
-	
 	</script> 
 </div>
 {template 'footer',1}

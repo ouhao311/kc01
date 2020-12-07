@@ -70,11 +70,11 @@ class govent_listControl extends SystemControl{
 			} 
 			
 			// if($this->checkCzqx("shenhe")){
-			// 	$list['operation'] .= "<a class='layui-btn layui-btn-sm layui-btn-auto' href='javascript:void(0)' onclick=\"fg_shenhe({$v['id']})\"><i class='fa fa-check-circle'></i> 审核</a>"; 
+			// 	$list['operation'] .= "<a class='layui-btn layui-btn-sm layui-btn-auto' href='javascript:void(0)' onclick=\"fg_shenhe({$v['id']})\">"; 
 			// }
 			
 		    if($this->checkCzqx("topshenhe")){
-		        	$list['operation'] .= "<a class='layui-btn layui-btn-sm layui-btn-auto' href='javascript:void(0)' onclick=\"fg_topshenhe({$v['id']})\"><i class='fa fa-check-circle'></i> 超级审核</a>"; 
+		        	// $list['operation'] .= "<a class='layui-btn layui-btn-sm layui-btn-auto' href='javascript:void(0)' onclick=\"fg_topshenhe({$v['id']})\">"; 
  				}
             $data['list'][$v['id']] = $list;
         }

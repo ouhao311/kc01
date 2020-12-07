@@ -72,7 +72,6 @@ colModel : [
 {display: '是否为工作人员提问', name : 'ismag', width: 130, sortable : true, align : 'center'}, 
 {display: '是否匿名提问', name : 'anonymous', width: 130, sortable : true, align : 'center'}, 
 {display: '时间', name : 'edittime', width: 120, sortable : true, align : 'center'}, 
-{display: '审核状态', name : 'isreview', width: 80, sortable : true, align : 'center'}, 
 {display: '操作', name : 'operation', width : 200, sortable : false, align: 'center', className: 'handle'}   
 ],  
 sortname: "id",
@@ -136,43 +135,23 @@ alert(data.msg);
 }
 });
 }
-//添加线上解疑列表
+//添加智慧政务列表
 function fg_add() { 
 layer.open({
 type: 2, 
-title:"添加线上解疑",
+title:"添加资讯",
 area: ['85%', '85%'],
 content: "index.php?url=<?php echo $this->name;?>&do=add"
   });  
 }
-//编辑线上解疑列表
 function fg_edit(id) { 
 layer.open({
 type: 2, 
-title:"编辑线上解疑",
+title:"编辑政务",
 area: ['85%', '85%'],
 content: "index.php?url=<?php echo $this->name;?>&do=edit&id="+id
   });  
 }
-//审核
-function fg_shenhe(id) { 
-layer.open({
-type: 2, 
-title:"审核数据",
-area: ['65%', '45%'],
-content: "index.php?url=<?php echo $this->name;?>&do=review&id="+id
-  });  
-}
-//审核
-function fg_topshenhe(id) { 
-layer.open({
-type: 2, 
-title:"审核数据",
-area: ['65%', '45%'],
-content: "index.php?url=<?php echo $this->name;?>&do=topreview&id="+id
-  });  
-}
-
 
 </script> 
 </div>

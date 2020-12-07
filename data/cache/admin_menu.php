@@ -62,7 +62,7 @@
           'govent_list' => 
           array (
             'name' => '列表',
-            'power' => 'view,add,edit,del,shenhe,topshenhe,progress,all',
+            'power' => 'view,add,edit,del,progress,all',
           ),
         ),
       ),

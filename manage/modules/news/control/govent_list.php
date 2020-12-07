@@ -27,7 +27,7 @@ class govent_listControl extends SystemControl{
      * 异步调用列表
      */
     public function get_xmlDo(){
-			$model = M('visit_list');
+			$model = M('govent_list');
 			$condition = array();  
 	list($condition,$order) = $this->_get_condition($condition);//处理条件和排序
 			$list = $model->where($condition)->order($order)->page($_POST['rp'])->select();
@@ -40,7 +40,7 @@ class govent_listControl extends SystemControl{
 		$list['name'] = "<span title='".$v['name']."'>".$v['name']."</span>"; 
 			$list['time'] = "<span title='time'>".$v['startdate']."-".$v['enddate']."</span>";
 			if($v['pid']){
-				$depart_list=getTableInfohanett($v['pid'],'depart_list');
+				$depart_list=getTableInfohanett($v['pid'],'departid');
 				$list['pid'] = "<span title='".$depart_list['title']."'>".$depart_list['title']."</span>";
 			}else{
 				$list['pid'] ="暂无部门";
@@ -87,30 +87,19 @@ class govent_listControl extends SystemControl{
 		$clicks=rand(0,999);
         if (chksubmit()){
             $data = array(); 
-			$data['rank']      = intval($_POST['rank']); 
-			$data['title']      = trim($_POST['title']); 
-			$data['shorttile']      = trim($_POST['shorttile']);
-			$data['intro']      = trim($_POST['intro']);
-			$data['content']  = htmlspecialchars_decode($_POST['content'], ENT_QUOTES); 
-			$data['pic']      = trim($_POST['pic']); 
-			$data['url']      = trim($_POST['url']); 
-			$data['addtime']  = time(); 
-			$data['mid']      = $this->admin_info['id'];
-			$data['edittime']  = time(); 
-			$data['editor']   = $this->admin_info['id'];
-			$data['status']=1;
-			$data['clicks']   = intval($_POST['clicks']); 
-			$data['ip']       = getIp();
-			$data['seo_title']      = trim($_POST['seo_title']);
-			$data['seo_keywords']      = trim($_POST['seo_keywords']);
-			$data['seo_description']      = trim($_POST['seo_description']);   
-			if(!$_POST['intro'])
-			{
-				$data['intro']    = clearHtmlText(str_cut(strip_tags($data['content']),200));//截取简介
-			}	
+			$data['name']      = trim($_POST['name']);  
+			$data['managerid']      = trim($_POST['managemember']); 
+		
+			$data['memberid']      = trim($_POST['member']);
+			$data['departid']      = trim($_POST['depart']);  
+			$data['enddate']      = trim($_POST['enddate']); 
+			$data['status']      = 1;  
+			$data['addtime']  = time();
+	
 			$result = M($this->name)->insert($data);
+				//var_Dump($this->name,333,$data);exit;
 			if ($result){
-				$this->log('智慧政务列表添加'.'['.$data['title'].']',null);
+				$this->log('任务列表添加'.'['.$data['name'].']',null);
 				echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('操作成功');</script>";
 				exit();
 			}else {
@@ -137,35 +126,25 @@ class govent_listControl extends SystemControl{
         $clicks=$info['clicks'];
         if (chksubmit()){ 
 			$data = array(); 
-			$data['rank']      = intval($_POST['rank']); 
-			$data['title']      = trim($_POST['title']); 
-			$data['shorttile']      = trim($_POST['shorttile']);
-			$data['intro']      = trim($_POST['intro']);
-			$data['content']  = htmlspecialchars_decode($_POST['content'], ENT_QUOTES); 
-			$data['pic']      = trim($_POST['pic']); 
-			$data['url']      = trim($_POST['url']);
-			$data['edittime']  = time(); 
-			$data['editor']   = $this->admin_info['id']; 
-			$data['clicks']   = intval($_POST['clicks']); 
-			$data['ip']       = getIp();
-			$data['seo_title']      = trim($_POST['seo_title']);
-			$data['seo_keywords']      = trim($_POST['seo_keywords']);
-			$data['seo_description']      = trim($_POST['seo_description']);   
-			if(!$_POST['intro'])
-			{
-				$data['intro']    = clearHtmlText(str_cut(strip_tags($data['content']),200));//截取简介
-			}	
-			$condition['id'] = intval($_POST['id']); 
+			$data['name']      = trim($_POST['name']);  
+			$data['managerid']      = trim($_POST['managemember']); 
+		
+			$data['memberid']      = trim($_POST['member']);
+			$data['departid']      = trim($_POST['depart']);  
+			$data['enddate']      = trim($_POST['enddate']); 
+			$data['status']      = 1;  
+			$data['addtime']  = time();
+		
 			$result = $model->where($condition)->update($data); 
 			if ($result){
-				$this->log('智慧政务列表编辑'.'['.$data['title'].']',null);
+				$this->log('任务列表编辑'.'['.$data['name'].']',null);
 				echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('操作成功');</script>";
 				exit();
 			}else {
 				echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('操作失败');</script>";
 				exit();
 			} 
-        } 
+        }
 		include T('govent_list_edit');
     }
 		
@@ -183,7 +162,7 @@ class govent_listControl extends SystemControl{
 				$data['isdel']=1;
                 $model->where($condition)->update($data); 
             }
-            $this->log('删除智慧政务列表列表'.'[ID:'.implode(',',$_GET['del_id']).']',null);
+            $this->log('删除任务列表'.'[ID:'.implode(',',$_GET['del_id']).']',null);
             exit(json_encode(array('state'=>true,'msg'=>'删除成功')));
         } else {
             exit(json_encode(array('state'=>false,'msg'=>'删除失败')));
@@ -202,7 +181,7 @@ class govent_listControl extends SystemControl{
 		echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('没有找到此信息');</script>";
 		exit(); 
 	} 
-			if (chksubmit()){ 
+	if (chksubmit()){ 
 		$data = array();
 		$data['isreview']      = intval($_POST['isreview']);
 		$data['revtime']  = time();
@@ -235,7 +214,7 @@ class govent_listControl extends SystemControl{
 			exit();
 		} 
 			}  
-	include T('shuju_review');
+		include T('govent_preview');
 	}
 	public function topreviewDo(){ 
 		$lang    = Language::getLangContent();
@@ -264,7 +243,7 @@ if (empty($info)){
 		exit();
 	} 
 		}  
-include T('govent_preview');
+include T('shuju_topreview1');
 } 
 	
 	/**

@@ -10,10 +10,10 @@
 <input type="hidden" name="id" value="<?php echo $info['id'];?>" />
 <input type="hidden" name="ref_url" value="<?php echo getReferer();?>" />  
 <div class="layui-row mb15 pt20">
-<div class=" layui-col-xs2  layui-col-sm1  layui-col-md1">
+<div class=" layui-col-xs2  layui-col-sm2  layui-col-md1">
 <label class="layui-form-title"><em>*</em> 审核状态</label>
 </div>
-<div class="layui-col-xs9 layui-col-sm11 layui-col-md11">
+<div class="layui-col-xs9 layui-col-sm10 layui-col-md11">
 <div class="layui-input-block">
 <?php echo getNotRadio('istopreview',$info['istopreview']);?> 
 </div>

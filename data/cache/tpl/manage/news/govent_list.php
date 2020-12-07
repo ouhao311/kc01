@@ -1,10 +1,12 @@
 <?php defined('SSZCMS') or exit('Access Denied');?><?php include T('header',1);?>
+<style>
+</style>
 <div class="page">
 <div class="fixed-bar">
 <div class="item-title">
 <div class="subject">
-<h3>智慧政务</h3>
-<h5>智慧政务列表管理</h5>
+<h3>智慧政务列表</h3>
+   <h3>智慧政务管理列表</h3>
 </div> 
 <span style="float: right;position:absolute;right:1%;top:10px;">
 <?php if($this->checkCzqx("add")) { ?>
@@ -61,25 +63,26 @@ layui.use(['laydate','element','form'], function(){
 $(function(){
 // 高级搜索提交
 $('#ncsubmit').click(function(){
-$("#flexigrid").flexOptions({url: 'index.php?url=<?php echo $this->name;?>&do=get_xml&'+$("#formSearch").serialize(),query:'',qtype:''}).flexReload();
+$("#flexigrid").flexOptions({url: 'index.php?url=<?php echo $this->name;?>&do=get_xml&pid=<?php echo $_GET['pid']?>&'+$("#formSearch").serialize(),query:'',qtype:''}).flexReload();
 });
 $("#flexigrid").flexigrid({
-url: 'index.php?url=<?php echo $this->name?>&do=get_xml',
+url: 'index.php?url=<?php echo $this->name;?>&do=get_xml&pid=<?php echo $_GET['pid']?>',
 colModel : [
-{display: '排序', name : 'rank', width : 60, sortable : false, align: 'center'},
-{display: '标题', name : 'title', width : 140, sortable : false, align: 'center'}, 
-{display: '发布者', name : 'releaseid', width : 80, sortable : false, align: 'center'},
-{display: '是否头条', name : 'isrec', width: 100, sortable : true, align : 'center'},
-{display: '是否显示', name : 'status', width: 80, sortable : true, align : 'center'}, 
-{display: '点击数', name : 'clicks', width: 80, sortable : true, align : 'center'},   
-{display: '时间', name : 'edittime', width: 120, sortable : true, align : 'center'}, 
-{display: '操作', name : 'operation', width : 200, sortable : false, align: 'center', className: 'handle'}   
+{display: '序号', name : 'id', width : 60, sortable : false, align: 'center'},      
+{display: '工作事项', name : 'name', width: 200, sortable : true, align : 'center'},
+{display: '完成时间', name : 'time', width: 100, sortable : true, align : 'center'},
+{display: '安排部门', name : 'depart', width: 160, sortable : true, align : 'center'},
+{display: '安排负责人', name : 'assignpar', width: 120, sortable : true, align : 'center'}, 
+{display: '完成负责人', name : 'finishpar', width: 120, sortable : true, align : 'center'}, 
+{display: '是否主动', name : 'isself', width: 60, sortable : true, align : 'center'},
+  {display: '是否完成', name : 'status', width: 60, sortable : true, align : 'center'},
+{display: '操作', name : 'operation', width : 200, sortable : false, align: 'center', className: 'handle'} 
 ],  
 sortname: "id",
 sortorder: "desc"
 }); 
 }); 
-//删除智慧政务列表
+//删除政务
 $('.deldata').click(function(){
 if($('#flexigrid .trSelected').length>0){
 var itemlist = new Array();
@@ -136,25 +139,53 @@ alert(data.msg);
 }
 });
 }
-//添加智慧政务
+//添加政务任务
 function fg_add() { 
 layer.open({
 type: 2, 
-title:"添加智慧政务",
+title:"添加任务",
 area: ['85%', '85%'],
 content: "index.php?url=<?php echo $this->name;?>&do=add"
   });  
 }
-//编辑智慧政务列表
+//编辑政务任务
 function fg_edit(id) { 
 layer.open({
 type: 2, 
-title:"编辑智慧政务",
+title:"编辑任务",
 area: ['85%', '85%'],
 content: "index.php?url=<?php echo $this->name;?>&do=edit&id="+id
   });  
 }
 
+//查看完成详情
+function fg_checkdetail(id) { 
+layer.open({
+type: 2, 
+title:"查看完成详情",
+area: ['85%', '85%'],
+content: "index.php?url=<?php echo $this->name;?>&do=checkdetail&id="+id
+  });  
+}
+//审核
+function fg_shenhe(id) { 
+layer.open({
+type: 2, 
+title:"审核数据",
+area: ['65%', '45%'],
+content: "index.php?url=<?php echo $this->name;?>&do=review&id="+id
+  });  
+}
+
+//审核
+function fg_topshenhe(id) { 
+layer.open({
+type: 2, 
+title:"审核数据",
+area: ['65%', '45%'],
+content: "index.php?url=<?php echo $this->name;?>&do=topreview&id="+id
+  });  
+}
 </script> 
 </div>
 <?php include T('footer',1);?>

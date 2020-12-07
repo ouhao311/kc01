@@ -27,43 +27,56 @@ class govent_listControl extends SystemControl{
      * 异步调用列表
      */
     public function get_xmlDo(){
-        $model = M($this->name);
-        $condition = array(); 
-        $condition['isdel'] = 0;
-		list($condition,$order) = $this->_get_condition($condition);//处理条件和排序
-        $list = $model->where($condition)->order($order)->page($_POST['rp'])->select();
-        $data = array();
-        $data['now_page'] = $model->shownowpage();
-        $data['total_num'] = $model->gettotalnum();
-        foreach ($list as $k => $v) {
-            $list = array();
-			 
-			$list['rank'] = "<span title='".$v['rank']."'>".$v['rank']."</span>";
-			if($v['pic']){
-				$list['title'] = "<a class='pic-thumb-tip' onmouseover=\"toolTip('<img src=".$v['pic'].">')\" onmouseout='toolTip()' href='javascript:void(0);'> <i class='fa fa-picture-o'></i></a> <span title='".$v['title']."'>".$v['title']."</span>";
+			$model = M('visit_list');
+			$condition = array();  
+	list($condition,$order) = $this->_get_condition($condition);//处理条件和排序
+			$list = $model->where($condition)->order($order)->page($_POST['rp'])->select();
+			$data = array();
+			$data['now_page'] = $model->shownowpage();
+			$data['total_num'] = $model->gettotalnum();
+			foreach ($list as $k => $v) {
+					$list = array();
+		 $list['id'] = "<span title='".$v['id']."'>".$v['id']."</span>";  
+		$list['name'] = "<span title='".$v['name']."'>".$v['name']."</span>"; 
+			$list['time'] = "<span title='time'>".$v['startdate']."-".$v['enddate']."</span>";
+			if($v['pid']){
+				$depart_list=getTableInfohanett($v['pid'],'depart_list');
+				$list['pid'] = "<span title='".$depart_list['title']."'>".$depart_list['title']."</span>";
 			}else{
-				$list['title'] = "<span title='".$v['title']."'>".$v['title']."</span>";
-			}
-			if(empty($v['releaseid'])){
-				$admininfo = Db::getAll("SELECT * FROM ".DBPRE."admin where admin_id={$v['mid']}"); 
-				$list['releaseid'] = "<img src='".getImageUrlAdmin($admininfo[0]['admin_avatar'],'admin_avatar')."' class='user-avatar' onMouseOut='toolTip()' onMouseOver='toolTip(\"<img src=".getImageUrlAdmin($admininfo[0]['admin_avatar'],'admin_avatar').">\")'><span title='".$admininfo[0]['admin_name']."'>".$admininfo[0]['admin_name']."</span>"; 
+				$list['pid'] ="暂无部门";
+			}  
+	
+			$memberinfo=getTableInfohanett($v['memberid'],'member');
+			$list['releaseid'] = "<img src='".getImageUrl($memberinfo['avatar'],'avatar')."' class='user-avatar' onMouseOut='toolTip()' onMouseOver='toolTip(\"<img src=".getImageUrl($memberinfo['avatar'],'avatar').">\")'><span title='".$memberinfo['truename']."'>".$memberinfo['truename']."</span>";
+			
+				$membermanainfo=getTableInfohanett($v['managerid'],'member');
+			$list['releasemanaid'] = "<img src='".getImageUrl($membermanainfo['avatar'],'avatar')."' class='user-avatar' onMouseOut='toolTip()' onMouseOver='toolTip(\"<img src=".getImageUrl($membermanainfo['avatar'],'avatar').">\")'><span title='".$membermanainfo['truename']."'>".$membermanainfo['truename']."</span>";
+			if(empty($v['isself']))
+			{
+			    	$list['self'] = "否"; 
 			}else{
-				$memberinfo=getTableInfohanett($v['releaseid'],'member');
-				$list['releaseid'] = "<img src='".getImageUrl($memberinfo['avatar'],'avatar')."' class='user-avatar' onMouseOut='toolTip()' onMouseOver='toolTip(\"<img src=".getImageUrl($memberinfo['avatar'],'avatar').">\")'><span title='".$memberinfo['truename']."'>".$memberinfo['truename']."</span>"; 
+			    	$list['self'] = "是"; 
 			}
-			$list['isrec'] = $v['isrec'] == 0 ? "<span class='no' onclick=\"fg_set({$v['id']},'rec')\" title='设为头条'><i class='fa fa-ban'></i> 否</span>" : "<span class='yes'  onclick=\"fg_set({$v['id']},'unrec')\"  title='取消头条'><i class='fa fa-check-circle'></i> 是</span>";
-			//$list['ishot'] = $v['ishot'] == 0 ? "<span class='no' onclick=\"fg_set({$v['id']},'hot')\" title='设为热门'><i class='fa fa-ban'></i> 否</span>" : "<span class='yes'  onclick=\"fg_set({$v['id']},'unhot')\"  title='取消热门'><i class='fa fa-check-circle'></i> 是</span>";
-			$list['status'] = $v['status'] == 0 ? "<span class='no' onclick=\"fg_set({$v['id']},'show')\" title='设为显示'><i class='fa fa-ban'></i> 否</span>" : "<span class='yes'  onclick=\"fg_set({$v['id']},'unshow')\"  title='取消显示'><i class='fa fa-check-circle'></i> 是</span>"; 
-			$list['clicks'] = "<span title='".$v['clicks']."'>".$v['clicks']."</span>";
-			$list['edittime'] = $v['edittime']?date('Y-m-d H:i:s',$v['edittime']):'-';
-			if($this->checkCzqx("edit")){
-				$list['operation'] = "<a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)' onclick='fg_edit(".$v['id'].")'><i class='fa fa-pencil-square-o'></i> 编辑</a>"; 
-			} 
-            $data['list'][$v['id']] = $list;
-        }
-        exit(Tpl::flexigridXML($data));
+		if(empty($v['status']))
+		{
+					$list['status'] = "否"; 
+		}else{
+					$list['status'] = "是"; 
+		}
+		
+	
+		if($this->checkCzqx("edit")){
+			$list['operation'] = "<a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)' onclick='fg_edit(".$v['id'].")'><i class='fa fa-pencil-square-o'></i> 编辑</a>"; 
+		} 
+		if($this->checkCzqx("topshenhe")){
+			$list['operation'] .= "<a class='layui-btn layui-btn-sm layui-btn-auto' href='javascript:void(0)' onclick=\"fg_topshenhe({$v['id']})\"><i class='fa fa-check-circle'></i> 审核</a>"; 
+		}
+		
+					$data['list'][$v['id']] = $list;
+			}
+			exit(Tpl::flexigridXML($data));
 
-    }
+	}
 	 
 	
     /**
@@ -175,7 +188,84 @@ class govent_listControl extends SystemControl{
         } else {
             exit(json_encode(array('state'=>false,'msg'=>'删除失败')));
         }
-    }
+		}
+		
+		/**
+     * 审核
+     */
+    public function reviewDo(){ 
+			$lang    = Language::getLangContent();
+	$model=M($this->name);
+	$condition['id'] = intval($_GET['id']);
+		$info = $model->where($condition)->find();
+	if (empty($info)){
+		echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('没有找到此信息');</script>";
+		exit(); 
+	} 
+			if (chksubmit()){ 
+		$data = array();
+		$data['isreview']      = intval($_POST['isreview']);
+		$data['revtime']  = time();
+		$data['reviewinfo']      = trim($_POST['reviewinfo']); 
+		$condition['id'] = intval($_POST['id']); 
+		$result = $model->where($condition)->update($data); 
+		if ($result){
+			$this->log('资讯数据审核'.'['.$info['title'].']',null);
+			if($data['isreview']==1){
+				if($info['releaseid']>0){
+					$memberinfo=getTableInfohanett($info['releaseid'],'member');
+					//更新积分
+					M('member')->where(array('id'=>$info['releaseid']))->update(array('integral'=>$memberinfo['integral']+C('integral')));
+					$this->log('发布'.'['.$info['title'].']审核成功奖励'.C('integral').'积分',null);
+					//写入积分记录
+					$data_record = array();
+					$data_record['mid']=$info['releaseid'];  
+					$data_record['integral']=C('integral');
+					$data_record['type']=1;
+					$data_record['addtime']=time();
+					$data_record['source']=1;
+					$data_record['intro']='发布'.'['.$info['title'].']审核成功奖励'.C('integral').'积分';
+					M("member_integral")->insert($data_record);
+				}
+			}
+			echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('操作成功');</script>";
+			exit();
+		}else {
+			echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('操作失败');</script>";
+			exit();
+		} 
+			}  
+	include T('shuju_review');
+	}
+	public function topreviewDo(){ 
+		$lang    = Language::getLangContent();
+$model=M($this->name);
+$condition['id'] = intval($_GET['id']);
+	$info = $model->where($condition)->find();
+if (empty($info)){
+	echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('没有找到此信息');</script>";
+	exit(); 
+} 
+		if (chksubmit()){ 
+	$data = array();
+
+	$data['topstatus']      = 1; 
+	$data['toptime']=time();
+	$data['reviewinfo']=$_POST['reviewinfo'];
+	
+	$condition['id'] = intval($_POST['id']); 
+	$result = $model->where($condition)->update($data); 
+	if ($result){
+		$this->log('任务数据审核'.'['.$info['title'].']',null); 
+		echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('操作成功');</script>";
+		exit();
+	}else {
+		echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('操作失败');</script>";
+		exit();
+	} 
+		}  
+include T('shuju_topreview1');
+} 
 	
 	/**
      * 设置操作

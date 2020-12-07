@@ -2527,3 +2527,57 @@ SELECT * FROM `hx_article_class` WHERE ( isdel = '0' ) AND ( status = '1' ) AND 
 [2020-12-07 11:50:41] /index.php?url=govent&do=index ( url=govent&do=index ) 
 ERR: Db Error: Table 'test.hx_article_class' doesn't exist
 SELECT * FROM `hx_article_class` WHERE ( isdel = '0' ) AND ( status = '1' ) AND ( pid = '0' ) AND ( cate = '2' ) ORDER BY rank asc LIMIT 1000  
+[2020-12-07 13:53:21] /index.php?url=govent&do=show&id=113 ( url=govent&do=show ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE ( isdel = '0' ) AND ( status = '1' ) AND ( pid = '0' ) AND ( cate = '2' ) ORDER BY rank asc LIMIT 1000  
+[2020-12-07 14:07:07] /manage/modules/news/index.php?url=article_list ( url=article_list&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE ( pid = '0' ) AND ( isdel = '0' ) ORDER BY rank asc LIMIT 1000  
+[2020-12-07 14:07:07] /manage/modules/news/index.php?url=article_list ( url=article_list&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM hx_article_class where pid=0 and isdel=0 ORDER by rank asc 
+[2020-12-07 14:07:08] /manage/modules/news/index.php?url=article_list&do=get_xml&pid= ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='18'
+[2020-12-07 14:07:08] /manage/modules/news/index.php?url=article_list&do=get_xml&pid= ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='18'
+[2020-12-07 14:07:08] /manage/modules/news/index.php?url=article_list&do=get_xml&pid= ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='10'
+[2020-12-07 14:07:08] /manage/modules/news/index.php?url=article_list&do=get_xml&pid= ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='2'
+[2020-12-07 14:07:08] /manage/modules/news/index.php?url=article_list&do=get_xml&pid= ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='2'
+[2020-12-07 14:07:08] /manage/modules/news/index.php?url=article_list&do=get_xml&pid= ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='9'
+[2020-12-07 14:07:08] /manage/modules/news/index.php?url=article_list&do=get_xml&pid= ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='7'
+[2020-12-07 14:07:08] /manage/modules/news/index.php?url=article_list&do=get_xml&pid= ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='18'
+[2020-12-07 14:07:08] /manage/modules/news/index.php?url=article_list&do=get_xml&pid= ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='6'
+[2020-12-07 14:07:08] /manage/modules/news/index.php?url=article_list&do=get_xml&pid= ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='3'
+[2020-12-07 14:07:08] /manage/modules/news/index.php?url=article_list&do=get_xml&pid= ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='3'
+[2020-12-07 14:07:08] /manage/modules/news/index.php?url=article_list&do=get_xml&pid= ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='3'
+[2020-12-07 14:07:08] /manage/modules/news/index.php?url=article_list&do=get_xml&pid= ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='2'
+[2020-12-07 14:07:08] /manage/modules/news/index.php?url=article_list&do=get_xml&pid= ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='2'
+[2020-12-07 14:07:08] /manage/modules/news/index.php?url=article_list&do=get_xml&pid= ( url=article_list&do=get_xml ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='2'

@@ -61,10 +61,10 @@ layui.use(['laydate','element','form'], function(){
 $(function(){
 // 高级搜索提交
 $('#ncsubmit').click(function(){
-$("#flexigrid").flexOptions({url: 'index.php?url=<?php echo $this->name;?>&do=get_xml&pid=<?php echo $_GET['pid']?>&'+$("#formSearch").serialize(),query:'',qtype:''}).flexReload();
+$("#flexigrid").flexOptions({url: 'index.php?url=<?php echo $this->name;?>&do=get_xml&'+$("#formSearch").serialize(),query:'',qtype:''}).flexReload();
 });
 $("#flexigrid").flexigrid({
-url: 'index.php?url=<?php echo $this->name;?>&do=get_xml&pid=<?php echo $_GET['pid']?>',
+url: 'index.php?url=<?php echo $this->name?>&do=get_xml',
 colModel : [
 {display: '问题', name : 'title', width : 140, sortable : false, align: 'center'}, 
 {display: '发布者', name : 'releaseid', width : 80, sortable : false, align: 'center'},      
@@ -78,7 +78,7 @@ sortname: "id",
 sortorder: "desc"
 }); 
 }); 
-//删除线上解疑列表
+//删除智慧政务列表
 $('.deldata').click(function(){
 if($('#flexigrid .trSelected').length>0){
 var itemlist = new Array();
@@ -135,19 +135,20 @@ alert(data.msg);
 }
 });
 }
-//添加智慧政务列表
+//添加智慧政务
 function fg_add() { 
 layer.open({
 type: 2, 
-title:"添加资讯",
+title:"添加智慧政务",
 area: ['85%', '85%'],
 content: "index.php?url=<?php echo $this->name;?>&do=add"
   });  
 }
+//编辑智慧政务列表
 function fg_edit(id) { 
 layer.open({
 type: 2, 
-title:"编辑政务",
+title:"编辑智慧政务",
 area: ['85%', '85%'],
 content: "index.php?url=<?php echo $this->name;?>&do=edit&id="+id
   });  

@@ -61,10 +61,10 @@
 	$(function(){
 		// 高级搜索提交
 		$('#ncsubmit').click(function(){
-			$("#flexigrid").flexOptions({url: 'index.php?url=<?php echo $this->name;?>&do=get_xml&pid=<?php echo $_GET['pid']?>&'+$("#formSearch").serialize(),query:'',qtype:''}).flexReload();
+			$("#flexigrid").flexOptions({url: 'index.php?url=<?php echo $this->name;?>&do=get_xml&'+$("#formSearch").serialize(),query:'',qtype:''}).flexReload();
 		});
 		$("#flexigrid").flexigrid({
-			url: 'index.php?url=<?php echo $this->name;?>&do=get_xml&pid=<?php echo $_GET['pid']?>',
+			url: 'index.php?url=<?php echo $this->name?>&do=get_xml?>',
 			colModel : [
 				{display: '问题', name : 'title', width : 140, sortable : false, align: 'center'}, 
 				{display: '发布者', name : 'releaseid', width : 80, sortable : false, align: 'center'},      
@@ -78,7 +78,7 @@
 			sortorder: "desc"
 		}); 	
 	}); 
-	//删除线上解疑列表
+	//删除智慧政务列表
 	$('.deldata').click(function(){
 		if($('#flexigrid .trSelected').length>0){
 			var itemlist = new Array();
@@ -135,41 +135,22 @@
 			}
 		});	
 	}
-	//添加线上解疑列表
+	//添加智慧政务
 	function fg_add() { 
 		layer.open({
 		type: 2, 
-		title:"添加线上解疑",
+		title:"添加智慧政务",
 		area: ['85%', '85%'],
 		content: "index.php?url=<?php echo $this->name;?>&do=add"
 	  });  
 	}
-	//编辑线上解疑列表
+	//编辑智慧政务列表
 	function fg_edit(id) { 
 		layer.open({
 		type: 2, 
-		title:"编辑线上解疑",
+		title:"编辑智慧政务",
 		area: ['85%', '85%'],
 		content: "index.php?url=<?php echo $this->name;?>&do=edit&id="+id
-	  });  
-	}
-
-		//审核
-		function fg_shenhe(id) { 
-		layer.open({
-		type: 2, 
-		title:"审核数据",
-		area: ['65%', '45%'],
-		content: "index.php?url=<?php echo $this->name;?>&do=review&id="+id
-	  });  
-	}
-		//审核
-	function fg_topshenhe(id) { 
-		layer.open({
-		type: 2, 
-		title:"审核数据",
-		area: ['65%', '45%'],
-		content: "index.php?url=<?php echo $this->name;?>&do=topreview&id="+id
 	  });  
 	}
 	

@@ -65,7 +65,7 @@ class goventModel extends Model {
         $param['table'] = 'govent_list';
         $param['where'] = $condition_str;
         $param['limit'] = $condition['limit'];
-        $param['order'] = (empty($condition['order'])?'edittime desc':$condition['order']);
+        $param['order'] = (empty($condition['order'])?'addtime desc':$condition['order']);
         $result = Db::select($param,$page);
         return $result;
     }
@@ -82,16 +82,10 @@ class goventModel extends Model {
         if ($condition['status'] != ''){
             $condition_str .= " and govent_list.status = '". $condition['status'] ."'";
         }
-        if ($condition['isrec'] != ''){
-            $condition_str .= " and govent_list.isrec = '". $condition['isrec'] ."'";
+        if ($condition['memberid'] != ''){
+            $condition_str .= " and govent_list.memberid in (". $condition['memberid'] .")";
         }
-        if ($condition['ishot'] != ''){
-            $condition_str .= " and govent_list.ishot = '". $condition['ishot'] ."'";
-        }
-        if ($condition['keywords'] != ''){ 
-			$condition_str .= " and govent_list.title like '%".$condition['keywords']."%' ";   
-        }
-		
+        
         return $condition_str;
     }
 

@@ -29,6 +29,7 @@ class govent_listControl extends SystemControl{
     public function get_xmlDo(){
 			$model = M('govent_list');
 			$condition = array();  
+			$condition['isdel'] = 0;
 	list($condition,$order) = $this->_get_condition($condition);//处理条件和排序
 			$list = $model->where($condition)->order($order)->page($_POST['rp'])->select();
 			$data = array();

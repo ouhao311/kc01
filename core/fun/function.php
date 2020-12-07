@@ -778,7 +778,7 @@ function getSinglePasmore($table='attribute',$code='',$value='',$title=''){
 }
 
 // value有多个时，根据逗号切开  非属性
-function getvaluemore($table='',$value=''){
+function getvaluemore($table='',$value='', $title='title'){
 
 	$valueone = explode(',',$value);
 
@@ -790,7 +790,7 @@ function getvaluemore($table='',$value=''){
 
 		$result = M($table)->where($param)->select();
 
-		$string.= ' <a class="">'.$result['0']['title']."</a> ";
+		$string.= ' <a class="">'.$result['0'][$title]."</a> ";
 
 	}
 	

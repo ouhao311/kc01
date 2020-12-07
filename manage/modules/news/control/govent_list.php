@@ -38,12 +38,12 @@ class govent_listControl extends SystemControl{
 					$list = array();
 		 $list['id'] = "<span title='".$v['id']."'>".$v['id']."</span>";  
 		$list['name'] = "<span title='".$v['name']."'>".$v['name']."</span>"; 
-			$list['time'] = "<span title='time'>".$v['startdate']."-".$v['enddate']."</span>";
-			if($v['pid']){
-				$depart_list=getTableInfohanett($v['pid'],'departid');
-				$list['pid'] = "<span title='".$depart_list['title']."'>".$depart_list['title']."</span>";
+			$list['time'] = "<span title='time'>".$v['enddate']."</span>";
+			if($v['departid']){
+				$depart_title=getSinglePas('attribute', 'department', $v['departid'], 'title');
+				$list['departid'] = "<span title='".$depart_title."'>".$depart_title."</span>";
 			}else{
-				$list['pid'] ="暂无部门";
+				$list['departid'] ="暂无部门";
 			}  
 	
 			$memberinfo=getTableInfohanett($v['memberid'],'member');
@@ -91,7 +91,7 @@ class govent_listControl extends SystemControl{
 			$data['managerid']      = trim($_POST['managemember']); 
 		
 			$data['memberid']      = trim($_POST['member']);
-			$data['departid']      = trim($_POST['depart']);  
+			$data['departid']      = trim($_POST['department']);  
 			$data['enddate']      = trim($_POST['enddate']); 
 			$data['status']      = 1;  
 			$data['addtime']  = time();
@@ -130,7 +130,7 @@ class govent_listControl extends SystemControl{
 			$data['managerid']      = trim($_POST['managemember']); 
 		
 			$data['memberid']      = trim($_POST['member']);
-			$data['departid']      = trim($_POST['depart']);  
+			$data['departid']      = trim($_POST['department']);  
 			$data['enddate']      = trim($_POST['enddate']); 
 			$data['status']      = 1;  
 			$data['addtime']  = time();
@@ -168,6 +168,44 @@ class govent_listControl extends SystemControl{
             exit(json_encode(array('state'=>false,'msg'=>'删除失败')));
         }
 		}
+
+
+	/*
+     * 人员
+     * */
+	public  function puttree($pid=0,$selected=0){
+        $rs = $this->gettree($pid);
+        $str='';
+        $str .= "<select name='pid' id='pid' lay-verify='required|pid'>";
+        $str .= '<option value="">请选择分类</option>';
+        foreach($rs as $key=>$val){
+
+            if($val['id'] == $selected){
+                $selectedstr = "selected";
+            }else{
+                $selectedstr = "";
+            }
+            $str .= "<option $selectedstr value='".$val['id']."'>".$val['title']."</option>";
+        }
+        $str .= "</select>";
+        return $str;
+    } 
+	public  function gettree($pid=0,&$result=array(),$spac=0){
+        $spac = $spac+2;
+		$row = Db::getAll("SELECT * FROM ".DBPRE."article_class where pid=$pid and isdel=0 ORDER by rank asc ");
+		if(!empty($row)){
+			foreach($row as $v){
+				if($v['pid']==0){
+					$v['title'] = $v['title'];
+				} else{
+					$v['title'] = str_repeat('&nbsp;&nbsp;',$spac)."|--".$v['title'];
+				}
+				$result[] = $v;
+				$this->gettree($v['id'],$result,$spac);
+			}
+		} 
+        return $result;
+    }
 		
 		/**
      * 审核

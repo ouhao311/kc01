@@ -6,9 +6,9 @@
 	<ul><i class="iconfont icon-dangwugongkai"></i><b>{$title}</b></ul>
 	<ol>当前位置：<a href="/">首页</a> >
 		{if !empty($sonclass)&&$topclassinfo['id']!=$_GET['pid']}
-		<a href="{url('news','index',array('pid'=>$topclassinfo['id']))}">{$topclassinfo['title']}</a> > 
-		{/if}
-		<a href="{url('news','index',array('pid'=>$classinfo['id']))}">{$classinfo['title']}</a> 
+		<a href="{url('govent','index',array('pid'=>$topclassinfo['id']))}">{$topclassinfo['title']}</a> > 
+    {/if}
+    <a href="{url('govent','index',array('pid'=>$classinfo['id']))}">{$title}</a> 
 	</ol>
 	</div>
 
@@ -16,7 +16,7 @@
 	<ul>
 		{loop $list $item} 
 	   <li>
-			<a href="{url('news','show',array('id'=>$item['id']))}" target="_blank" title="{$item['title']}">
+			<a href="{url('govent','show',array('id'=>$item['id']))}" target="_blank" title="{$item['title']}">
 				<img src="{getImageUrl($item['pic'],'200')}" />
 			<dl>
 				<dt>{$item['title']}</dt>

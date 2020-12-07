@@ -5,16 +5,16 @@
 <ul><i class="iconfont icon-dangwugongkai"></i><b><?php echo $title;?></b></ul>
 <ol>当前位置：<a href="/">首页</a> >
 <?php if(!empty($sonclass)&&$topclassinfo['id']!=$_GET['pid']) { ?>
-<a href="<?php echo url('news','index',array('pid'=>$topclassinfo['id']));?>"><?php echo $topclassinfo['title'];?></a> > 
-<?php } ?>
-<a href="<?php echo url('news','index',array('pid'=>$classinfo['id']));?>"><?php echo $classinfo['title'];?></a> 
+<a href="<?php echo url('govent','index',array('pid'=>$topclassinfo['id']));?>"><?php echo $topclassinfo['title'];?></a> > 
+    <?php } ?>
+    <a href="<?php echo url('govent','index',array('pid'=>$classinfo['id']));?>"><?php echo $title;?></a> 
 </ol>
 </div>
 <div class="m_newtu">
 <ul>
 <?php if(is_array($list)) { foreach($list as $item) { ?> 
    <li>
-<a href="<?php echo url('news','show',array('id'=>$item['id']));?>" target="_blank" title="<?php echo $item['title'];?>">
+<a href="<?php echo url('govent','show',array('id'=>$item['id']));?>" target="_blank" title="<?php echo $item['title'];?>">
 <img src="<?php echo getImageUrl($item['pic'],'200');?>" />
 <dl>
 <dt><?php echo $item['title'];?></dt>

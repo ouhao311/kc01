@@ -49,17 +49,7 @@
 </div>  
 <div class="layui-row mb15 ">
 <div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
-                 <label class="layui-form-title"><em>*</em>开始时间</label>
-</div>
-<div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
-                 <div class="layui-input-block">
-                 <input type="text" name="startdate" style="width:100%;" id="startdate" lay-v="required|title" autocomplete="off" class="layui-input" value="<?php echo $info['startdate']?>">
-                 </div>
-</div>
-</div> 
-<div class="layui-row mb15 ">
-<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
-                 <label class="layui-form-title"><em>*</em>结束时间</label>
+                 <label class="layui-form-title"><em>*</em>完成时间</label>
 </div>
 <div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
                  <div class="layui-input-block">
@@ -67,14 +57,15 @@
                  </div>
 </div>
 </div>
+
 <div class="layui-row mb15 ">
 <div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
-                 <label class="layui-form-title"><em>*</em>安排部门</label>
+<label class="layui-form-title"><em>*</em> 所属职能部门</label>
 </div>
 <div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
-                 <div class="layui-input-block">
-                 <input type="text" name="depart" style="width:100%;" id="depart" placeholder="请输入安排部门" lay-v="required|title" autocomplete="off" class="layui-input" value="<?php echo $info['depart']?>">
-                 </div>
+<div class="layui-input-block">
+<?php echo getNotSelect('department',$info['department']);?> 
+</div>
 </div>
 </div> 
 <div style="line-height:50PX;">&nbsp;</div>

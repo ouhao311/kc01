@@ -50,18 +50,61 @@
 					
 					<div class="layui-container">
 					
-            <div class="m_new1 ht1">
-              <ul>
-                <li onclick='handleClick()'>
-                  <a title="你有一个新的任务">你有一个新的xiaoxi</a>
-                  <em>2020-09-09</em>
-                </li>  
-                <li onclick='handleClick()'>
-                  <a title="你有一个新的任务">你有一个新的任务</a>
-                  <em>2020-09-09</em>
-                </li>  
-              </ul>
-            </div>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="banjian">
+              <thead>
+                <tr bgcolor="#f3f7fc">
+                  <td width="30%" align="left" valign="middle">工作事项</td>
+                  <td width="14%" align="center" valign="middle">截止时间</td>
+                  <td width="14%" align="center" valign="middle">安排负责人</td>
+                  <td width="14%" align="center" valign="middle">审核状态</td>
+                  <td width="20%" align="center" valign="middle">操作</td>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- {loop $list $item} 
+                <tr >
+                  <td align="left" valign="middle"><a target="_blank" href="{url('news','show',array('id'=>$item['id']))}" class="bj_link" title="{$item['title']}">{$item['title']}</a></td>
+                  <td align="center" valign="middle">{getTableInfohanettName($item['pid'],'article_class','title')}</td>
+                  <td align="center" valign="middle"><span class="da-time">{date('Y-m-d H:i:s',$item['edittime'])}</span></td>
+                  <td align="center" valign="middle">{getReview('isreview',$item['isreview'])}</td>
+                  <td align="center" valign="middle">
+                    {if $item['isreview']!=1}
+                    <span class="icon_sq"> <a target="_blank" href="{url('member','editviews',array('id'=>$item['id']))}"title="编辑"> 编辑 </a> </span>
+                    <span class="icon_sq"> <a class="delviews" data-id="{$item['id']}" href="JavaScript:;"title="删除"> 删除 </a> </span>
+                    {else}
+                    <span class="icon_sq"> <a class="zhuanjiao" data-id="{$item['id']}" title="转让"> 转让 </a> </span>
+                    {/if}
+                  </td>
+                </tr>
+                {/loop} -->
+                <tr>
+                  <td>自我测试分配任务管理</td>
+                  <td>2020-12-10 15:28:16</td>
+                  <td>怡卫茹</td>
+                  <td>草稿</td>
+                  <td>
+                    <a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)'><i class='fa fa-pencil-square-o'></i> 上传附件</a>
+                    <a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)'><i class='fa fa-pencil-square-o'></i> 提交审核</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>自我测试分配任务管理</td>
+                  <td>2020-12-10 15:28:16</td>
+                  <td>怡卫茹</td>
+                  <td>审核中</td>
+                  <td>
+                  </td>
+                </tr>
+                <tr>
+                  <td>自我测试分配任务管理</td>
+                  <td>2020-12-10 15:28:16</td>
+                  <td>怡卫茹</td>
+                  <td>已通过</td>
+                  <td>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
 					<script> 
 					function handleClick() { 
             //梁艳todo

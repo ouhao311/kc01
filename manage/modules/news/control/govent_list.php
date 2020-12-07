@@ -264,7 +264,7 @@ if (empty($info)){
 		exit();
 	} 
 		}  
-include T('shuju_topreview1');
+include T('govent_preview');
 } 
 	
 	/**

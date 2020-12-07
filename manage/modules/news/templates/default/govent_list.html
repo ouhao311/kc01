@@ -64,13 +64,14 @@
 			$("#flexigrid").flexOptions({url: 'index.php?url=<?php echo $this->name;?>&do=get_xml&'+$("#formSearch").serialize(),query:'',qtype:''}).flexReload();
 		});
 		$("#flexigrid").flexigrid({
-			url: 'index.php?url=<?php echo $this->name?>&do=get_xml?>',
+			url: 'index.php?url=<?php echo $this->name?>&do=get_xml',
 			colModel : [
-				{display: '问题', name : 'title', width : 140, sortable : false, align: 'center'}, 
-				{display: '发布者', name : 'releaseid', width : 80, sortable : false, align: 'center'},      
-				{display: '描述', name : 'content', width: 180, sortable : true, align : 'center'}, 
-				{display: '是否为工作人员提问', name : 'ismag', width: 130, sortable : true, align : 'center'}, 
-				{display: '是否匿名提问', name : 'anonymous', width: 130, sortable : true, align : 'center'}, 
+				{display: '排序', name : 'rank', width : 60, sortable : false, align: 'center'},
+				{display: '标题', name : 'title', width : 140, sortable : false, align: 'center'}, 
+				{display: '发布者', name : 'releaseid', width : 80, sortable : false, align: 'center'},
+				{display: '是否头条', name : 'isrec', width: 100, sortable : true, align : 'center'},
+				{display: '是否显示', name : 'status', width: 80, sortable : true, align : 'center'}, 
+				{display: '点击数', name : 'clicks', width: 80, sortable : true, align : 'center'},   
 				{display: '时间', name : 'edittime', width: 120, sortable : true, align : 'center'}, 
 				{display: '操作', name : 'operation', width : 200, sortable : false, align: 'center', className: 'handle'}   		
 				], 		 

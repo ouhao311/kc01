@@ -1732,3 +1732,132 @@ SELECT * FROM `hx_article_class` WHERE id='2'
 [2020-12-07 11:06:46] /manage/modules/news/index.php?url=article_list&do=get_xml&pid= ( url=article_list&do=get_xml ) 
 ERR: Db Error: Table 'test.hx_article_class' doesn't exist
 SELECT * FROM `hx_article_class` WHERE id='2'
+[2020-12-07 11:07:58] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE ( isdel = '0' ) AND ( status = '1' ) AND ( pid = '0' ) AND ( cate = '2' ) ORDER BY rank asc LIMIT 1000  
+[2020-12-07 11:07:58] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='18'
+[2020-12-07 11:07:58] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM hx_article_class where pid=18 and status=1 and isdel=0 ORDER by rank asc 
+[2020-12-07 11:07:58] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='2'
+[2020-12-07 11:07:58] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM hx_article_class where pid=2 and status=1 and isdel=0 ORDER by rank asc 
+[2020-12-07 11:07:58] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='1'
+[2020-12-07 11:07:58] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM hx_article_class where pid=1 and status=1 and isdel=0 ORDER by rank asc 
+[2020-12-07 11:07:58] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='4'
+[2020-12-07 11:07:58] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM hx_article_class where pid=4 and status=1 and isdel=0 ORDER by rank asc 
+[2020-12-07 11:07:58] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='3'
+[2020-12-07 11:07:58] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM hx_article_class where pid=3 and status=1 and isdel=0 ORDER by rank asc 
+[2020-12-07 11:07:58] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='7'
+[2020-12-07 11:07:58] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM hx_article_class where pid=7 and status=1 and isdel=0 ORDER by rank asc 
+[2020-12-07 11:07:58] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='6'
+[2020-12-07 11:07:58] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM hx_article_class where pid=6 and status=1 and isdel=0 ORDER by rank asc 
+[2020-12-07 11:07:58] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='9'
+[2020-12-07 11:07:58] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM hx_article_class where pid=9 and status=1 and isdel=0 ORDER by rank asc 
+[2020-12-07 11:08:06] /index.php?url=member&do=index ( url=member&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE ( isdel = '0' ) AND ( status = '1' ) AND ( pid = '0' ) AND ( cate = '2' ) ORDER BY rank asc LIMIT 1000  
+[2020-12-07 11:12:21] /index.php?url=member&do=index ( url=member&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE ( isdel = '0' ) AND ( status = '1' ) AND ( pid = '0' ) AND ( cate = '2' ) ORDER BY rank asc LIMIT 1000  
+[2020-12-07 11:13:13] /index.php?url=govent&do=index ( url=govent&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE ( isdel = '0' ) AND ( status = '1' ) AND ( pid = '0' ) AND ( cate = '2' ) ORDER BY rank asc LIMIT 1000  
+[2020-12-07 11:13:27] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE ( isdel = '0' ) AND ( status = '1' ) AND ( pid = '0' ) AND ( cate = '2' ) ORDER BY rank asc LIMIT 1000  
+[2020-12-07 11:13:27] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='18'
+[2020-12-07 11:13:27] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM hx_article_class where pid=18 and status=1 and isdel=0 ORDER by rank asc 
+[2020-12-07 11:13:27] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='2'
+[2020-12-07 11:13:27] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM hx_article_class where pid=2 and status=1 and isdel=0 ORDER by rank asc 
+[2020-12-07 11:13:27] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='1'
+[2020-12-07 11:13:27] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM hx_article_class where pid=1 and status=1 and isdel=0 ORDER by rank asc 
+[2020-12-07 11:13:27] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='4'
+[2020-12-07 11:13:27] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM hx_article_class where pid=4 and status=1 and isdel=0 ORDER by rank asc 
+[2020-12-07 11:13:27] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='3'
+[2020-12-07 11:13:27] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM hx_article_class where pid=3 and status=1 and isdel=0 ORDER by rank asc 
+[2020-12-07 11:13:27] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='7'
+[2020-12-07 11:13:27] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM hx_article_class where pid=7 and status=1 and isdel=0 ORDER by rank asc 
+[2020-12-07 11:13:27] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='6'
+[2020-12-07 11:13:27] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM hx_article_class where pid=6 and status=1 and isdel=0 ORDER by rank asc 
+[2020-12-07 11:13:27] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE id='9'
+[2020-12-07 11:13:27] / ( url=index&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM hx_article_class where pid=9 and status=1 and isdel=0 ORDER by rank asc 
+[2020-12-07 11:13:29] /index.php?url=online&do=index ( url=online&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE ( isdel = '0' ) AND ( status = '1' ) AND ( pid = '0' ) AND ( cate = '2' ) ORDER BY rank asc LIMIT 1000  
+[2020-12-07 11:13:29] /index.php?url=integral&do=index ( url=integral&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE ( isdel = '0' ) AND ( status = '1' ) AND ( pid = '0' ) AND ( cate = '2' ) ORDER BY rank asc LIMIT 1000  
+[2020-12-07 11:13:30] /index.php?url=govent&do=index ( url=govent&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE ( isdel = '0' ) AND ( status = '1' ) AND ( pid = '0' ) AND ( cate = '2' ) ORDER BY rank asc LIMIT 1000  
+[2020-12-07 11:13:34] /index.php?url=integral&do=index ( url=integral&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE ( isdel = '0' ) AND ( status = '1' ) AND ( pid = '0' ) AND ( cate = '2' ) ORDER BY rank asc LIMIT 1000  
+[2020-12-07 11:13:36] /index.php?url=govent&do=index ( url=govent&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE ( isdel = '0' ) AND ( status = '1' ) AND ( pid = '0' ) AND ( cate = '2' ) ORDER BY rank asc LIMIT 1000  
+[2020-12-07 11:14:34] /index.php?url=govent&do=index ( url=govent&do=index ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE ( isdel = '0' ) AND ( status = '1' ) AND ( pid = '0' ) AND ( cate = '2' ) ORDER BY rank asc LIMIT 1000  

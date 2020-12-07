@@ -1,0 +1,40 @@
+{template 'header'}
+<!--主体内容 开始-->
+<div class="mgtop-15 background-w1">
+
+	<div class="fdiv mua">
+	<ul><i class="iconfont icon-dangwugongkai"></i><b>{$title}</b></ul>
+	<ol>当前位置：<a href="/">首页</a> >
+		{if !empty($sonclass)&&$topclassinfo['id']!=$_GET['pid']}
+		<a href="{url('news','index',array('pid'=>$topclassinfo['id']))}">{$topclassinfo['title']}</a> > 
+		{/if}
+		<a href="{url('news','index',array('pid'=>$classinfo['id']))}">{$classinfo['title']}</a> 
+	</ol>
+	</div>
+
+	<div class="m_newtu">
+	<ul>
+		{loop $list $item} 
+	   <li>
+			<a href="{url('news','show',array('id'=>$item['id']))}" target="_blank" title="{$item['title']}">
+				<img src="{getImageUrl($item['pic'],'200')}" />
+			<dl>
+				<dt>{$item['title']}</dt>
+				<dd>{$item['intro']}</dd>
+				<span><em><i class="iconfont icon-chakan1"></i>{$item['clicks']}</em>
+				<cite><i class="iconfont icon-shijian1"></i>{date('Y-m-d',$item['edittime'])}</cite></span>
+			</dl>
+			</a>
+		</li>
+		{/loop}	
+	</ul>	
+	</div>
+	<ul class="xwpages">
+	    {if !empty($list)}
+			{$show_page}
+		{/if}
+	</ul>
+</div>
+
+ 
+{template 'footer'} 

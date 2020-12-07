@@ -29,6 +29,7 @@ class govent_listControl extends SystemControl{
     public function get_xmlDo(){
 			$model = M('govent_list');
 			$condition = array();  
+			$condition['isdel'] = 0;
 	list($condition,$order) = $this->_get_condition($condition);//处理条件和排序
 			$list = $model->where($condition)->order($order)->page($_POST['rp'])->select();
 			$data = array();
@@ -38,7 +39,7 @@ class govent_listControl extends SystemControl{
 					$list = array();
 		 $list['id'] = "<span title='".$v['id']."'>".$v['id']."</span>";  
 		$list['name'] = "<span title='".$v['name']."'>".$v['name']."</span>"; 
-			$list['time'] = "<span title='time'>".$v['enddate']."</span>";
+			$list['time'] = "<span title='".$v['enddate']."'>".$v['enddate']."</span>";
 			if($v['departid']){
 				$depart_title=getSinglePas('attribute', 'department', $v['departid'], 'title');
 				$list['departid'] = "<span title='".$depart_title."'>".$depart_title."</span>";

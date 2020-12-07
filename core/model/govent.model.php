@@ -59,10 +59,10 @@ class goventModel extends Model {
      * @param obj $page 分页
      * @return array 数组结构的返回结果
      */
-    public function getArticleList($condition,$page=''){
+    public function getGoventList($condition,$page=''){
         $condition_str = $this->_condition($condition);
         $param = array();
-        $param['table'] = 'article_list';
+        $param['table'] = 'govent_list';
         $param['where'] = $condition_str;
         $param['limit'] = $condition['limit'];
         $param['order'] = (empty($condition['order'])?'edittime desc':$condition['order']);
@@ -78,18 +78,18 @@ class goventModel extends Model {
     private function _condition($condition){
         $condition_str = '';
 
-		$condition_str .= " and article_list.isdel = 0 ";
+		$condition_str .= " and govent_list.isdel = 0 ";
         if ($condition['status'] != ''){
-            $condition_str .= " and article_list.status = '". $condition['status'] ."'";
+            $condition_str .= " and govent_list.status = '". $condition['status'] ."'";
         }
         if ($condition['isrec'] != ''){
-            $condition_str .= " and article_list.isrec = '". $condition['isrec'] ."'";
+            $condition_str .= " and govent_list.isrec = '". $condition['isrec'] ."'";
         }
         if ($condition['ishot'] != ''){
-            $condition_str .= " and article_list.ishot = '". $condition['ishot'] ."'";
+            $condition_str .= " and govent_list.ishot = '". $condition['ishot'] ."'";
         }
         if ($condition['keywords'] != ''){ 
-			$condition_str .= " and article_list.title like '%".$condition['keywords']."%' ";   
+			$condition_str .= " and govent_list.title like '%".$condition['keywords']."%' ";   
         }
 		
         return $condition_str;

@@ -28,7 +28,7 @@ class govent_listControl extends SystemControl{
      */
     public function get_xmlDo(){
         $model = M($this->name);
-        $condition = array();  
+        $condition = array(); 
         $condition['isdel'] = 0;
 		list($condition,$order) = $this->_get_condition($condition);//处理条件和排序
         $list = $model->where($condition)->order($order)->page($_POST['rp'])->select();
@@ -38,47 +38,29 @@ class govent_listControl extends SystemControl{
         foreach ($list as $k => $v) {
             $list = array();
 			 
-			$list['title'] = "<span title='".$v['title']."'>".$v['title']."</span>";  
+			$list['rank'] = "<span title='".$v['rank']."'>".$v['rank']."</span>";
+			if($v['pic']){
+				$list['title'] = "<a class='pic-thumb-tip' onmouseover=\"toolTip('<img src=".$v['pic'].">')\" onmouseout='toolTip()' href='javascript:void(0);'> <i class='fa fa-picture-o'></i></a> <span title='".$v['title']."'>".$v['title']."</span>";
+			}else{
+				$list['title'] = "<span title='".$v['title']."'>".$v['title']."</span>";
+			}
 			if(empty($v['releaseid'])){
-				$list['releaseid'] = "游客"; 
+				$admininfo = Db::getAll("SELECT * FROM ".DBPRE."admin where admin_id={$v['mid']}"); 
+				$list['releaseid'] = "<img src='".getImageUrlAdmin($admininfo[0]['admin_avatar'],'admin_avatar')."' class='user-avatar' onMouseOut='toolTip()' onMouseOver='toolTip(\"<img src=".getImageUrlAdmin($admininfo[0]['admin_avatar'],'admin_avatar').">\")'><span title='".$admininfo[0]['admin_name']."'>".$admininfo[0]['admin_name']."</span>"; 
 			}else{
 				$memberinfo=getTableInfohanett($v['releaseid'],'member');
 				$list['releaseid'] = "<img src='".getImageUrl($memberinfo['avatar'],'avatar')."' class='user-avatar' onMouseOut='toolTip()' onMouseOver='toolTip(\"<img src=".getImageUrl($memberinfo['avatar'],'avatar').">\")'><span title='".$memberinfo['truename']."'>".$memberinfo['truename']."</span>"; 
 			}
-			$list['content'] = "<span title='".$v['content']."'>".$v['content']."</span>";
-			 if(!empty($v['ismag']))
-			 {
-			     	$list['ismag'] = "<span title='".$v['ismag']."'>".是."</span>";
-			 }else{
-			    	$list['ismag'] = "<span title='".$v['ismag']."'>".否."</span>"; 
-			 }
-			 
-			 
-		
-			 if($v['anonymous']=="2")
-			 {
-			     	$list['anonymous'] = "<span title='".$v['anonymous']."'>".是."</span>";
-			 }else{
-			    	$list['anonymous'] = "<span title='".$v['anonymous']."'>".否."</span>"; 
-			 }
-// 		
-			
-			$list['addtime'] = $v['addtime']?date('Y-m-d H:i:s',$v['addtime']):'-';
-			// $list['isreview'] = getReview('istopreview',$v['istopreview']);
+			$list['isrec'] = $v['isrec'] == 0 ? "<span class='no' onclick=\"fg_set({$v['id']},'rec')\" title='设为头条'><i class='fa fa-ban'></i> 否</span>" : "<span class='yes'  onclick=\"fg_set({$v['id']},'unrec')\"  title='取消头条'><i class='fa fa-check-circle'></i> 是</span>";
+			//$list['ishot'] = $v['ishot'] == 0 ? "<span class='no' onclick=\"fg_set({$v['id']},'hot')\" title='设为热门'><i class='fa fa-ban'></i> 否</span>" : "<span class='yes'  onclick=\"fg_set({$v['id']},'unhot')\"  title='取消热门'><i class='fa fa-check-circle'></i> 是</span>";
+			$list['status'] = $v['status'] == 0 ? "<span class='no' onclick=\"fg_set({$v['id']},'show')\" title='设为显示'><i class='fa fa-ban'></i> 否</span>" : "<span class='yes'  onclick=\"fg_set({$v['id']},'unshow')\"  title='取消显示'><i class='fa fa-check-circle'></i> 是</span>"; 
+			$list['clicks'] = "<span title='".$v['clicks']."'>".$v['clicks']."</span>";
+			$list['edittime'] = $v['edittime']?date('Y-m-d H:i:s',$v['edittime']):'-';
 			if($this->checkCzqx("edit")){
 				$list['operation'] = "<a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)' onclick='fg_edit(".$v['id'].")'><i class='fa fa-pencil-square-o'></i> 编辑</a>"; 
 			} 
-			
-			// if($this->checkCzqx("shenhe")){
-			// 	$list['operation'] .= "<a class='layui-btn layui-btn-sm layui-btn-auto' href='javascript:void(0)' onclick=\"fg_shenhe({$v['id']})\">"; 
-			// }
-			
-		    if($this->checkCzqx("topshenhe")){
-		        	// $list['operation'] .= "<a class='layui-btn layui-btn-sm layui-btn-auto' href='javascript:void(0)' onclick=\"fg_topshenhe({$v['id']})\">"; 
- 				}
             $data['list'][$v['id']] = $list;
         }
-         //var_DUmp(Tpl::flexigridXML($data));exit;
         exit(Tpl::flexigridXML($data));
 
     }
@@ -92,7 +74,6 @@ class govent_listControl extends SystemControl{
 		$clicks=rand(0,999);
         if (chksubmit()){
             $data = array(); 
-			$data['pid']      = intval($_POST['pid']); 
 			$data['rank']      = intval($_POST['rank']); 
 			$data['title']      = trim($_POST['title']); 
 			$data['shorttile']      = trim($_POST['shorttile']);
@@ -143,7 +124,6 @@ class govent_listControl extends SystemControl{
         $clicks=$info['clicks'];
         if (chksubmit()){ 
 			$data = array(); 
-			$data['pid']      = intval($_POST['pid']); 
 			$data['rank']      = intval($_POST['rank']); 
 			$data['title']      = trim($_POST['title']); 
 			$data['shorttile']      = trim($_POST['shorttile']);
@@ -190,7 +170,7 @@ class govent_listControl extends SystemControl{
 				$data['isdel']=1;
                 $model->where($condition)->update($data); 
             }
-            $this->log('删除资讯列表'.'[ID:'.implode(',',$_GET['del_id']).']',null);
+            $this->log('删除智慧政务列表列表'.'[ID:'.implode(',',$_GET['del_id']).']',null);
             exit(json_encode(array('state'=>true,'msg'=>'删除成功')));
         } else {
             exit(json_encode(array('state'=>false,'msg'=>'删除失败')));

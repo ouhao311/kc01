@@ -38,7 +38,7 @@ class govent_listControl extends SystemControl{
 					$list = array();
 		 $list['id'] = "<span title='".$v['id']."'>".$v['id']."</span>";  
 		$list['name'] = "<span title='".$v['name']."'>".$v['name']."</span>"; 
-			$list['time'] = "<span title='time'>".$v['enddate']."</span>";
+			$list['time'] = "<span title='".$v['enddate']."'>".$v['enddate']."</span>";
 			if($v['departid']){
 				$depart_title=getSinglePas('attribute', 'department', $v['departid'], 'title');
 				$list['departid'] = "<span title='".$depart_title."'>".$depart_title."</span>";

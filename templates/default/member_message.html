@@ -53,7 +53,7 @@
               <ul>
 									{loop $list $item}
 									<li>
-											<a title="<?php echo $info['name'];?>">{$item['name']}</a>
+											<a href="{url('member','taskview',array('id'=>$item['id']))}" title="<?php echo $info['name'];?>">{$item['name']}</a>
 											<em>截止时间：{$item['enddate']}</em>
 										</li>  
 									{/loop}

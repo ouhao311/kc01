@@ -3,6 +3,7 @@
 .layui-container{width: 85%;margin-left: 4%;}
 .ke-container{width: 100%!important;}
 .layui-form-title em{color:red;}
+.layui-form-value {display:block;width:100%;line-height:34px;min-width:60px;height:34px;margin-left: 30px}
 </style>
 
 <div class="layui-container">
@@ -12,7 +13,7 @@
 	<input type="hidden" name="ref_url" value="<?php echo getReferer();?>" />  
 	<div class="layui-row mb15 pt20">
 		<div class=" layui-col-xs2  layui-col-sm2  layui-col-md1">
-			<label class="layui-form-title"><em>*</em> 审核状态</label>
+			<label class="layui-form-title"><em>*</em> 审核状态：</label>
 		</div>
 		<div class="layui-col-xs9 layui-col-sm10 layui-col-md11">
 			<div class="layui-input-block">
@@ -20,13 +21,24 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="layui-row mb15 pt20">
+		<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+			<label class="layui-form-title"> 附件：</label>
+		</div>
+		<div class="layui-col-xs9 layui-col-sm10 layui-col-md10">
+			<div class="layui-form-value">
+				<a>这是一个附件</a>
+			</div>
+		</div>
+	</div> 
 	
 	
 	<div class="layui-row mb15 pt20">
-		<div class=" layui-col-xs2  layui-col-sm1  layui-col-md1">
-			<label class="layui-form-title"> 回复内容</label>
+		<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+			<label class="layui-form-title"> 回复内容：</label>
 		</div>
-		<div class="layui-col-xs9 layui-col-sm11 layui-col-md11">
+		<div class="layui-col-xs9 layui-col-sm10 layui-col-md10">
 			<div class="layui-input-block"> 
 				<textarea name="topreviewinfo" id="topreviewinfo" placeholder="请输入回复内容" class="layui-textarea"><?php echo $info['topreviewinfo'];?></textarea>
 			</div>

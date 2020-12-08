@@ -53,11 +53,12 @@
             <table width="100%" border="0" cellspacing="0" cellpadding="0" class="banjian">
               <thead>
                 <tr bgcolor="#f3f7fc">
-                  <td width="30%" align="left" valign="middle">工作事项</td>
-                  <td width="14%" align="center" valign="middle">截止时间</td>
-                  <td width="14%" align="center" valign="middle">安排负责人</td>
-                  <td width="14%" align="center" valign="middle">审核状态</td>
-                  <td width="20%" align="center" valign="middle">操作</td>
+                  <td width="180" align="left" valign="middle">工作事项</td>
+                  <td width="120" align="center" valign="middle">完成时间</td>
+                  <td width="80" align="center" valign="middle">安排负责人</td>
+                  <td width="80" align="center" valign="middle">安排部门</td>
+                  <td width="60" align="center" valign="middle">审核状态</td>
+                  <td width="60" align="center" valign="middle">操作</td>
                 </tr>
               </thead>
               <tbody>
@@ -66,6 +67,7 @@
                   <td align="left" valign="middle"><?php echo $item['name'];?></td>
                   <td align="center" valign="middle"><span class="da-time"><?php echo $item['enddate'];?></span></td>
                   <td align="center" valign="middle"><?php echo getvaluemore('member',$item['managerid'], 'truename');?></td>
+                  <td align="center" valign="middle">部门</td>
                   <td align="center" valign="middle">审核中</td>
                   <td align="center" valign="middle">
                       <!-- <?php echo getMoreattachment('upload_img_down','upload_img_list_down','down',$info['down'],'model',$info['model'],'size',$info['size']);?> -->

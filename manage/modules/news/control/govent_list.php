@@ -40,33 +40,31 @@ class govent_listControl extends SystemControl{
 		 $list['id'] = "<span title='".$v['id']."'>".$v['id']."</span>";  
 		$list['name'] = "<span title='".$v['name']."'>".$v['name']."</span>"; 
 			$list['time'] = "<span title='".$v['enddate']."'>".$v['enddate']."</span>";
+
+			$memberinfo=getTableInfohanett($v['memberid'],'member');
+			$list['releaseid'] = "<img src='".getImageUrl($memberinfo['avatar'],'avatar')."' class='user-avatar' onMouseOut='toolTip()' onMouseOver='toolTip(\"<img src=".getImageUrl($memberinfo['avatar'],'avatar').">\")'><span title='".$memberinfo['truename']."'>".$memberinfo['truename']."</span>";
 			if($v['departid']){
 				$depart_title=getSinglePas('attribute', 'department', $v['departid'], 'title');
 				$list['departid'] = "<span title='".$depart_title."'>".$depart_title."</span>";
 			}else{
-				$list['departid'] ="暂无部门";
+				$list['departid'] ="-";
 			}  
-	
-			$memberinfo=getTableInfohanett($v['memberid'],'member');
-			$list['releaseid'] = "<img src='".getImageUrl($memberinfo['avatar'],'avatar')."' class='user-avatar' onMouseOut='toolTip()' onMouseOver='toolTip(\"<img src=".getImageUrl($memberinfo['avatar'],'avatar').">\")'><span title='".$memberinfo['truename']."'>".$memberinfo['truename']."</span>";
-			
 				$membermanainfo=getTableInfohanett($v['managerid'],'member');
 			$list['releasemanaid'] = "<img src='".getImageUrl($membermanainfo['avatar'],'avatar')."' class='user-avatar' onMouseOut='toolTip()' onMouseOver='toolTip(\"<img src=".getImageUrl($membermanainfo['avatar'],'avatar').">\")'><span title='".$membermanainfo['truename']."'>".$membermanainfo['truename']."</span>";
 			if(empty($v['isself']))
 			{
-			    	$list['self'] = "否"; 
+			    	$list['self'] = "-"; 
 			}else{
 			    	$list['self'] = "是"; 
 			}
 
 			if(empty($v['status']))
 			{
-			    	$list['self'] = "否"; 
+			    	$list['status'] = "-"; 
 			}else{
-			    	$list['self'] = "是"; 
+			    	$list['status'] = "是"; 
 			}
 
-	
 		if($this->checkCzqx("edit")){
 			$list['operation'] = "<a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)' onclick='fg_edit(".$v['id'].")'><i class='fa fa-pencil-square-o'></i> 编辑</a>"; 
 		} 

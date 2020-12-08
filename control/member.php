@@ -232,6 +232,18 @@ class memberControl extends BaseMemberControl{
 				$data = array(); 
 				$data['goventid']      = intval($_GET['id']);  
 				$data['content']  = htmlspecialchars_decode($_POST['content'], ENT_QUOTES); 
+				if(empty($_POST['down'])) {
+					echo '<link rel="stylesheet" type="text/css" href="/public/layui/css/layui.css">';
+					echo '<script src="/public/layui/layui.all.js"></script>';
+					echo "<script>
+						layer.msg('附件必传！', { 
+							time: 2000
+						}, function(){
+							window.history.back(-1);
+						});  
+						</script>";
+					exit();
+				}
 				$data['attachment']  = json_encode(array('url' => $_POST['down'], 'realname'=> $_POST['realname'], 'model' => $_POST['model'], 'size' => $_POST['size'], 'ref_url' => $_POST['ref_url']), JSON_UNESCAPED_UNICODE); 
 				$data['createtime']  = time();
 				$data['transaction']      =  $mid; 

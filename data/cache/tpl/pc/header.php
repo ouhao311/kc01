@@ -82,9 +82,9 @@ TMPL: "/public/"
 
     </li>
 <?php } } ?>
- <li class="layui-nav-item <?php if($_GET['url']=='online') { ?>layui-this<?php } ?>
+ <li class="layui-nav-item <?php if($_GET['url']=='onlines') { ?>layui-this<?php } ?>
 ">
-<a href="<?php echo url('online','index');?>" target="">
+<a href="<?php echo url('onlines','index');?>" target="">
 <b>线上解疑平台</b>
 </a>
 </li>

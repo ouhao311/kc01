@@ -34,10 +34,10 @@
 <div style=" font-size:20px; font-weight:bold; color:#485261; padding-left:30px; padding-bottom:19px; padding-top: 18px;">用户中心</div>
 <div class="yhmenu"> 
 <ul>
-            <li class="hmenu"> <a href="<?php echo url('member','index');?>"> <i class="s_icon zhuye"></i>我的主页 </a> </li>
+<li class="hmenu "> <a href="<?php echo url('member','index');?>"> <i class="s_icon zhuye"></i>我的主页 </a> </li>
 <li class="hmenu"> <a href="<?php echo url('member','message');?>"> <i class="s_icon zixuni"></i>我的消息 </a> </li>
-<li class="hmenu active" > <a href="<?php echo url('member','task');?>"> <i class="s_icon zixuni"></i>我的任务</a> </li>
-<li class="hmenu" > <a href="<?php echo url('member','addviews');?>"> <i class="s_icon youjii"></i>发布资讯</a> </li>
+<li class="hmenu" > <a href="<?php echo url('member','task');?>"> <i class="s_icon zixuni"></i>我的任务</a> </li>
+<li class="hmenu active" > <a href="<?php echo url('member','addviews');?>"> <i class="s_icon zixuni"></i>发布资讯</a> </li>
 <li class="hmenu" > <a href="<?php echo url('onlines','add');?>"> <i class="s_icon youjii"></i>我要提问</a> </li>
 <!-- <li class="hmenu" data-item="shoucang" data-url="collection/findByPage"> <a href="javascript:void(0);"> <i class="s_icon shoucangi"></i>我的收藏</a> </li>  -->
 <!-- <li class="hmenu" data-item="zuji" data-url="userBrowsing/query"> <a href="javascript:void(0);"> <i class="s_icon zuji"></i>我的足迹</a> </li> -->
@@ -49,38 +49,77 @@
 <div class="ccon-cell" style="margin-top: -0px;">
 
 <div class="layui-container">
+<form class="layui-form"  id="article_list_form" enctype="multipart/form-data" method="post" >
+<input type="hidden" name="form_submit" value="ok"/>
+<input type="hidden" name="id" value="<?php echo $info['id'];?>" />
+<input type="hidden" name="ref_url" value="<?php echo getReferer();?>" /> 
+<div class="layui-tab-item layui-show">
+<div class="layui-row mb15 pt20">
+<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+<label class="layui-form-title">工作事项</label>
+</div>
+<div class=" layui-col-xs9 layui-col-sm9 layui-col-md8">
+这里是工作事项
+</div>
+</div>
+<div class="layui-row mb15 ">
+<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+<label class="layui-form-title">完成时间</label>
+</div>
+<div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
+这里是完成时间
+</div>
+              </div> 
+              <div class="layui-row mb15 ">
+<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+<label class="layui-form-title">安排负责人</label>
+</div>
+<div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
+这里是完成负责人
+</div>
+              </div>
+              <div class="layui-row mb15 ">
+<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+<label class="layui-form-title">安排部门</label>
+</div>
+<div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
+这里是安排负责人
+</div>
+</div> 
+<div class="layui-row mb15 <?php if($info['down_style']==2){ echo 'hidden';} ?>" id="bendidown">
+                <div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+                  <label class="layui-form-title"><em>*</em> 上传附件</label>
+                </div>
+                <div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
+                  <div class="layui-input-block">
+                    <?php echo getMoreattachment('upload_img_down','upload_img_list_down','down',$info['down'],'model',$info['model'],'size',$info['size']);?>
+                  </div>
+                </div>
+              </div>
+ 
+<div class="layui-row mb15 ">
+<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
+<label class="layui-form-title"> </label>
+</div>
+<div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
+<div class="layui-input-block">
+<button class="layui-btn layui-btn-primary updateinfo"  lay-submit lay-filter="formDemo">发布</button> 
+</div>
+</div>
+</div>
 
-            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="banjian">
-              <thead>
-                <tr bgcolor="#f3f7fc">
-                  <td width="30%" align="left" valign="middle">工作事项</td>
-                  <td width="14%" align="center" valign="middle">截止时间</td>
-                  <td width="14%" align="center" valign="middle">安排负责人</td>
-                  <td width="14%" align="center" valign="middle">审核状态</td>
-                  <td width="20%" align="center" valign="middle">操作</td>
-                </tr>
-              </thead>
-              <tbody>
-                <?php if(is_array($list)) { foreach($list as $item) { ?>
-                <tr >
-                  <td align="left" valign="middle"><?php echo $item['name'];?></td>
-                  <td align="center" valign="middle"><span class="da-time"><?php echo $item['enddate'];?></span></td>
-                  <td align="center" valign="middle"><?php echo getvaluemore('member',$item['managerid'], 'truename');?></td>
-                  <td align="center" valign="middle">审核中</td>
-                  <td align="center" valign="middle">
-                      <!-- <?php echo getMoreattachment('upload_img_down','upload_img_list_down','down',$info['down'],'model',$info['model'],'size',$info['size']);?> -->
-                    <a class='layui-btn layui-btn-sm layui-btn-auto2' href="<?php echo url('member','taskview',array('id'=>$item['id']));?>"><i class='fa fa-pencil-square-o'></i> 办理</a>
-                  </td>
-                </tr>
-                <?php } } ?>
-              </tbody>
-            </table>
+</form>
+ 
 <script> 
-function handleClick() { 
-            //梁艳todo
-            console.log('0000000000')
-          }
-            
+layui.use('form', function(){
+var form = layui.form;
+ 
+//监听提交
+form.verify({
+
+}); 
+
+});
 </script>
 </div>
 

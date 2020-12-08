@@ -227,7 +227,74 @@ class memberControl extends BaseMemberControl{
 		// print_r($list);exit;
 		// $list= $myinfo->getGoventList($condition); 
 		include T('member_task');
-    }	
+	}	
+		//我的任务
+		public function taskviewDo(){
+			//   header("Content-Security-Policy: upgrade-insecure-requests");
+			$lang = Language::getLangContent();
+			$mid=$_SESSION['member_id'];
+			$title='编辑资讯';
+			$myinfo = M('member');
+			$condition 	= array();
+			$condition['id']	= $mid;
+			$member= $myinfo->getMemberInfo($condition);
+			$model=M('govent_list');
+			$condition1 	= array();
+			$condition1['id'] = intval($_GET['id']);
+			$info = $model->where($condition1)->find();
+			if (empty($info)){
+				echo '<link rel="stylesheet" type="text/css" href="/public/layui/css/layui.css">';
+				echo '<script src="/public/layui/layui.all.js"></script>';
+				echo "<script>
+						layer.msg('没有找到此信息！', { 
+							time: 2000
+						}, function(){
+							window.history.back(-1);
+						});  
+						</script>";
+				exit();
+			} 
+			if (chksubmit()){
+				$editmodel=M('govent_detail_list');
+				$data = array(); 
+				$data['goventid']      = intval($_GET['id']);  
+				$data['content']  = htmlspecialchars_decode($_POST['content'], ENT_QUOTES); 
+				$data['createtime']  = time();  
+				$data['transaction']      =  $mid; 
+				// if(!$_POST['intro'])
+				// {
+				// 	$data['intro']    = clearHtmlText(str_cut(strip_tags($data['content']),200));//截取简介
+				// }	
+				// $condition2 	= array(); 
+				// $condition2['id'] = intval($_POST['id']); 
+				// $info2 = $editmodel->where($condition2)->find();
+				$result = $editmodel->insert($data); 
+				if ($result){
+					echo '<link rel="stylesheet" type="text/css" href="/public/layui/css/layui.css">';
+					echo '<script src="/public/layui/layui.all.js"></script>';
+					echo "<script>
+						layer.msg('提交成功！', { 
+							time: 2000
+						}, function(){
+							window.location.href='/index.php?url=member&do=views';
+						});  
+						</script>";
+					exit();
+				}else {
+					echo '<link rel="stylesheet" type="text/css" href="/public/layui/css/layui.css">';
+					echo '<script src="/public/layui/layui.all.js"></script>';
+					echo "<script>
+						layer.msg('提交失败！', { 
+							time: 2000
+						}, function(){
+							window.history.back(-1);
+						});  
+						</script>";
+					exit();
+				}
+			}
+			include T('member_taskviews');
+		}	
 	
 	
 	

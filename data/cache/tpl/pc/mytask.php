@@ -1,1 +1,0 @@
-<?php defined('SSZCMS') or exit('Access Denied');?>我的任务

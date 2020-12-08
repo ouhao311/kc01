@@ -1,6 +1,0 @@
-[2020-09-16 11:51:57] /index.php?url=news&do=index ( url=news&do=index ) 
-ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
-SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 
-[2020-09-16 17:02:28] /index.php?url=news&do=index ( url=news&do=index ) 
-ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and status=1 and isdel=0 ORDER by rank asc' at line 1
-SELECT * FROM hx_article_class where pid= and status=1 and isdel=0 ORDER by rank asc 

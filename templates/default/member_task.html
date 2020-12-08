@@ -38,7 +38,7 @@
 						<li class="hmenu"> <a href="{url('member','message')}"> <i class="s_icon zixuni"></i>我的消息 </a> </li>
 						<li class="hmenu active" > <a href="{url('member','task')}"> <i class="s_icon zixuni"></i>我的任务</a> </li>
 						<li class="hmenu" > <a href="{url('member','addviews')}"> <i class="s_icon youjii"></i>发布资讯</a> </li>
-						<li class="hmenu" > <a href="{url('online','add')}"> <i class="s_icon youjii"></i>我要提问</a> </li>
+						<li class="hmenu" > <a href="{url('onlines','add')}"> <i class="s_icon youjii"></i>我要提问</a> </li>
 						<!-- <li class="hmenu" data-item="shoucang" data-url="collection/findByPage"> <a href="javascript:void(0);"> <i class="s_icon shoucangi"></i>我的收藏</a> </li>  -->
 						<!-- <li class="hmenu" data-item="zuji" data-url="userBrowsing/query"> <a href="javascript:void(0);"> <i class="s_icon zuji"></i>我的足迹</a> </li> -->
 						<!-- <li class="hmenu" data-item="youxiang" data-url="person/infoList"><a href="javascript:void(0);"><i class="s_icon youjii"></i>省长信箱</a></li> -->
@@ -68,44 +68,11 @@
                   <td align="center" valign="middle">{getvaluemore('member',$item['managerid'], 'truename')}</td>
                   <td align="center" valign="middle">审核中</td>
                   <td align="center" valign="middle">
-                    {if $item['status']!=1}
-                    <a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)'><i class='fa fa-pencil-square-o'></i> 
-                      {getMoreattachment('upload_img_down','upload_img_list_down','down',$info['down'],'model',$info['model'],'size',$info['size'])}
-                    </a>
-                    <a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)'><i class='fa fa-pencil-square-o'></i> 提交审核</a>
-                    {else}
-                    <a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)'><i class='fa fa-pencil-square-o'></i> 上传附件</a>
-                    <a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)'><i class='fa fa-pencil-square-o'></i> 提交审核</a>
-                    {/if}
+                      <!-- {getMoreattachment('upload_img_down','upload_img_list_down','down',$info['down'],'model',$info['model'],'size',$info['size'])} -->
+                    <a class='layui-btn layui-btn-sm layui-btn-auto2' href="{url('member','taskview',array('id'=>$item['id']))}"><i class='fa fa-pencil-square-o'></i> 办理</a>
                   </td>
                 </tr>
                 {/loop}
-                <!-- <tr>
-                  <td>自我测试分配任务管理</td>
-                  <td>2020-12-10 15:28:16</td>
-                  <td>怡卫茹</td>
-                  <td>草稿</td>
-                  <td>
-                    <a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)'><i class='fa fa-pencil-square-o'></i> 上传附件</a>
-                    <a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)'><i class='fa fa-pencil-square-o'></i> 提交审核</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td>自我测试分配任务管理</td>
-                  <td>2020-12-10 15:28:16</td>
-                  <td>怡卫茹</td>
-                  <td>审核中</td>
-                  <td>
-                  </td>
-                </tr>
-                <tr>
-                  <td>自我测试分配任务管理</td>
-                  <td>2020-12-10 15:28:16</td>
-                  <td>怡卫茹</td>
-                  <td>已通过</td>
-                  <td>
-                  </td>
-                </tr> -->
               </tbody>
             </table>
 					<script> 

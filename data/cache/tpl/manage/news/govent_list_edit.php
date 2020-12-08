@@ -48,12 +48,12 @@
 </div>  
 <div class="layui-row mb15 ">
 <div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
-                 <label class="layui-form-title"><em>*</em>完成时间</label>
+ <label class="layui-form-title"><em>*</em>完成时间</label>
 </div>
 <div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
-                 <div class="layui-input-block">
-                 <input type="text" name="enddate" style="width:100%;" id="enddate" lay-v="required|title" autocomplete="off" class="layui-input" value="<?php echo $info['enddate']?>">
-                 </div>
+ <div class="layui-input-block">
+ <input type="text" name="enddate" style="width:100%;" id="enddate" lay-v="required|title" autocomplete="off" class="layui-input" value="<?php echo $info['enddate']?>">
+ </div>
 </div>
 </div>
 
@@ -82,10 +82,7 @@ var form = layui.form,
 laydate = layui.laydate;
 //日期
 laydate.render({
-type: 'datetime',
-trigger: 'click'
-});
-laydate.render({
+elem: '#enddate',
 type: 'datetime',
 trigger: 'click'
 });
@@ -121,11 +118,6 @@ if(/(^\_)|(\__)|(\_+$)/.test(value)){
 }
 if(/^\d+\d+\d$/.test(value)){
   return '用户名不能全为数字';
-}
-} 
-,levelid: function(value, item){
-if(value==''){
-  return '请选择学员等级';
 }
 } 
 }); 

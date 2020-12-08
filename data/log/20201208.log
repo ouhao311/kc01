@@ -679,3 +679,30 @@ SELECT * FROM `hx_article_class` WHERE ( isdel = '0' ) AND ( status = '1' ) AND 
 [2020-12-08 21:12:31] /index.php?url=member&do=message ( url=member&do=message ) 
 ERR: Db Error: Table 'test.hx_article_class' doesn't exist
 SELECT * FROM `hx_article_class` WHERE ( isdel = '0' ) AND ( status = '1' ) AND ( pid = '0' ) AND ( cate = '2' ) ORDER BY rank asc LIMIT 1000  
+[2020-12-08 22:29:58] /manage/modules/news/index.php?url=govent_list&do=topreview&goventid=16&memberid=16 ( url=govent_list&do=topreview ) 
+ERR: Db Error: Unknown column 'memberid' in 'where clause'
+SELECT * FROM `hx_govent_detail_list` WHERE ( goventid = '16' ) AND ( memberid = '16' ) LIMIT 1  
+[2020-12-08 22:30:04] /manage/modules/news/index.php?url=govent_list&do=topreview&goventid=16&memberid=16 ( url=govent_list&do=topreview ) 
+ERR: Db Error: Unknown column 'memberid' in 'where clause'
+SELECT * FROM `hx_govent_detail_list` WHERE ( goventid = '16' ) AND ( memberid = '16' ) LIMIT 1  
+[2020-12-08 22:30:17] /manage/modules/news/index.php?url=govent_list&do=topreview&goventid=16&memberid=16 ( url=govent_list&do=topreview ) 
+ERR: Db Error: Unknown column 'memberid' in 'where clause'
+SELECT * FROM `hx_govent_detail_list` WHERE ( goventid = '16' ) AND ( memberid = '16' ) LIMIT 1  
+[2020-12-08 22:30:46] /manage/modules/news/index.php?url=govent_list&do=topreview&goventid=16&memberid=80 ( url=govent_list&do=topreview ) 
+ERR: Db Error: Unknown column 'memberid' in 'where clause'
+SELECT * FROM `hx_govent_detail_list` WHERE ( goventid = '16' ) AND ( memberid = '80' ) LIMIT 1  
+[2020-12-08 22:31:07] /manage/modules/news/index.php?url=govent_list&do=topreview&goventid=16&memberid=80 ( url=govent_list&do=topreview ) 
+ERR: Db Error: Unknown column 'memberid' in 'where clause'
+SELECT * FROM `hx_govent_detail_list` WHERE ( goventid = '16' ) AND ( memberid = '80' ) LIMIT 1  
+[2020-12-08 23:03:11] /manage/modules/news/index.php?url=govent_list&do=get_xml&pid=&kaishi=&jieshu=&keywords=a ( url=govent_list&do=get_xml ) 
+ERR: Db Error: Unknown column 'title' in 'where clause'
+SELECT COUNT(*) AS nc_count FROM `hx_govent_list` WHERE ( isdel = '0' ) AND ( title LIKE '%a%' ) ORDER BY id desc LIMIT 1  
+[2020-12-08 23:03:11] /manage/modules/news/index.php?url=govent_list&do=get_xml&pid=&kaishi=&jieshu=&keywords=a ( url=govent_list&do=get_xml ) 
+ERR: Db Error: Unknown column 'title' in 'where clause'
+SELECT * FROM `hx_govent_list` WHERE ( isdel = '0' ) AND ( title LIKE '%a%' ) ORDER BY id desc LIMIT 0,15  
+[2020-12-08 23:04:45] /manage/modules/news/index.php?url=govent_list&do=get_xml&pid=&kaishi=&jieshu=2020-12-30&keywords=%E4%BB%BB%E5%8A%A1 ( url=govent_list&do=get_xml ) 
+ERR: Db Error: Unknown column 'edittime' in 'where clause'
+SELECT COUNT(*) AS nc_count FROM `hx_govent_list` WHERE ( isdel = '0' ) AND ( name LIKE '%任务%' ) AND ( edittime < '1609344000' ) ORDER BY id desc LIMIT 1  
+[2020-12-08 23:04:45] /manage/modules/news/index.php?url=govent_list&do=get_xml&pid=&kaishi=&jieshu=2020-12-30&keywords=%E4%BB%BB%E5%8A%A1 ( url=govent_list&do=get_xml ) 
+ERR: Db Error: Unknown column 'edittime' in 'where clause'
+SELECT * FROM `hx_govent_list` WHERE ( isdel = '0' ) AND ( name LIKE '%任务%' ) AND ( edittime < '1609344000' ) ORDER BY id desc LIMIT 0,15  

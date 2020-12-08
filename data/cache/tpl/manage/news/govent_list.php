@@ -178,12 +178,12 @@ content: "index.php?url=<?php echo $this->name;?>&do=review&id="+id
 }
 
 //审核
-function fg_topshenhe(id) { 
+function fg_topshenhe(id, memberid) { 
 layer.open({
 type: 2, 
 title:"审核数据",
 area: ['65%', '45%'],
-content: "index.php?url=<?php echo $this->name;?>&do=topreview&id="+id
+content: "index.php?url=<?php echo $this->name;?>&do=topreview&goventid="+id+"&memberid="+memberid
   });  
 }
 </script> 

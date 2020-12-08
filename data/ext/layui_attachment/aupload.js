@@ -27,7 +27,7 @@ function layui_upattachment(upload_img,upload_img_list,picname,upurl,defaultatta
 			done: function(res) {
 				layer.close(layer.msg());//关闭上传提示窗口
 				if(res.error==1){
-					$('#'+upload_img_list).html('<dd class="item_img" id="' + res.imgid + '"><div class="operate"><i onclick=UPLOAD_IMG_DEL("' + res.imgid + '") class="close layui-icon"></i></div><img src="' + defaultatta + '" class="img" ><input type="hidden" name="'+picname+'" value="' + res.name + '" /><input type="hidden" name="'+modelname+'" value="' + res.model + '" /><input type="hidden" name="'+sizename+'" value="' + res.size + '" /></dd>');
+					$('#'+upload_img_list).html('<dd class="item_img" id="' + res.imgid + '"><div class="operate"><i onclick=UPLOAD_IMG_DEL("' + res.imgid + '") class="close layui-icon"></i></div><img src="' + defaultatta + '" class="img" ><input type="hidden" name="realname" value="' + res.realname + '" />v<input type="hidden" name="'+picname+'" value="' + res.name + '" /><input type="hidden" name="'+modelname+'" value="' + res.model + '" /><input type="hidden" name="'+sizename+'" value="' + res.size + '" /></dd>');
 					layer.msg(res.message);
 				}else{
 					layer.msg(res.message);

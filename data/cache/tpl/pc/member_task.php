@@ -67,12 +67,16 @@
                   <td align="left" valign="middle"><?php echo $item['name'];?></td>
                   <td align="center" valign="middle"><span class="da-time"><?php echo $item['enddate'];?></span></td>
                   <td align="center" valign="middle"><?php echo getvaluemore('member',$item['managerid'], 'truename');?></td>
-                  <td align="center" valign="middle">部门</td>
-                  <td align="center" valign="middle">审核中</td>
+                  <td align="center" valign="middle"><?php echo getSinglePas('attribute', 'department', $item['departid'], 'title');?></td>
+                  <td align="center" valign="middle"><?php echo $item['revstatusName'];?></td>
                   <td align="center" valign="middle">
                       <!-- <?php echo getMoreattachment('upload_img_down','upload_img_list_down','down',$info['down'],'model',$info['model'],'size',$info['size']);?> -->
-                    <a class='layui-btn layui-btn-sm layui-btn-auto2' href="<?php echo url('member','taskview',array('id'=>$item['id']));?>"><i class='fa fa-pencil-square-o'></i> 办理</a>
-                  </td>
+<?php if($item['revstatus'] == 0) { ?>
+<a class='layui-btn layui-btn-sm layui-btn-auto2' href="<?php echo url('member','taskview',array('id'=>$item['id']));?>"><i class='fa fa-pencil-square-o'></i> 办理</a>
+<?php } else { ?>
+-
+<?php } ?>
+</td>
                 </tr>
                 <?php } } ?>
               </tbody>

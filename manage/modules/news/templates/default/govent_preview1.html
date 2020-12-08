@@ -17,7 +17,8 @@
 		</div>
 		<div class="layui-col-xs9 layui-col-sm10 layui-col-md11">
 			<div class="layui-input-block">
-				{php echo getNotRadio('istopreview',$info['istopreview']);} 
+				<input type='radio' lay-skin='primary' title='审核通过' checked name='revstatus' value='2' lay-filter='审核通过'/>
+				<input type='radio' lay-skin='primary' title='审核不通过' name='revstatus' value='3' lay-filter='审核不通过'/>
 			</div>
 		</div>
 	</div>
@@ -28,7 +29,7 @@
 		</div>
 		<div class="layui-col-xs9 layui-col-sm10 layui-col-md10">
 			<div class="layui-form-value">
-				<a>这是一个附件</a>
+				<a><?php echo empty($info['attachment']['realname']) ? '' : $info['attachment']['realname'];?></a>
 			</div>
 		</div>
 	</div> 
@@ -40,7 +41,7 @@
 		</div>
 		<div class="layui-col-xs9 layui-col-sm10 layui-col-md10">
 			<div class="layui-input-block"> 
-				<textarea name="topreviewinfo" id="topreviewinfo" placeholder="请输入回复内容" class="layui-textarea"><?php echo $info['topreviewinfo'];?></textarea>
+				<textarea name="revcontent" id="revcontent" placeholder="请输入回复内容" class="layui-textarea"><?php echo $info['revcontent'];?></textarea>
 			</div>
 		</div>
 	</div> 

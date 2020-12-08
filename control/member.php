@@ -178,7 +178,7 @@ class memberControl extends BaseMemberControl{
 			$param['value'] = intval($value['id']); 
 			$result = Db::getRow($param);
 			$list[$key]['revstatus'] = $result['revstatus'] || 0;
-			$list[$key]['revstatusName'] = $result['revstatus'] == 1 ? '审核中' : ($result['revstatus'] == 2 ? '审核通过' : ($result['revstatus'] == 1 ? '审核退回' : '待办理'));
+			$list[$key]['revstatusName'] = $result['revstatus'] == 1 ? '待审核' : ($result['revstatus'] == 2 ? '审核通过' : ($result['revstatus'] == 1 ? '审核退回' : '待办理'));
 		}
 		// $list= $myinfo->getGoventList($condition); 
 		include T('member_task');
@@ -232,7 +232,7 @@ class memberControl extends BaseMemberControl{
 				$data = array(); 
 				$data['goventid']      = intval($_GET['id']);  
 				$data['content']  = htmlspecialchars_decode($_POST['content'], ENT_QUOTES); 
-				$data['attachment']  = json_encode(array('url' => $_POST['down'], 'realname'=> $_POST['realname'], 'model' => $_POST['model'], 'size' => $_POST['size'], 'ref_url' => $_POST['ref_url'])); 
+				$data['attachment']  = json_encode(array('url' => $_POST['down'], 'realname'=> $_POST['realname'], 'model' => $_POST['model'], 'size' => $_POST['size'], 'ref_url' => $_POST['ref_url']), JSON_UNESCAPED_UNICODE); 
 				$data['createtime']  = time();
 				$data['transaction']      =  $mid; 
 				// if(!$_POST['intro'])

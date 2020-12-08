@@ -42,9 +42,9 @@ if (isset($_FILES)) {
 	$imgid=rand(1000000, 9999999);
 	$pic_name =  rand(1000000, 9999999) . "." . $type; //文件名称
     $pic_url = $path . $pic_name; //上传后图片路径+名称
-	$pic_urlzs = $pathzs . $pic_name;
+    $pic_urlzs = $pathzs . $pic_name;
     if (move_uploaded_file($name_tmp, $pic_url)) { //临时文件转移到目标文件夹
-        echo json_encode(array("error" => "1","message" => "上传成功！", "pic" => $pic_urlzs,"imgid" => $imgid, "name" => $pic_urlzs, "model" => $type, "size" => $size));
+        echo json_encode(array("error" => "1","message" => "上传成功！", "realname"=> $name,"pic" => $pic_urlzs,"imgid" => $imgid, "name" => $pic_urlzs, "model" => $type, "size" => $size));
     } else {
         echo json_encode(array("error" => "0","message" => "上传有误，清检查服务器配置！"));
     }

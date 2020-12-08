@@ -58,18 +58,18 @@ class govent_listControl extends SystemControl{
 			    	$list['self'] = "是"; 
 			}
 
-			if(empty($v['status']))
-			{
-			    	$list['status'] = "-"; 
-			}else{
-			    	$list['status'] = "是"; 
-			}
+			$modeldetail=M('govent_detail_list');
+			$condition2 	= array();
+			$condition2['goventid'] = intval($v['id']);
+			$condition2['transaction'] = intval($v['memberid']);
+			$infodetail = $modeldetail->where($condition2)->find();
+			$list['revstatusName'] = $infodetail['revstatus'] == 1 ? '待审核' : ($infodetail['revstatus'] == 2 ? '审核通过' : ($infodetail['revstatus'] == 1 ? '审核退回' : '待办理'));
 
 		if($this->checkCzqx("edit")){
 			$list['operation'] = "<a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)' onclick='fg_edit(".$v['id'].")'><i class='fa fa-pencil-square-o'></i> 编辑</a>"; 
 		} 
 		if($this->checkCzqx("topshenhe")){
-			$list['operation'] .= "<a class='layui-btn layui-btn-sm layui-btn-auto' href='javascript:void(0)' onclick=\"fg_topshenhe({$v['id']})\"><i class='fa fa-check-circle'></i> 审核</a>"; 
+			$list['operation'] .= "<a class='layui-btn layui-btn-sm layui-btn-auto' href='javascript:void(0)' onclick='fg_topshenhe(".$v['id'].", ".$v['memberid'].")'><i class='fa fa-check-circle'></i> 审核</a>"; 
 		}
 					$data['list'][$v['id']] = $list;
 			}
@@ -264,6 +264,10 @@ class govent_listControl extends SystemControl{
 		$lang    = Language::getLangContent();
 		$mid=$_SESSION['member_id'];
 		$model=M('govent_detail_list');
+		$condition['goventid'] = intval($_GET['goventid']);
+		$condition['transaction'] = intval($_GET['memberid']);
+		$info = $model->where($condition)->find();
+		$info['attachment'] = json_decode($info['attachment'], true);
 		$goventinfo=getTableInfohanett($info['goventid'],'govent_list');
 		if (chksubmit()){ 
 			$data = array();
@@ -272,9 +276,10 @@ class govent_listControl extends SystemControl{
 			$data['revuid']      = trim($mid);
 			$data['revcontent']      = trim($_POST['revcontent']); 
 			$condition['id'] = intval($_POST['id']); 
+			$result = $model->where($condition)->update($data); 
 			if ($result){
 				$this->log('任务数据审核'.'['.$goventinfo['name'].']',null);
-				if($data['revstatus']==1){
+				if($data['revstatus']==2){
 					if($info['transaction']>0){
 						$memberinfo=getTableInfohanett($info['transaction'],'member');
 						//更新积分
@@ -282,12 +287,12 @@ class govent_listControl extends SystemControl{
 						$this->log('发布'.'['.$info['title'].']审核成功奖励2积分',null);
 						//写入积分记录
 						$data_record = array();
-						$data_record['mid']=$info['releaseid'];  
+						$data_record['mid']=$info['transaction'];  
 						$data_record['integral']=2;
 						$data_record['type']=1;
 						$data_record['addtime']=time();
 						$data_record['source']=1;
-						$data_record['intro']='发布'.'['.$info['title'].']审核成功奖励2积分';
+						$data_record['intro']='任务数据'.'['.$goventinfo['name'].']审核成功奖励2积分';
 						M("member_integral")->insert($data_record);
 					}
 				}
@@ -326,7 +331,7 @@ class govent_listControl extends SystemControl{
     private function _get_condition($condition) {
  
         if ($_GET['keywords'] != '') {
-            $condition['title']          = array('like',"%{$_GET['keywords']}%"); 
+            $condition['name']          = array('like',"%{$_GET['keywords']}%"); 
         }
 		
 		//更新时间
@@ -335,9 +340,9 @@ class govent_listControl extends SystemControl{
         $start_unixtime = $if_start_time ? strtotime($_GET['kaishi']) : null;
         $end_unixtime = $if_end_time ? strtotime($_GET['jieshu']): null;
         if ($start_unixtime || $end_unixtime) {
-            $condition['edittime'] = array('time',array($start_unixtime,$end_unixtime));
-        } 
-        $sort_fields = array('rank','id','edittime');
+            $condition['enddate'] = array('time',array($start_unixtime,$end_unixtime));
+		} 
+        $sort_fields = array('rank','id','enddate');
 		if ($_REQUEST['sortorder'] != '' && in_array($_REQUEST['sortname'],$sort_fields)) {
             $order = $_REQUEST['sortname'].' '.$_REQUEST['sortorder'];
         } 

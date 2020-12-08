@@ -37,7 +37,7 @@
 <ul>
 <li class="hmenu "> <a href="<?php echo url('member','index');?>"> <i class="s_icon zhuye"></i>我的主页 </a> </li>
 <li class="hmenu"> <a href="<?php echo url('member','message');?>"> <i class="s_icon zixuni"></i>我的消息 </a> </li>
-<li class="hmenu active" > <a href="<?php echo url('member','task');?>"> <i class="s_icon zixuni"></i>我的任务</a> </li>
+<li class="hmenu active" > <a href="<?php echo url('member','task');?>"> <i class="s_icon banshii"></i>我的任务</a> </li>
 <li class="hmenu" > <a href="<?php echo url('member','addviews');?>"> <i class="s_icon zixuni"></i>发布资讯</a> </li>
 <li class="hmenu" > <a href="<?php echo url('onlines','add');?>"> <i class="s_icon youjii"></i>我要提问</a> </li>
 <!-- <li class="hmenu" data-item="shoucang" data-url="collection/findByPage"> <a href="javascript:void(0);"> <i class="s_icon shoucangi"></i>我的收藏</a> </li>  -->
@@ -61,7 +61,7 @@
 </div>
 <div class=" layui-col-xs9 layui-col-sm9 layui-col-md8">
                   <div class="layui-form-value">
-这里是工作事项
+<?php echo $info['name'];?>
 </div>
 </div>
 </div>
@@ -72,7 +72,7 @@
 <div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
 <div class="layui-form-value">
 <div class="layui-form-value">
-                      这里是工作事项
+<?php echo $info['enddate'];?>
                     </div>
 </div>
 </div>
@@ -83,7 +83,7 @@
 </div>
 <div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
 <div class="layui-form-value">
-这里是工作事项
+<?php echo getvaluemore('member', $info['managerid'], 'truename');?>
 </div>
 </div>
               </div>
@@ -93,7 +93,7 @@
 </div>
 <div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
 <div class="layui-form-value">
-这里是工作事项
+<?php echo getSinglePas('attribute', 'department', $info['departid'], 'title');?>
 </div>
 </div>
 </div> 

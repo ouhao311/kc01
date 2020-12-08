@@ -70,13 +70,13 @@
 <div style="line-height:50PX;">&nbsp;</div>
 <div class="layui-form-item" style="width:88%;height:45px;margin:0 auto;background:#fff;position:fixed;bottom:0;text-align:center;border-top-style: solid;border-top-width: 1px;border-top-color: #009688;padding-top: 5px;z-index: 99999;" id="submit">
 <div class="layui-input-block" style="margin-left: -15px;">
-<button class="layui-btn" lay-submit lay-filter="formDemo"><?php echo $lang['hx_submit'];?></button> 
+<button class="layui-btn save" lay-submit lay-filter="formDemo"><?php echo $lang['hx_save'];?></button> 
 <button type="reset" class="layui-btn layui-btn-primary" onclick="parent.location.reload();">关闭</button> 
 </div>
 </div>
 </form>
  
-<script> 
+<script>
 layui.use(['form','laydate'], function() {
 var form = layui.form,
 laydate = layui.laydate;

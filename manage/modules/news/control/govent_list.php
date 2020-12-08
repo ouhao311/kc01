@@ -64,10 +64,10 @@ class govent_listControl extends SystemControl{
 			$condition2['transaction'] = intval($v['memberid']);
 			$infodetail = $modeldetail->where($condition2)->find();
 			$list['revstatusName'] = $infodetail['revstatus'] == 1 ? '待审核' : ($infodetail['revstatus'] == 2 ? '审核通过' : ($infodetail['revstatus'] == 1 ? '审核退回' : '待办理'));
-
-		if($this->checkCzqx("edit")){
+	
+		if($this->checkCzqx("edit") && $infodetail['revstatus'] != 2){
 			$list['operation'] = "<a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)' onclick='fg_edit(".$v['id'].")'><i class='fa fa-pencil-square-o'></i> 编辑</a>"; 
-		} 
+		}
 		if($this->checkCzqx("topshenhe")){
 			$list['operation'] .= "<a class='layui-btn layui-btn-sm layui-btn-auto' href='javascript:void(0)' onclick='fg_topshenhe(".$v['id'].", ".$v['memberid'].")'><i class='fa fa-check-circle'></i> 审核</a>"; 
 		}

@@ -296,7 +296,6 @@ class memberControl extends BaseMemberControl{
 		$condition 	= array();
 		$condition['id']	= $mid;
 		$member= $myinfo->getMemberInfo($condition); 
-		print_r($_POST);exit;
 		if (chksubmit()){
 			$data = array(); 
 			$data['pid']      = intval($_POST['pid']); 

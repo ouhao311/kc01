@@ -127,7 +127,11 @@ var form = layui.form;
  
 //监听提交
 form.verify({
-
+upload_img_down: function(value, item){
+if(value==''){
+return '请上传附件!';
+} 
+},
 }); 
 
 });

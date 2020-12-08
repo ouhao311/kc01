@@ -82,10 +82,6 @@
               </tbody>
             </table>
 <script> 
-function handleClick() { 
-            //梁艳todo
-            console.log('0000000000')
-          }
             
 </script>
 </div>

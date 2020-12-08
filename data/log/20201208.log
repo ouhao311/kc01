@@ -355,3 +355,6 @@ SELECT * FROM `hx_article_class` WHERE ( isdel = '0' ) AND ( status = '1' ) AND 
 [2020-12-08 20:23:32] /index.php?url=member&do=taskview&id=15 ( url=member&do=taskview ) 
 ERR: Db Error: Table 'test.hx_article_class' doesn't exist
 SELECT * FROM `hx_article_class` WHERE ( isdel = '0' ) AND ( status = '1' ) AND ( pid = '0' ) AND ( cate = '2' ) ORDER BY rank asc LIMIT 1000  
+[2020-12-08 20:24:30] /index.php?url=member&do=taskview&id=15 ( url=member&do=taskview ) 
+ERR: Db Error: Table 'test.hx_article_class' doesn't exist
+SELECT * FROM `hx_article_class` WHERE ( isdel = '0' ) AND ( status = '1' ) AND ( pid = '0' ) AND ( cate = '2' ) ORDER BY rank asc LIMIT 1000  

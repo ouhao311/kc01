@@ -70,7 +70,11 @@
 <label class="layui-form-title">完成时间：</label>
 </div>
 <div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
-这里是完成时间
+<div class="layui-form-value">
+<div class="layui-form-value">
+                      这里是工作事项
+                    </div>
+</div>
 </div>
               </div> 
               <div class="layui-row mb15 ">
@@ -78,7 +82,9 @@
 <label class="layui-form-title">安排负责人：</label>
 </div>
 <div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
-这里是完成负责人
+<div class="layui-form-value">
+这里是工作事项
+</div>
 </div>
               </div>
               <div class="layui-row mb15 ">
@@ -86,7 +92,9 @@
 <label class="layui-form-title">安排部门：</label>
 </div>
 <div class=" layui-col-xs9 layui-col-sm9 layui-col-md9">
-这里是安排负责人
+<div class="layui-form-value">
+这里是工作事项
+</div>
 </div>
 </div> 
 <div class="layui-row mb15 <?php if($info['down_style']==2){ echo 'hidden';} ?>" id="bendidown">

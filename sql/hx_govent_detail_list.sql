@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2020-12-07 20:57:38
+Date: 2020-12-08 21:44:23
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -26,23 +26,25 @@ CREATE TABLE `hx_govent_detail_list` (
   `content` varchar(255) NOT NULL COMMENT '处理结果',
   `transaction` varchar(255) NOT NULL COMMENT '办理人员',
   `revtime` int(11) DEFAULT NULL COMMENT '审核时间',
-  `createtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
-  `revstatus` int(2) DEFAULT '0' COMMENT '审批状态 0未审核 1审核通过 2审核退回',
+  `createtime` int(11) DEFAULT NULL COMMENT '创建时间',
+  `revstatus` int(2) DEFAULT '1' COMMENT '审批状态 1未审核 2审核通过 3审核退回',
   `revuid` int(5) DEFAULT NULL COMMENT '审批人员',
   `revcontent` varchar(255) DEFAULT NULL COMMENT '审核内容',
+  `attachment` varchar(255) DEFAULT NULL COMMENT '用户传的附件',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of hx_govent_detail_list
 -- ----------------------------
-INSERT INTO `hx_govent_detail_list` VALUES ('1', '3', '描述问题', '处理内容', '办理人员', null, '2020-08-18 14:44:42', '0', '0', null);
-INSERT INTO `hx_govent_detail_list` VALUES ('2', '3', '描述问题', '处理内容', '办理人员', null, '2020-08-18 17:57:54', '0', '0', null);
-INSERT INTO `hx_govent_detail_list` VALUES ('3', '5', '测试', '完成', '怡卫茹', null, '2020-08-20 13:35:40', '0', '0', null);
-INSERT INTO `hx_govent_detail_list` VALUES ('4', '6', '', 'ok', 'wei', null, '2020-08-20 13:52:30', '0', '0', null);
-INSERT INTO `hx_govent_detail_list` VALUES ('5', '8', '测试', '测试', '王斌', null, '2020-08-21 14:14:59', '0', '0', null);
-INSERT INTO `hx_govent_detail_list` VALUES ('20', '10', '123', 'ok', 'ywr', null, '2020-08-24 14:05:56', '0', '0', null);
-INSERT INTO `hx_govent_detail_list` VALUES ('21', '12', 'rwerewrwreewr', '', '', null, '2020-09-20 17:48:37', '1', '18', null);
+INSERT INTO `hx_govent_detail_list` VALUES ('1', '3', '描述问题', '处理内容', '办理人员', null, '1607434708', '0', '0', null, null);
+INSERT INTO `hx_govent_detail_list` VALUES ('2', '3', '描述问题', '处理内容', '办理人员', null, '1607434708', '0', '0', null, null);
+INSERT INTO `hx_govent_detail_list` VALUES ('3', '5', '测试', '完成', '怡卫茹', null, '1607434708', '0', '0', null, null);
+INSERT INTO `hx_govent_detail_list` VALUES ('4', '6', '', 'ok', 'wei', null, '1607434708', '0', '0', null, null);
+INSERT INTO `hx_govent_detail_list` VALUES ('5', '8', '测试', '测试', '王斌', null, '1607434708', '0', '0', null, null);
+INSERT INTO `hx_govent_detail_list` VALUES ('20', '10', '123', 'ok', 'ywr', null, '1607434708', '0', '0', null, null);
+INSERT INTO `hx_govent_detail_list` VALUES ('21', '12', 'rwerewrwreewr', '', '', null, '1607434708', '1', '18', null, null);
+INSERT INTO `hx_govent_detail_list` VALUES ('28', '16', '', '', '80', null, '1607434708', '1', null, null, '{\"url\":\"/data/upload/attachment/20201208/3989105.docx\",\"realname\":null,\"model\":\"docx\",\"size\":\"612.7978515625\",\"ref_url\":\"\"}');
 
 -- ----------------------------
 -- Table structure for hx_govent_list
@@ -61,7 +63,7 @@ CREATE TABLE `hx_govent_list` (
   `departid` int(11) DEFAULT NULL COMMENT '安排部门',
   `itself` int(11) NOT NULL DEFAULT '0' COMMENT '是否主动 0主动',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of hx_govent_list
@@ -73,11 +75,12 @@ INSERT INTO `hx_govent_list` VALUES ('4', '任务4', '8', '8', '2020-08-16 00:00
 INSERT INTO `hx_govent_list` VALUES ('5', '任务5', '8', '14', '2020-08-19 10:45:53', '2020-08-19 10:45:56', '1597805188', '0', '0', null, '0');
 INSERT INTO `hx_govent_list` VALUES ('6', '任务6', '14', '14', '2020-08-20 13:50:38', '2020-08-20 13:50:40', '1597902673', '0', '0', null, '0');
 INSERT INTO `hx_govent_list` VALUES ('7', '测试霍鹏的任务', '8', '13', '2020-08-21 00:00:00', '2020-08-31 00:00:00', '1597990308', '0', '0', null, '0');
-INSERT INTO `hx_govent_list` VALUES ('8', '测试霍鹏', '15', '15', '2020-08-21 00:00:00', '2020-08-24 00:00:00', '1597990408', '0', '0', null, '0');
+INSERT INTO `hx_govent_list` VALUES ('8', '测试霍鹏', '15', '15', '2020-08-21 00:00:00', '2020-08-24 00:00:00', '1597990408', '0', '1', null, '0');
 INSERT INTO `hx_govent_list` VALUES ('9', '测试', '14', '8', '2020-08-21 15:28:12', '2020-08-21 15:28:16', '1601028634', '1', '0', null, '0');
 INSERT INTO `hx_govent_list` VALUES ('10', '创意盒子检查水表', '14', '14', '2020-09-03 00:00:00', '2020-09-09 00:00:00', '1599542407', '1', '0', null, '0');
 INSERT INTO `hx_govent_list` VALUES ('11', '自我分配任务', '14', '14', '2020-09-08 00:00:00', '2020-09-30 00:00:00', '1599546126', '1', '0', null, '0');
-INSERT INTO `hx_govent_list` VALUES ('12', '自我测试分配任务管理', '8', '8', '2020-09-08 00:00:00', '2020-09-26 00:00:00', '1600596220', '1', '0', null, '0');
+INSERT INTO `hx_govent_list` VALUES ('12', '自我测试分配任务管理', '8', '8', '2020-09-08 00:00:00', '2020-09-26 00:00:00', '1600596220', '1', '1', null, '0');
 INSERT INTO `hx_govent_list` VALUES ('13', '走访任务test', '80', '13', '2020-12-08 00:00:00', '2020-12-31 00:00:00', '1607321175', '0', '1', null, '0');
 INSERT INTO `hx_govent_list` VALUES ('14', 'renwutest', '77', '', '', '2020-12-31 00:00:00', '1607340894', '0', '1', '0', '0');
-INSERT INTO `hx_govent_list` VALUES ('15', 'aaa', '8', '12', '', '2020-12-31 00:00:00', '1607345793', '1', '0', '1', '0');
+INSERT INTO `hx_govent_list` VALUES ('15', '任务1', '8', '80', '', '2020-12-08 19:00:00', '1607345793', '1', '0', '1', '0');
+INSERT INTO `hx_govent_list` VALUES ('16', '任务2', '8', '80', '', '2020-12-08 20:12:00', '1607345793', '1', '0', '1', '0');

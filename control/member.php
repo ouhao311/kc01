@@ -171,7 +171,15 @@ class memberControl extends BaseMemberControl{
 		$page->setStyle('5');
 		$list	= $models->getGoventList($condition,$page);
 		$show_page=$page->show(); 
-		// print_r($list);exit;
+		foreach ($list as $key => $value) {
+			$param = array();
+			$param['table'] = 'govent_detail_list';
+			$param['field'] = 'goventid';
+			$param['value'] = intval($value['id']); 
+			$result = Db::getRow($param);
+			$list[$key]['revstatus'] = $result['revstatus'] || 0;
+			$list[$key]['revstatusName'] = $result['revstatus'] == 1 ? '审核中' : ($result['revstatus'] == 2 ? '审核通过' : ($result['revstatus'] == 1 ? '审核退回' : '待办理'));
+		}
 		// $list= $myinfo->getGoventList($condition); 
 		include T('member_task');
 	}	
@@ -201,12 +209,31 @@ class memberControl extends BaseMemberControl{
 						</script>";
 				exit();
 			} 
+			$modeldetail=M('govent_detail_list');
+			$condition2 	= array();
+			$condition2['goventid'] = intval($_GET['id']);
+			$condition2['transaction'] = intval($mid);
+			$infodetail = $modeldetail->where($condition2)->find();
+			if (!empty($infodetail)){
+				echo '<link rel="stylesheet" type="text/css" href="/public/layui/css/layui.css">';
+				echo '<script src="/public/layui/layui.all.js"></script>';
+				echo "<script>
+						layer.msg('已办理！', { 
+							time: 2000
+						}, function(){
+							window.history.back(-1);
+						});  
+						</script>";
+				exit();
+			} 
+			// print_r($_POST);EXIT;
 			if (chksubmit()){
 				$editmodel=M('govent_detail_list');
 				$data = array(); 
 				$data['goventid']      = intval($_GET['id']);  
 				$data['content']  = htmlspecialchars_decode($_POST['content'], ENT_QUOTES); 
-				$data['createtime']  = time();  
+				$data['attachment']  = json_encode(array('url' => $_POST['down'], 'realname'=> $_POST['realname'], 'model' => $_POST['model'], 'size' => $_POST['size'], 'ref_url' => $_POST['ref_url'])); 
+				$data['createtime']  = time();
 				$data['transaction']      =  $mid; 
 				// if(!$_POST['intro'])
 				// {
@@ -223,7 +250,7 @@ class memberControl extends BaseMemberControl{
 						layer.msg('提交成功！', { 
 							time: 2000
 						}, function(){
-							window.location.href='/index.php?url=member&do=views';
+							window.location.href='/index.php?url=member&do=task';
 						});  
 						</script>";
 					exit();
@@ -257,6 +284,7 @@ class memberControl extends BaseMemberControl{
 		$condition 	= array();
 		$condition['id']	= $mid;
 		$member= $myinfo->getMemberInfo($condition); 
+		print_r($_POST);exit;
 		if (chksubmit()){
 			$data = array(); 
 			$data['pid']      = intval($_POST['pid']); 

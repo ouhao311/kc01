@@ -67,12 +67,16 @@
                   <td align="left" valign="middle">{$item['name']}</td>
                   <td align="center" valign="middle"><span class="da-time">{$item['enddate']}</span></td>
                   <td align="center" valign="middle">{getvaluemore('member',$item['managerid'], 'truename')}</td>
-                  <td align="center" valign="middle">部门</td>
-                  <td align="center" valign="middle">审核中</td>
+                  <td align="center" valign="middle">{getSinglePas('attribute', 'department', $item['departid'], 'title')}</td>
+                  <td align="center" valign="middle">{$item['revstatusName']}</td>
                   <td align="center" valign="middle">
                       <!-- {getMoreattachment('upload_img_down','upload_img_list_down','down',$info['down'],'model',$info['model'],'size',$info['size'])} -->
-                    <a class='layui-btn layui-btn-sm layui-btn-auto2' href="{url('member','taskview',array('id'=>$item['id']))}"><i class='fa fa-pencil-square-o'></i> 办理</a>
-                  </td>
+											{if $item['revstatus'] == 0}
+											<a class='layui-btn layui-btn-sm layui-btn-auto2' href="{url('member','taskview',array('id'=>$item['id']))}"><i class='fa fa-pencil-square-o'></i> 办理</a>
+											{else}
+											-
+											{/if}
+									</td>
                 </tr>
                 {/loop}
               </tbody>

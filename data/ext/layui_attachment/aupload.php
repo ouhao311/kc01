@@ -8,7 +8,7 @@
 // +----------------------------------------------------------------------
 /* defined('SSZCMS') or exit('Access Denied'); */
 
-$typeArr = array("xls", "xlsx", "rar", "zip", "7z", "xmind", "Workbook", "XLS", "PNG", "XLSX", "DOCX", "PPTX");//允许上传文件格式 
+$typeArr = array("xls", "xlsx", "rar", "png", "jpg", "doc", "docx", "zip", "7z", "xmind", "Workbook", "XLS", "PNG", "XLSX", "DOCX", "PPTX");//允许上传文件格式 
 $addtime=date("Ymd",time());      
 $testdir="../../upload/attachment/".$addtime."/";   
 if(file_exists($testdir)):   
@@ -19,8 +19,7 @@ endif;
 $path = $testdir; //上传路径
 $pathzs = "/data/upload/attachment/".$addtime.'/'; //真实上传路径
 
-
-if (isset($_POST)) {
+if (isset($_FILES)) {
     $name = $_FILES['file']['name'];
     $size = $_FILES['file']['size'];
     $name_tmp = $_FILES['file']['tmp_name'];

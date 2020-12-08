@@ -257,6 +257,58 @@ class govent_listControl extends SystemControl{
 		}  
 		include T('govent_preview');
 	}
+
+		
+		/**
+     * 审核
+     */
+    public function topreviewDo(){ 
+		$lang    = Language::getLangContent();
+		$mid=$_SESSION['member_id'];
+		$model=M('govent_detail_list');
+		// $condition['id'] = intval($_GET['id']);
+		// $info = $model->where($condition)->find();
+		// if (empty($info)){
+		// 	echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('没有找到此信息');</script>";
+		// 	exit(); 
+		// } 
+		$goventinfo=getTableInfohanett($info['goventid'],'govent_list');
+		if (chksubmit()){ 
+			$data = array();
+			$data['revstatus']      = intval($_POST['revstatus']);
+			$data['revtime']  = time();
+			$data['revuid']      = trim($mid);
+			$data['revcontent']      = trim($_POST['revcontent']); 
+			$condition['id'] = intval($_POST['id']); 
+			if ($result){
+				$this->log('任务数据审核'.'['.$goventinfo['name'].']',null);
+				if($data['revstatus']==1){
+					if($info['transaction']>0){
+						$memberinfo=getTableInfohanett($info['transaction'],'member');
+						//更新积分
+						M('member')->where(array('id'=>$info['transaction']))->update(array('integral'=>$memberinfo['integral']+2)); //C('integral')
+						$this->log('发布'.'['.$info['title'].']审核成功奖励2积分',null);
+						//写入积分记录
+						$data_record = array();
+						$data_record['mid']=$info['releaseid'];  
+						$data_record['integral']=2;
+						$data_record['type']=1;
+						$data_record['addtime']=time();
+						$data_record['source']=1;
+						$data_record['intro']='发布'.'['.$info['title'].']审核成功奖励2积分';
+						M("member_integral")->insert($data_record);
+					}
+				}
+				echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('操作成功');</script>";
+				exit();
+			}else {
+				echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('操作失败');</script>";
+				exit();
+			} 
+		}  
+		include T('shuju_topreview1');
+	}
+	
 	
 	/**
      * 设置操作

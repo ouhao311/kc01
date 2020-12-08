@@ -36,7 +36,7 @@
 <ul>
             <li class="hmenu"> <a href="<?php echo url('member','index');?>"> <i class="s_icon zhuye"></i>我的主页 </a> </li>
 <li class="hmenu"> <a href="<?php echo url('member','message');?>"> <i class="s_icon zixuni"></i>我的消息 </a> </li>
-<li class="hmenu active" > <a href="<?php echo url('member','task');?>"> <i class="s_icon zixuni"></i>我的任务</a> </li>
+<li class="hmenu active" > <a href="<?php echo url('member','task');?>"> <i class="s_icon banshii"></i>我的任务</a> </li>
 <li class="hmenu" > <a href="<?php echo url('member','addviews');?>"> <i class="s_icon youjii"></i>发布资讯</a> </li>
 <li class="hmenu" > <a href="<?php echo url('onlines','add');?>"> <i class="s_icon youjii"></i>我要提问</a> </li>
 <!-- <li class="hmenu" data-item="shoucang" data-url="collection/findByPage"> <a href="javascript:void(0);"> <i class="s_icon shoucangi"></i>我的收藏</a> </li>  -->

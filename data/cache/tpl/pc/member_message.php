@@ -36,9 +36,9 @@
 <ul>
             <li class="hmenu"> <a href="<?php echo url('member','index');?>"> <i class="s_icon zhuye"></i>我的主页 </a> </li>
 <li class="hmenu active"> <a href="<?php echo url('member','message');?>"> <i class="s_icon zixuni"></i>我的消息 </a> </li>
-<li class="hmenu" > <a href="<?php echo url('member','task');?>"> <i class="s_icon zixuni"></i>我的任务</a> </li>
+<li class="hmenu" > <a href="<?php echo url('member','task');?>"> <i class="s_icon banshii"></i>我的任务</a> </li>
 <li class="hmenu" > <a href="<?php echo url('member','addviews');?>"> <i class="s_icon youjii"></i>发布资讯</a> </li>
-<li class="hmenu" > <a href="<?php echo url('online','add');?>"> <i class="s_icon youjii"></i>我要提问</a> </li>
+<li class="hmenu" > <a href="<?php echo url('onlines','add');?>"> <i class="s_icon youjii"></i>我要提问</a> </li>
 <!-- <li class="hmenu" data-item="shoucang" data-url="collection/findByPage"> <a href="javascript:void(0);"> <i class="s_icon shoucangi"></i>我的收藏</a> </li>  -->
 <!-- <li class="hmenu" data-item="zuji" data-url="userBrowsing/query"> <a href="javascript:void(0);"> <i class="s_icon zuji"></i>我的足迹</a> </li> -->
 <!-- <li class="hmenu" data-item="youxiang" data-url="person/infoList"><a href="javascript:void(0);"><i class="s_icon youjii"></i>省长信箱</a></li> -->
@@ -51,22 +51,15 @@
 <div class="layui-container">
 <div class="m_new1 ht1">
               <ul>
-                <li onclick='handleClick()'>
-                  <a title="你有一个新的任务">你有一个新的任务</a>
-                  <em>2020-09-09</em>
-                </li>  
-                <li onclick='handleClick()'>
-                  <a title="你有一个新的任务">你有一个新的任务</a>
-                  <em>2020-09-09</em>
-                </li>  
+<?php if(is_array($list)) { foreach($list as $item) { ?>
+<li>
+<a href="<?php echo url('member','taskview',array('id'=>$item['id']));?>" title="<?php echo $info['name'];?>"><?php echo $item['name'];?></a>
+<em>截止时间：<?php echo $item['enddate'];?></em>
+</li>  
+<?php } } ?>
               </ul>
             </div>
-<script> 
-function handleClick() { 
-            //梁艳todo
-            console.log('0000000000')
-          }
-</script>
+
 </div>
 
 </div> 

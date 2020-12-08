@@ -61,23 +61,24 @@
                 </tr>
               </thead>
               <tbody>
-                <!-- <?php if(is_array($list)) { foreach($list as $item) { ?> 
+                <?php if(is_array($list)) { foreach($list as $item) { ?>
                 <tr >
-                  <td align="left" valign="middle"><a target="_blank" href="<?php echo url('news','show',array('id'=>$item['id']));?>" class="bj_link" title="<?php echo $item['title'];?>"><?php echo $item['title'];?></a></td>
-                  <td align="center" valign="middle"><?php echo getTableInfohanettName($item['pid'],'article_class','title');?></td>
-                  <td align="center" valign="middle"><span class="da-time"><?php echo date('Y-m-d H:i:s',$item['edittime']);?></span></td>
-                  <td align="center" valign="middle"><?php echo getReview('isreview',$item['isreview']);?></td>
+                  <td align="left" valign="middle"><?php echo $item['name'];?></td>
+                  <td align="center" valign="middle"><span class="da-time"><?php echo $item['enddate'];?></span></td>
+                  <td align="center" valign="middle"><?php echo getvaluemore('member',$item['managerid'], 'truename');?></td>
+                  <td align="center" valign="middle">审核中</td>
                   <td align="center" valign="middle">
-                    <?php if($item['isreview']!=1) { ?>
-                    <span class="icon_sq"> <a target="_blank" href="<?php echo url('member','editviews',array('id'=>$item['id']));?>"title="编辑"> 编辑 </a> </span>
-                    <span class="icon_sq"> <a class="delviews" data-id="<?php echo $item['id'];?>" href="JavaScript:;"title="删除"> 删除 </a> </span>
+                    <?php if($item['status']!=1) { ?>
+                    <a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)'><i class='fa fa-pencil-square-o'></i> 上传附件</a>
+                    <a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)'><i class='fa fa-pencil-square-o'></i> 提交审核</a>
                     <?php } else { ?>
-                    <span class="icon_sq"> <a class="zhuanjiao" data-id="<?php echo $item['id'];?>" title="转让"> 转让 </a> </span>
+                    <a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)'><i class='fa fa-pencil-square-o'></i> 上传附件</a>
+                    <a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)'><i class='fa fa-pencil-square-o'></i> 提交审核</a>
                     <?php } ?>
                   </td>
                 </tr>
-                <?php } } ?> -->
-                <tr>
+                <?php } } ?>
+                <!-- <tr>
                   <td>自我测试分配任务管理</td>
                   <td>2020-12-10 15:28:16</td>
                   <td>怡卫茹</td>
@@ -102,7 +103,7 @@
                   <td>已通过</td>
                   <td>
                   </td>
-                </tr>
+                </tr> -->
               </tbody>
             </table>
 <script> 

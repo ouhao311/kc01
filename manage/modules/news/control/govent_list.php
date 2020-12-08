@@ -266,12 +266,6 @@ class govent_listControl extends SystemControl{
 		$lang    = Language::getLangContent();
 		$mid=$_SESSION['member_id'];
 		$model=M('govent_detail_list');
-		// $condition['id'] = intval($_GET['id']);
-		// $info = $model->where($condition)->find();
-		// if (empty($info)){
-		// 	echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('没有找到此信息');</script>";
-		// 	exit(); 
-		// } 
 		$goventinfo=getTableInfohanett($info['goventid'],'govent_list');
 		if (chksubmit()){ 
 			$data = array();
@@ -306,7 +300,7 @@ class govent_listControl extends SystemControl{
 				exit();
 			} 
 		}  
-		include T('shuju_topreview1');
+		include T('govent_preview1');
 	}
 	
 	

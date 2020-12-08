@@ -58,13 +58,18 @@ class govent_listControl extends SystemControl{
 			}else{
 			    	$list['self'] = "是"; 
 			}
-		if(empty($v['status']))
-		{
-					$list['status'] = "否"; 
-		}else{
-					$list['status'] = "是"; 
-		}
-		
+
+			if($v['status'] === 1) {
+				$list['status'] = "草稿"; 
+			} else if($v['status'] === 2) {
+				$list['status'] = "已派发"; 
+			} else if($v['status'] === 3) {
+				$list['status'] = "待审批"; 
+			} else if($v['status'] === 4) {
+				$list['status'] = "已审批"; 
+			} else {
+				$list['status'] = "已退回";
+			}
 	
 		if($this->checkCzqx("edit")){
 			$list['operation'] = "<a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)' onclick='fg_edit(".$v['id'].")'><i class='fa fa-pencil-square-o'></i> 编辑</a>"; 
@@ -72,7 +77,6 @@ class govent_listControl extends SystemControl{
 		if($this->checkCzqx("topshenhe")){
 			$list['operation'] .= "<a class='layui-btn layui-btn-sm layui-btn-auto' href='javascript:void(0)' onclick=\"fg_topshenhe({$v['id']})\"><i class='fa fa-check-circle'></i> 审核</a>"; 
 		}
-		
 					$data['list'][$v['id']] = $list;
 			}
 			exit(Tpl::flexigridXML($data));

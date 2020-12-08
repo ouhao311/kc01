@@ -69,6 +69,19 @@ class goventModel extends Model {
         $result = Db::select($param,$page);
         return $result;
     }
+
+    public function getMessageList($condition) {
+        // $condition_str = $this->_condition($condition);
+        $condition_str = " isdel = 0 and memberid in (". $condition['memberid'] .") 
+        and NOW() > DATE_SUB(enddate,INTERVAL  1 HOUR) 
+        AND NOW() < DATE_SUB(enddate,INTERVAL  0 HOUR)";
+        $param = array();
+        $param['table'] = 'govent_list';
+        $param['where'] = $condition_str;
+        $param['order'] = (empty($condition['order'])?'addtime desc':$condition['order']);
+        $result = Db::select($param,$page);
+        return $result;
+    }
     /**
      * 构造检索条件
      *

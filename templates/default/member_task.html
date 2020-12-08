@@ -69,7 +69,9 @@
                   <td align="center" valign="middle">审核中</td>
                   <td align="center" valign="middle">
                     {if $item['status']!=1}
-                    <a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)'><i class='fa fa-pencil-square-o'></i> 上传附件</a>
+                    <a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)'><i class='fa fa-pencil-square-o'></i> 
+                      {getMoreattachment('upload_img_down','upload_img_list_down','down',$info['down'],'model',$info['model'],'size',$info['size'])}
+                    </a>
                     <a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)'><i class='fa fa-pencil-square-o'></i> 提交审核</a>
                     {else}
                     <a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)'><i class='fa fa-pencil-square-o'></i> 上传附件</a>

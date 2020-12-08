@@ -51,6 +51,12 @@
 					<div class="layui-container">
 						<div class="m_new1 ht1">
               <ul>
+									{loop $list $item}
+									<li onclick='handleClick()'>
+											<a title="{php echo $item['name']}">你有一个新的任务</a>
+											<em>截止时间：{$item['enddate']}</em>
+										</li>  
+									{/loop}
                 <li onclick='handleClick()'>
                   <a title="你有一个新的任务">你有一个新的任务</a>
                   <em>2020-09-09</em>

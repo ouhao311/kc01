@@ -76,7 +76,7 @@ class govent_listControl extends SystemControl{
 		if($this->checkCzqx("edit") && $infodetail['revstatus'] != 2){
 			$list['operation'] = "<a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)' onclick='fg_edit(".$v['id'].")'><i class='fa fa-pencil-square-o'></i> 编辑</a>"; 
 		}
-		if($this->checkCzqx("topshenhe") && $infodetail['revstatus'] == 1){
+		if($this->checkCzqx("topshenhe")){
 			$list['operation'] .= "<a class='layui-btn layui-btn-sm layui-btn-auto' href='javascript:void(0)' onclick='fg_topshenhe(".$v['id'].", ".$v['memberid'].")'><i class='fa fa-check-circle'></i> 审核</a>"; 
 		}
 					$data['list'][$v['id']] = $list;

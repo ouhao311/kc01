@@ -99,7 +99,13 @@ TMPL: "/public/"
 <a href="<?php echo url('govent','index');?>" target="">
 <b>智慧政务</b>
 </a>
-</li>     
+</li>
+<li class="layui-nav-item <?php if($_GET['url']=='party') { ?>layui-this<?php } ?>
+">
+<a href="<?php echo url('party','index');?>" target="">
+<b>党建系统</b>
+</a>
+</li>    
 </ul>
 <script>
 //注意：导航 依赖 element 模块，否则无法进行功能性操作

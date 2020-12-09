@@ -1,0 +1,45 @@
+{template 'header'}
+
+<div class="mgtop-15 background-w1">
+	<div class="fdiv mua"><ul><i class="iconfont icon-dangwugongkai"></i><b>正文</b></ul>
+	<ol>
+		当前位置：<a href="/">首页</a> >
+		    {if !empty($sonclass)&&$topclassinfo['id']!=$_GET['pid']}
+			<a href="{url('govent','index',array('pid'=>$topclassinfo['id']))}">{$topclassinfo['title']}</a> >
+			{/if}	
+			<a href="{url('govent','index',array('pid'=>$classinfo['id']))}">党建系统</a> >
+		
+		正文
+	</ol>	
+	</div>
+
+	<div class="lnmu">
+		<ul>{$info['title']}</ul>
+		<ol>来源：<a href="{url('govent','index',array('id'=>$classinfo['id']))}" target="_blank">党建系统</a>  发布时间：{date('Y-m-d H:i:s',$info['addtime'])}　点击数量:<span id="hits">{$info['clicks']}</span></ol>
+	</div>
+		<div class="listn imgk" id="articlePreviewDialog">
+		{$info['content']}
+	</div>
+	<div class="xiaz">
+		<ul>
+			<li><strong>上一篇：</strong>
+				{if empty($preinfo)}
+				没有了
+				{else}
+					<a href="{url('govent','show',array('id'=>$preinfo['id']))}">{$preinfo['title']}</a>{/if}
+			</li>
+			<li><strong>下一篇：</strong>
+				{if empty($nextinfo)}
+				没有了
+				{else}
+				<a href="{url('govent','show',array('id'=>$nextinfo['id']))}">{$nextinfo['title']}</a>{/if}
+			</li>
+		</ul>
+	</div>
+</div>
+
+ 
+<!--主体内容 结束-->
+ 
+
+{template 'footer'} 

@@ -17,8 +17,8 @@
 		</div>
 		<div class="layui-col-xs9 layui-col-sm10 layui-col-md11">
 			<div class="layui-input-block">
-				<input type='radio' lay-skin='primary' title='审核通过' {if $info["revcontent"] != 3}checked{/if} name='revstatus' value='2' lay-filter='审核通过'/>
-				<input type='radio' lay-skin='primary' title='审核不通过' name='revstatus' value='3' lay-filter='审核不通过'/>
+				<input type='radio' lay-skin='primary' title='审核通过' {if $info["revstatus"] == 2}checked{/if} name='revstatus' value='2' lay-filter='审核通过'/>
+				<input type='radio' lay-skin='primary' title='审核不通过' {if $info["revstatus"] == 3}checked{/if} name='revstatus' value='3' lay-filter='审核不通过'/>
 			</div>
 		</div>
 	</div>

@@ -178,7 +178,7 @@ class memberControl extends BaseMemberControl{
 			$param['value'] = intval($value['id']); 
 			$result = Db::getRow($param);
 			$list[$key]['revstatus'] = $result['revstatus'] || 0;
-			$list[$key]['revstatusName'] = $result['revstatus'] == 1 ? '待审核' : ($result['revstatus'] == 2 ? '审核通过' : ($result['revstatus'] == 1 ? '审核退回' : '待办理'));
+			$list[$key]['revstatusName'] = $result['revstatus'] == 1 ? '待审核' : ($result['revstatus'] == 2 ? '审核通过' : ($result['revstatus'] == 3 ? '审核退回' : '待办理'));
 		}
 		// $list= $myinfo->getGoventList($condition); 
 		include T('member_task');

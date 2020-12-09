@@ -17,7 +17,7 @@
 		</div>
 		<div class="layui-col-xs9 layui-col-sm10 layui-col-md11">
 			<div class="layui-input-block">
-				<input type='radio' lay-skin='primary' title='审核通过' checked name='revstatus' value='2' lay-filter='审核通过'/>
+				<input type='radio' lay-skin='primary' title='审核通过' {if $info["revcontent"] != 3}checked{/if} name='revstatus' value='2' lay-filter='审核通过'/>
 				<input type='radio' lay-skin='primary' title='审核不通过' name='revstatus' value='3' lay-filter='审核不通过'/>
 			</div>
 		</div>
@@ -25,11 +25,11 @@
 
 	<div class="layui-row mb15 pt20">
 		<div class=" layui-col-xs2  layui-col-sm2  layui-col-md2">
-			<label class="layui-form-title"> 附件：</label>
+			<label class="layui-form-title"> 下载附件：</label>
 		</div>
 		<div class="layui-col-xs9 layui-col-sm10 layui-col-md10">
 			<div class="layui-form-value">
-				<a><?php echo empty($info['attachment']['realname']) ? '' : $info['attachment']['realname'];?></a>
+				<a href="<?php echo $info['attachment']['url']; ?>" target="_blank"><?php echo empty($info['attachment']['realname']) ? '' : $info['attachment']['realname'];?></a>
 			</div>
 		</div>
 	</div> 

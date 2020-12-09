@@ -31,11 +31,17 @@ class govent_listControl extends SystemControl{
 			$condition = array();  
 			$condition['isdel'] = 0;
 	list($condition,$order) = $this->_get_condition($condition);//处理条件和排序
+	// print_r($condition);exit;
 			$list = $model->where($condition)->order($order)->page($_POST['rp'])->select();
 			$data = array();
 			$data['now_page'] = $model->shownowpage();
 			$data['total_num'] = $model->gettotalnum();
 			foreach ($list as $k => $v) {
+				$modeldetail=M('govent_detail_list');
+				$condition2 	= array();
+				$condition2['goventid'] = intval($v['id']);
+				$condition2['transaction'] = intval($v['memberid']);
+				$infodetail = $modeldetail->where($condition2)->find();
 					$list = array();
 		 $list['id'] = "<span title='".$v['id']."'>".$v['id']."</span>";  
 		$list['name'] = "<span title='".$v['name']."'>".$v['name']."</span>"; 
@@ -51,24 +57,26 @@ class govent_listControl extends SystemControl{
 			}  
 				$membermanainfo=getTableInfohanett($v['managerid'],'member');
 			$list['releasemanaid'] = "<img src='".getImageUrl($membermanainfo['avatar'],'avatar')."' class='user-avatar' onMouseOut='toolTip()' onMouseOver='toolTip(\"<img src=".getImageUrl($membermanainfo['avatar'],'avatar').">\")'><span title='".$membermanainfo['truename']."'>".$membermanainfo['truename']."</span>";
-			if(empty($v['isself']))
+			$end_unixtime = strtotime($v['enddate']);
+			// print_r($end_unixtime);echo "<br/>";print_r($infodetail);echo "<br/>";
+			if(empty($infodetail))
 			{
 			    	$list['self'] = "-"; 
+			}else if((intval($end_unixtime) - intval($infodetail['createtime'])) < 0){
+				// print_r($end_unixtime);echo "222<br/>";print_r($infodetail);echo "<br/>";
+			    	$list['self'] = "否"; 
 			}else{
-			    	$list['self'] = "是"; 
+				// var_dump($end_unixtime);echo "是<br/>";var_dump(intval($infodetail['createtime']));echo "<br/>";
+				$list['self'] = "是"; 
 			}
 
-			$modeldetail=M('govent_detail_list');
-			$condition2 	= array();
-			$condition2['goventid'] = intval($v['id']);
-			$condition2['transaction'] = intval($v['memberid']);
-			$infodetail = $modeldetail->where($condition2)->find();
-			$list['revstatusName'] = $infodetail['revstatus'] == 1 ? '待审核' : ($infodetail['revstatus'] == 2 ? '审核通过' : ($infodetail['revstatus'] == 1 ? '审核退回' : '待办理'));
+			
+			$list['revstatusName'] = $infodetail['revstatus'] == 1 ? '待审核' : ($infodetail['revstatus'] == 2 ? '审核通过' : ($infodetail['revstatus'] == 3 ? '审核退回' : '待办理'));
 	
 		if($this->checkCzqx("edit") && $infodetail['revstatus'] != 2){
 			$list['operation'] = "<a class='layui-btn layui-btn-sm layui-btn-auto2' href='javascript:void(0)' onclick='fg_edit(".$v['id'].")'><i class='fa fa-pencil-square-o'></i> 编辑</a>"; 
 		}
-		if($this->checkCzqx("topshenhe")){
+		if($this->checkCzqx("topshenhe") && $infodetail['revstatus'] == 1){
 			$list['operation'] .= "<a class='layui-btn layui-btn-sm layui-btn-auto' href='javascript:void(0)' onclick='fg_topshenhe(".$v['id'].", ".$v['memberid'].")'><i class='fa fa-check-circle'></i> 审核</a>"; 
 		}
 					$data['list'][$v['id']] = $list;
@@ -270,6 +278,10 @@ class govent_listControl extends SystemControl{
 		$info['attachment'] = json_decode($info['attachment'], true);
 		$goventinfo=getTableInfohanett($info['goventid'],'govent_list');
 		if (chksubmit()){ 
+			if (empty($_POST['id'])) {
+				echo "<script>window.parent.layer.closeAll();window.parent.$('#flexigrid').flexReload();window.parent.layer.msg('用户未处理，无法提交审核');</script>";
+				exit;				
+			}
 			$data = array();
 			$data['revstatus']      = intval($_POST['revstatus']);
 			$data['revtime']  = time();
@@ -340,7 +352,7 @@ class govent_listControl extends SystemControl{
         $start_unixtime = $if_start_time ? strtotime($_GET['kaishi']) : null;
         $end_unixtime = $if_end_time ? strtotime($_GET['jieshu']): null;
         if ($start_unixtime || $end_unixtime) {
-            $condition['enddate'] = array('time',array($start_unixtime,$end_unixtime));
+            $condition['enddate'] = array('date',array($start_unixtime,$end_unixtime));
 		} 
         $sort_fields = array('rank','id','enddate');
 		if ($_REQUEST['sortorder'] != '' && in_array($_REQUEST['sortname'],$sort_fields)) {

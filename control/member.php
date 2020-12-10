@@ -153,7 +153,7 @@ class memberControl extends BaseMemberControl{
 		$conditionMember['id']	= $mid;
 		$member= $myinfo->getMemberInfo($conditionMember);
 
-        $title='我的任务';
+        $title='我的消息';
 		$condition 	= array();
 		$condition['memberid']	= $mid;
 		$models = M('govent');
@@ -200,7 +200,7 @@ class memberControl extends BaseMemberControl{
 			//   header("Content-Security-Policy: upgrade-insecure-requests");
 			$lang = Language::getLangContent();
 			$mid=$_SESSION['member_id'];
-			$title='编辑资讯';
+			$title='办理任务';
 			$myinfo = M('member');
 			$condition 	= array();
 			$condition['id']	= $mid;

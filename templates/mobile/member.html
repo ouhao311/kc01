@@ -219,6 +219,20 @@
 				</div>
 			</div>
 			{/if}
+			{if $member['identity']>="1"}
+				<div class="mem-list">
+				<div>
+					<p class="list-title"><span></span><a href="{url('member','task')}" id="zhsz"> <img src="/ssz/images/mine-zixun-nor@2x.png" alt="我的任务" />我的任务<span>查看 <em>></em></span></a></p>
+				</div>
+			</div>
+			{/if}
+			{if $member['identity']>="1"}
+				<div class="mem-list">
+				<div>
+					<p class="list-title"><span></span><a href="{url('member','message')}" id="zhsz"> <img src="/ssz/images/mine-zixun-nor@2x.png" alt="我的消息" />我的消息<span>查看 <em>></em></span></a></p>
+				</div>
+			</div>
+			{/if}
 		    <!-- 考勤打卡 end -->
 		</div>
 		<div class="clear"></div> 

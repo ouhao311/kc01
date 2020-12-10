@@ -148,6 +148,11 @@ class memberControl extends BaseMemberControl{
 
         $lang = Language::getLangContent();
 		$mid=$_SESSION['member_id'];
+		$myinfo = M('member');
+		$conditionMember 	= array();
+		$conditionMember['id']	= $mid;
+		$member= $myinfo->getMemberInfo($conditionMember);
+
         $title='我的任务';
 		$condition 	= array();
 		$condition['memberid']	= $mid;
@@ -162,6 +167,11 @@ class memberControl extends BaseMemberControl{
 
         $lang = Language::getLangContent();
 		$mid=$_SESSION['member_id'];
+		$myinfo = M('member');
+		$conditionMember 	= array();
+		$conditionMember['id']	= $mid;
+		$member= $myinfo->getMemberInfo($conditionMember);
+
         $title='我的任务';
 		$condition 	= array();
 		$condition['memberid']	= $mid;

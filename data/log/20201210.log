@@ -1,0 +1,9 @@
+[2020-12-10 16:39:17] /index.php?url=task&do=myunquest ( url=task&do=myunquest ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER by id desc' at line 1
+SELECT * FROM hx_online_list where releaseid=78 or mobile=   ORDER by id desc 
+[2020-12-10 16:40:34] /index.php?url=task&do=myunquest ( url=task&do=myunquest ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER by id desc' at line 1
+SELECT * FROM hx_online_list where releaseid=78 or mobile=   ORDER by id desc 
+[2020-12-10 17:12:01] /index.php?url=task&do=myunquest ( url=task&do=myunquest ) 
+ERR: Db Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'ORDER by id desc' at line 1
+SELECT * FROM hx_online_list where releaseid=78 or mobile=   ORDER by id desc 

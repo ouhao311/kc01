@@ -6,10 +6,11 @@
 .user_three span{
     margin:0 8px ;
 }
-#zhsz{
+#zhsz, #message {
     display: block;
     width: 100%;
 }
+
 .mem-list{
     width: 98%;
     height: 30px;
@@ -29,7 +30,7 @@
     height: 16px;
     margin: -5px 10px 0 0;
 }
-#zhsz span,#myque span,#myunque span{
+#zhsz span,#myque span,#myunque span, #message span{
     display: inline-block;
     float: right;
     margin-right: 10px;
@@ -104,7 +105,14 @@
 					<p class="list-title"><span></span><a href="{url('member','index')}" id="zhsz"><img src="/ssz/images/mine-home-nor@2x.png" alt="我的主页" />我的主页 <span>查看 <em>></em></span></a></p>
 				</div>
 			</div>
-		    <!-- 我的主页 end -->
+				<!-- 我的主页 end -->
+				<!-- 我的消息 start --> 
+				<div class="mem-list">
+						<div>
+							<p class="list-title"><span></span><a href="{url('member','message')}" id="message"><img src="/ssz/images/mine-home-nor@2x.png" alt="我的消息" />我的消息 <span>查看 <em>></em></span></a></p>
+						</div>
+			  </div>
+				<!-- 我的消息 end -->
 		    <!-- TODO 我要提问 start --> 
 		    <div class="mem-list">
 				<div>
@@ -211,16 +219,6 @@
 				</div>
 			</div>
 			{/if}
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
 		    <!-- 考勤打卡 end -->
 		</div>
 		<div class="clear"></div> 

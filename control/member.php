@@ -294,6 +294,140 @@ class memberControl extends BaseMemberControl{
 			include T('member_taskviews');
 		}	
 	
+		
+		//志愿者任务
+	public function volunteerDo(){
+		//   header("Content-Security-Policy: upgrade-insecure-requests");
+	
+			$lang = Language::getLangContent();
+			$mid=$_SESSION['member_id'];
+			$myinfo = M('member');
+			$conditionMember 	= array();
+			$conditionMember['id']	= $mid;
+			$member= $myinfo->getMemberInfo($conditionMember);
+	
+			$title='志愿者任务';
+			$condition 	= array();
+			$condition['memberid']	= $mid;
+			$models = M('volunteer');
+			$page	= new Page();
+			$page->setEachNum(10);
+			$page->setStyle('5');
+			$list	= $models->getGoventList($condition,$page);
+			$show_page=$page->show(); 
+			if ($list) {
+				foreach ($list as $key => $value) {
+					$param = array();
+					$param['table'] = 'volunteer_detail_list';
+					$param['field'] = 'vid';
+					$param['value'] = intval($value['id']); 
+					$result = Db::getRow($param);
+					$list[$key]['revstatus'] = $result['revstatus'] || 0;
+					$list[$key]['revstatusName'] = $result['revstatus'] == 1 ? '待审核' : ($result['revstatus'] == 2 ? '审核通过' : ($result['revstatus'] == 3 ? '审核退回' : '待办理'));
+				}
+			}
+			// $list= $myinfo->getGoventList($condition); 
+			include T('member_volunteer');
+		}	
+			//志愿者任务
+			public function volunteerviewDo(){
+				//   header("Content-Security-Policy: upgrade-insecure-requests");
+				$lang = Language::getLangContent();
+				$mid=$_SESSION['member_id'];
+				$title='办理任务';
+				$myinfo = M('member');
+				$condition 	= array();
+				$condition['id']	= $mid;
+				$member= $myinfo->getMemberInfo($condition);
+				$model=M('volunteer_list');
+				$condition1 	= array();
+				$condition1['id'] = intval($_GET['id']);
+				$info = $model->where($condition1)->find();
+				if (empty($info)){
+					echo '<link rel="stylesheet" type="text/css" href="/public/layui/css/layui.css">';
+					echo '<script src="/public/layui/layui.all.js"></script>';
+					echo "<script>
+							layer.msg('没有找到此信息！', { 
+								time: 2000
+							}, function(){
+								window.history.back(-1);
+							});  
+							</script>";
+					exit();
+				} 
+				$modeldetail=M('volunteer_detail_list');
+				$condition2 	= array();
+				$condition2['vid'] = intval($_GET['id']);
+				$condition2['transaction'] = intval($mid);
+				$infodetail = $modeldetail->where($condition2)->find();
+				if (!empty($infodetail)){
+					echo '<link rel="stylesheet" type="text/css" href="/public/layui/css/layui.css">';
+					echo '<script src="/public/layui/layui.all.js"></script>';
+					echo "<script>
+							layer.msg('已办理！', { 
+								time: 2000
+							}, function(){
+								window.history.back(-1);
+							});  
+							</script>";
+					exit();
+				} 
+				// print_r($_POST);EXIT;
+				if (chksubmit()){
+					$editmodel=M('volunteer_detail_list');
+					$data = array(); 
+					$data['vid']      = intval($_GET['id']);  
+					$data['content']  = htmlspecialchars_decode($_POST['content'], ENT_QUOTES); 
+					if(empty($_POST['down'])) {
+						echo '<link rel="stylesheet" type="text/css" href="/public/layui/css/layui.css">';
+						echo '<script src="/public/layui/layui.all.js"></script>';
+						echo "<script>
+							layer.msg('附件必传！', { 
+								time: 2000
+							}, function(){
+								window.history.back(-1);
+							});  
+							</script>";
+						exit();
+					}
+					$data['attachment']  = json_encode(array('url' => $_POST['down'], 'realname'=> $_POST['realname'], 'model' => $_POST['model'], 'size' => $_POST['size'], 'ref_url' => $_POST['ref_url']), JSON_UNESCAPED_UNICODE); 
+					$data['createtime']  = time();
+					$data['transaction']      =  $mid; 
+					// if(!$_POST['intro'])
+					// {
+					// 	$data['intro']    = clearHtmlText(str_cut(strip_tags($data['content']),200));//截取简介
+					// }	
+					// $condition2 	= array(); 
+					// $condition2['id'] = intval($_POST['id']); 
+					// $info2 = $editmodel->where($condition2)->find();
+					$result = $editmodel->insert($data); 
+					if ($result){
+						echo '<link rel="stylesheet" type="text/css" href="/public/layui/css/layui.css">';
+						echo '<script src="/public/layui/layui.all.js"></script>';
+						echo "<script>
+							layer.msg('提交成功！', { 
+								time: 2000
+							}, function(){
+								window.location.href='/index.php?url=member&do=volunteer';
+							});  
+							</script>";
+						exit();
+					}else {
+						echo '<link rel="stylesheet" type="text/css" href="/public/layui/css/layui.css">';
+						echo '<script src="/public/layui/layui.all.js"></script>';
+						echo "<script>
+							layer.msg('提交失败！', { 
+								time: 2000
+							}, function(){
+								window.history.back(-1);
+							});  
+							</script>";
+						exit();
+					}
+				}
+				include T('member_volunteerviews');
+			}	
+		
 	
 	
 	
